@@ -273,6 +273,29 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
   border-radius:10px;padding:11px 13px;font-size:10.7px;color:var(--muted)
 }
 .focus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.activity-page .project-grid{height:calc(100% - 92px)}
+.activity-page .visual{position:relative;min-height:0;background:#f8fcfe;flex:1}
+.activity-page .visual img{width:100%;height:100%;object-fit:contain}
+.activity-page .visuals.single-visual .visual{flex:1}
+.activity-page .visual.slideshow img{position:absolute;inset:0;opacity:0;animation:focus-slides 12s infinite}
+.activity-page .visual.slideshow img:nth-child(2){animation-delay:4s}
+.activity-page .visual.slideshow img:nth-child(3){animation-delay:8s}
+.activity-page .visual.slideshow.two-images img{animation-name:two-slides;animation-duration:8s}
+.activity-page .visual.slideshow.two-images img:nth-child(2){animation-delay:4s}
+.activity-page .visual.adaptive-slideshow{transition:background-color .65s ease}
+.activity-page .visual.adaptive-slideshow img{animation:none;opacity:0;transition:opacity .65s ease}
+.activity-page .visual.adaptive-slideshow img.active{opacity:1}
+.activity-copy{justify-content:flex-start;padding-top:0;gap:12px}
+.activity-entry{display:grid;grid-template-columns:max-content minmax(0,1fr);column-gap:8px;align-items:baseline;padding-bottom:11px;border-bottom:1px solid var(--line)}
+.activity-entry:last-child{padding-bottom:0;border-bottom:0}
+.activity-entry .subhead{margin:0;white-space:nowrap}
+.activity-entry .subhead::after{content:"·";margin-left:8px;color:#9eb3c1}
+.activity-entry h3{margin:0 0 6px;font-size:14px;line-height:1.35;letter-spacing:-.025em}
+.activity-entry .bullets{grid-column:1/-1}
+.activity-entry .bullets li{font-size:10.8px;line-height:1.68;margin-bottom:4px}
+.activity-entry a,.section-title a{color:inherit;text-decoration:none}
+.activity-entry a:hover,.section-title a:hover{color:var(--blue-dark);text-decoration:underline;text-underline-offset:3px}
+.external-mark{font-size:.78em;color:var(--blue-dark);margin-left:3px}
 .focus-panel{border:1px solid #d4e9f4;border-radius:18px;background:linear-gradient(155deg,#fff 30%,#f3faff);padding:18px;box-shadow:0 9px 24px rgba(66,145,190,.08);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
 .focus-panel:hover{transform:translateY(-3px);border-color:#abd7eb;box-shadow:0 15px 32px rgba(49,126,169,.13)}
 .focus-head{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)}
@@ -299,9 +322,14 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
   33%,96%{opacity:0}
   100%{opacity:1}
 }
+@keyframes two-slides{
+  0%,45%{opacity:1}
+  50%,95%{opacity:0}
+  100%{opacity:1}
+}
 @media(prefers-reduced-motion:reduce){
-  .focus-photo.slideshow img{animation:none;opacity:0}
-  .focus-photo.slideshow img:first-child{opacity:1}
+  .focus-photo.slideshow img,.activity-page .visual.slideshow img{animation:none;opacity:0}
+  .focus-photo.slideshow img:first-child,.activity-page .visual.slideshow img:first-child{opacity:1}
 }
 .focus-item{padding:12px 0;border-bottom:1px solid #deedf5}
 .focus-item:last-child{border-bottom:0;padding-bottom:0}
@@ -428,7 +456,7 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
               <div class="rsec-title">수상 내역</div>
               <div class="ritem has-document"><span class="date">2026.03.20</span><strong>KT 디지털 인재 장학생</strong><a class="document-link" href="files/award-2.jpg" target="_blank" rel="noreferrer" aria-label="KT 디지털 인재 장학증서 보기" title="장학증서 보기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v18H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a></div>
               <div class="ritem has-document"><span class="date">2026.02.05</span><strong>KCSE 2026 우수 학부생 논문상</strong><a class="document-link" href="files/award-1.jpg" target="_blank" rel="noreferrer" aria-label="KCSE 2026 우수 학부생 논문상 상장 보기" title="상장 보기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v18H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a></div>
-              <div class="ritem has-document"><span class="date">2024.11.23</span><strong>제 1회 디지털소프트웨어공학부 해커톤 2위</strong><a class="document-link" href="files/award-3.jpeg" target="_blank" rel="noreferrer" aria-label="해커톤 상장 보기" title="상장 보기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v18H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a></div>
+              <div class="ritem"><span class="date">2024.11.23</span><strong>제 1회 디지털소프트웨어공학부 해커톤 2위</strong></div>
               <div class="ritem has-document"><span class="date">2023–2026</span><strong>학과 수석(24-1) · 단과대학 성적우수(23-1, 23-2) · 학과 성적우수 (24-2, 26-1)</strong><a class="document-link" href="files/성적증명서.pdf" target="_blank" rel="noreferrer" aria-label="성적증명서 보기" title="성적증명서 보기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v18H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a></div>
             </div>
 
@@ -437,7 +465,7 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
           <div>
             <div class="rsec dense-list compact-list">
               <div class="rsec-title">보안 · 개발</div>
-              <div class="ritem"><span class="date">2025.03–2025.09</span><strong>차세대 보안리더 양성 프로그램 화이트햇스쿨 3기</strong><a class="document-link" href="files/whs.jpg" target="_blank" rel="noreferrer" aria-label="화이트햇스쿨 수료증 보기" title="수료증 보기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v18H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a></div>
+              <div class="ritem"><span class="date">2025.03–2025.09</span><strong>차세대 보안리더 양성 프로그램 화이트햇스쿨 3기</strong></div>
               <div class="ritem"><span class="date">2024.03–2026.08</span><strong>덕성여자대학교 사이버보안 동아리 BackDoor 2기 회장</strong></div>
               <div class="ritem"><span class="date">2024.09–2025.08</span><strong>덕성여자대학교 웹 개발 동아리 Corner 4기</strong></div>
             </div>
@@ -445,7 +473,7 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
             <div class="rsec dense-list compact-list">
               <div class="rsec-title">멘토링 · 교육</div>
               <div class="ritem"><span class="date">2023.11–2026.08</span><strong>OUTTA AI 부트캠프 멘토</strong></div>
-              <div class="ritem"><span class="date">2026.01–2026.02</span><strong>한국수력원자력 아인슈타인 클래스 17기 멘토</strong><a class="document-link" href="files/khnp.jpg" target="_blank" rel="noreferrer" aria-label="한국수력원자력 아인슈타인 클래스 증서 보기" title="증서 보기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v18H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a></div>
+              <div class="ritem"><span class="date">2026.01–2026.02</span><strong>한국수력원자력 아인슈타인 클래스 17기 멘토</strong></div>
               <div class="ritem"><span class="date">2023.06–2023.09</span><strong>현대오토에버 스마트 모빌리티 공학체험교육 6기 멘토</strong></div>
               <div class="ritem"><span class="date">2023.03–2024.06</span><strong>덕성여자대학교 코딩 교육 봉사 동아리 I-Coding</strong></div>
             </div>
@@ -475,7 +503,7 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
 <section class="slide">
   <div class="page autofic-page">
     <div class="title-row"><div class="title-bar"></div><h1>RESEARCH & PROJECT · 01</h1></div>
-    <h2 class="section-title">AutoFiC : 취약점 탐지부터 PR 생성까지 자동화된 보안 패치 파이프라인</h2>
+    <h2 class="section-title"><a href="https://autofic.github.io/" target="_blank" rel="noreferrer">AutoFiC : 취약점 탐지부터 PR 생성까지 자동화된 보안 패치 파이프라인 <span class="external-mark">↗</span></a></h2>
 
     <div class="project-grid">
       <div class="visuals">
@@ -554,24 +582,40 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
 
 <!-- 6. Experience -->
 <section class="slide">
-  <div class="page link-cards-page">
+  <div class="page link-cards-page activity-page">
     <div class="title-row"><div class="title-bar"></div><h1>EXPERIENCE</h1></div>
-    <div class="focus-grid">
-      <div class="focus-panel"><div class="focus-head"><div><span>덕성여자대학교 사이버보안 동아리</span><h3>BackDoor</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><p>2기 회장으로서 사이버보안 관련 스터디 세션 및 프로젝트를 운영하였습니다.</p></div></div>
-      <div class="focus-panel"><div class="focus-head"><div><span>차세대 보안리더 양성 프로그램</span><h3>화이트햇스쿨 3기</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><p>사이버보안 관련 이론과 실무를 학습하고, 팀 프로젝트를 수행했습니다.</p></div></div>
-      <div class="focus-panel"><div class="focus-head"><div><span>덕성여자대학교 웹 개발 동아리</span><h3>Corner</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><p>Node.js와 Git 기초를 학습하고 <br> 다양한 웹 개발 프로젝트와 해커톤에 참여했습니다.</p></div></div>
+    <h2 class="section-title">보안·개발 역량을 넓힌 교내·외 활동</h2>
+    <div class="project-grid">
+      <div class="visuals single-visual">
+        <div class="visual slideshow adaptive-slideshow" aria-label="보안 및 개발 활동 이미지">
+          <img class="active" src="files/autofic-3.png" alt="AutoFiC 소개 페이지" data-bg="#001329">
+          <img src="files/autofic-4.png" alt="AutoFiC 대시보드" data-bg="#0b0924">
+        </div>
+      </div>
+      <div class="project-copy activity-copy">
+        <div class="activity-entry"><div class="subhead">덕성여자대학교 사이버보안 동아리</div><h3>BackDoor</h3><ul class="bullets"><li>2기 회장으로서 사이버보안 관련 스터디 세션과 팀 프로젝트 기획·운영</li><li>CCA, HSPACE, INGOGNITO, WUISP와 파트너십 체결</li></ul></div>
+        <div class="activity-entry"><div class="subhead">차세대 보안리더 양성 프로그램</div><h3>화이트햇스쿨 3기</h3><ul class="bullets"><li>사이버보안 이론·실무 학습 및 팀 프로젝트 수행</li><li><a href="https://autofic.github.io/" target="_blank" rel="noreferrer">AutoFiC: 취약점 탐지부터 PR 생성까지 자동화된 보안 패치 파이프라인 <span class="external-mark">↗</span></a></li></ul></div>
+        <div class="activity-entry"><div class="subhead">덕성여자대학교 웹 개발 동아리</div><h3>Corner</h3><ul class="bullets"><li><a href="https://github.com/inyeongjang/Snoopy" target="_blank" rel="noreferrer">Node.js 및 Git 기초 학습 <span class="external-mark">↗</span></a></li><li><a href="https://github.com/inyeongjang/corner4" target="_blank" rel="noreferrer">제3회 코너톤: 개인 맞춤형 도서 추천 서비스 “My Book Planet” <span class="external-mark">↗</span></a></li></ul></div>
+        <div class="activity-entry"><div class="subhead">덕성여자대학교 디지털소프트웨어공학부</div><h3>제 1회 해커톤</h3><ul class="bullets"><li><a href="https://github.com/inyeongjang/NextBridge_Hackathon" target="_blank" rel="noreferrer">지방 소멸 문제를 해결하기 위한 외국인 노동자 커뮤니티 “Next Bridge” <span class="external-mark">↗</span></a></li><li>Django 백엔드 개발 및 BeautifulSoup·Selenium 기반 데이터 크롤링</li></ul></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- 7. Mentoring -->
 <section class="slide">
-  <div class="page link-cards-page">
+  <div class="page link-cards-page activity-page">
     <div class="title-row"><div class="title-bar"></div><h1>MENTORING</h1></div>
-    <div class="focus-grid">
-      <div class="focus-panel"><div class="focus-head"><div><span>대학생 연합 AI 연구 동아리 OUTTA</span><h3>AI 부트캠프 멘토</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><p>학습자의 질문과 진행 상황을 파악하고 문제 해결에 필요한 피드백을 제공했습니다.</p></div></div>
-      <div class="focus-panel"><div class="focus-head"><div><span>한국수력원자력</span><h3>아인슈타인 클래스 17기 멘토</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><p>한국수력원자력 17기와 현대오토에버 6기 멘토로 참여해 공학 체험과 학습을 지원했습니다.</p></div></div>
-      <div class="focus-panel"><div class="focus-head"><div><span>현대오토에버</span><h3>스마트모빌리티 공학체험교육 6기 멘토</h3></div></div><div class="focus-photo"><img src="files/autoever-1.jpg" alt="현대오토에버 스마트모빌리티 공학체험교육 활동"></div><div class="focus-item"><p>교육 대상자의 이해 수준에 맞춰 소프트웨어 개념을 설명하고 실습을 지원했습니다.</p></div></div>
+    <h2 class="section-title">배운 지식을 나누며 함께 성장한 경험</h2>
+    <div class="project-grid">
+      <div class="visuals single-visual">
+        <div class="visual image-light"><img src="files/autoever-1.jpg" alt="현대오토에버 스마트모빌리티 공학체험교육"></div>
+      </div>
+      <div class="project-copy activity-copy">
+        <div class="activity-entry"><div class="subhead">대학생 연합 AI 연구 동아리 OUTTA</div><h3>OUTTA AI Bootcamp 멘토</h3><ul class="bullets"><li>파이썬, 선형대수학, 머신러닝, 딥러닝 기초 스터디</li><li>‘데이터 크롤링’, ‘인공신경망’, ‘GAN’ 과목의 과제 채점 및 질의응답</li></ul></div>
+        <div class="activity-entry"><div class="subhead">한국수력원자력</div><h3>아인슈타인 클래스 17기 멘토</h3><ul class="bullets"><li>청소년의 눈높이에 맞춰 공학 개념을 설명했습니다.</li><li>프로젝트 기반 AI 학습과 문제 해결을 지원했습니다.</li></ul></div>
+        <div class="activity-entry"><div class="subhead">현대오토에버</div><h3>스마트모빌리티 공학체험교육 6기 멘토</h3><ul class="bullets"><li>구립푸르름지역아동센터 초등학생 10명을 대상으로 스마트 모빌리티 공학 체험 교육 진행</li><li>스마트 모빌리티, SDV, PBV, 자율주행, 센서의 개념 설명</li><li>학습한 개념을 바탕으로 ‘나만의 모빌리티’를 제작할 수 있도록 지도</li></ul></div>
+      </div>
     </div>
   </div>
 </section>
@@ -585,12 +629,25 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
 
 <!-- 9. Finance -->
 <section class="slide">
-  <div class="page link-cards-page">
+  <div class="page link-cards-page activity-page">
     <div class="title-row"><div class="title-bar"></div><h1>FINANCE</h1></div>
-    <div class="focus-grid">
-      <div class="focus-panel"><div class="focus-head"><div><span>덕성여자대학교 가치투자 동아리</span><h3>ISSUE</h3></div></div><div class="focus-photo slideshow issue-slideshow"><img src="files/ISSUE/images/1.png" alt="SK텔레콤 분석 자료"><img src="files/ISSUE/images/2.png" alt="드림시큐리티 분석 자료"><img src="files/ISSUE/images/3.png" alt="사이버보안 관련주 분석 자료"></div><div class="focus-item"><p>산업·기업 분석과 모의투자를 수행하며 <br>주식 투자에 필요한 기초 지식을 익혔습니다.</p></div></div>
-      <div class="focus-panel"><div class="focus-head"><div><span>덕성여자대학교 가치투자 동아리</span><h3>하나증권 글로벌 투자 아카데미</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><p>산업·기업 분석과 모의투자를 수행하며 <br> 금융 시장과 증권 서비스에 대한 이해를 넓혔습니다.</p></div></div>
-      <div class="focus-panel"><div class="focus-head"><div><span>가상자산 거래소 고팍스 서포터즈</span><h3>GOPAX Guardians</h3></div></div><div class="focus-photo slideshow"><img src="files/GOPAX/1.png" alt="GOPAX Guardians 바이낸스 리서치"><img src="files/GOPAX/2.jpg" alt="GOPAX Guardians 위믹스 리서치"><img src="files/GOPAX/3.jpg" alt="GOPAX Guardians 영지식 증명 리서치"></div><ol class="research-lines"><li><span class="research-no">1.</span><a href="https://xangle.io/research/detail/1612" target="_blank" rel="noreferrer">영지식 증명의 이해와 활용 사례</a></li><li><span class="research-no">2.</span><a href="https://academy.gopax.co.kr/bainaenseuneun-wae-hangugsijangeul-ggumgguna/" target="_blank" rel="noreferrer">바이낸스는 왜 한국 시장을 꿈꾸나?</a></li><li><span class="research-no">3.</span><a href="https://medium.com/gopax/위메이드가-꿈꾸는-블록체인-메가-에코-시스템-위믹스-wemix-생태계-톺아보기-e44922395010" target="_blank" rel="noreferrer">위메이드가 꿈꾸는 블록체인 메가 에코 시스템 — 위믹스(WEMIX) 생태계 톺아보기</a></li></ol><div class="focus-item"><p>가상자산 시장과 주요 이슈를 분석하고 <br> 총 3편의 리서치 페이퍼를 발간했습니다.</p></div></div>
+    <h2 class="section-title">분석과 리서치로 쌓은 금융 도메인 경험</h2>
+    <div class="project-grid">
+      <div class="visuals single-visual">
+        <div class="visual slideshow adaptive-slideshow" aria-label="금융 활동 이미지">
+          <img class="active" src="files/ISSUE/images/1.png" alt="SK텔레콤 분석 자료" data-bg="#ffffff">
+          <img src="files/ISSUE/images/2.png" alt="드림시큐리티 분석 자료" data-bg="#ffffff">
+          <img src="files/ISSUE/images/3.png" alt="사이버보안 관련주 분석 자료" data-bg="#ffffff">
+          <img src="files/GOPAX/1.png" alt="바이낸스 리서치" data-bg="#20242e">
+          <img src="files/GOPAX/2.jpg" alt="위믹스 리서치" data-bg="#20242e">
+          <img src="files/GOPAX/3.jpg" alt="영지식 증명 리서치" data-bg="#20242e">
+        </div>
+      </div>
+      <div class="project-copy activity-copy">
+        <div class="activity-entry"><div class="subhead">덕성여자대학교 가치투자 동아리</div><h3>ISSUE</h3><ul class="bullets"><li>산업·기업 분석과 모의투자를 수행하며 주식 투자에 필요한 기초 지식을 익혔습니다.</li><li><a href="files/ISSUE/papers/1.pdf" target="_blank" rel="noreferrer">SK텔레콤 <span class="external-mark">↗</span></a></li><li><a href="files/ISSUE/papers/2.pdf" target="_blank" rel="noreferrer">드림시큐리티 <span class="external-mark">↗</span></a></li><li><a href="files/ISSUE/papers/3.pdf" target="_blank" rel="noreferrer">사이버보안 관련주 <span class="external-mark">↗</span></a></li></ul></div>
+        <div class="activity-entry"><div class="subhead">덕성여자대학교 가치투자 동아리</div><h3>하나증권 글로벌 투자 아카데미</h3><ul class="bullets"><li>산업·기업 분석과 모의투자를 수행하며 금융 시장과 증권 서비스에 대한 이해를 넓혔습니다.</li></ul></div>
+        <div class="activity-entry"><div class="subhead">가상자산 거래소 고팍스 서포터즈</div><h3>GOPAX Guardians</h3><ul class="bullets"><li><a href="https://xangle.io/research/detail/1612" target="_blank" rel="noreferrer">영지식 증명의 이해와 활용 사례 <span class="external-mark">↗</span></a></li><li><a href="https://academy.gopax.co.kr/bainaenseuneun-wae-hangugsijangeul-ggumgguna/" target="_blank" rel="noreferrer">바이낸스는 왜 한국 시장을 꿈꾸나? <span class="external-mark">↗</span></a></li><li><a href="https://medium.com/gopax/위메이드가-꿈꾸는-블록체인-메가-에코-시스템-위믹스-wemix-생태계-톺아보기-e44922395010" target="_blank" rel="noreferrer">위메이드가 꿈꾸는 블록체인 메가 에코 시스템 — 위믹스(WEMIX) 생태계 톺아보기 <span class="external-mark">↗</span></a></li><li>가상자산 시장과 주요 이슈를 분석하고 총 3편의 리서치 페이퍼를 발간했습니다.</li></ul></div>
+      </div>
     </div>
   </div>
 </section>
@@ -624,20 +681,16 @@ const nextButton = document.querySelector(SELECTORS.nextButton);
 
 const DOCUMENT_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v18H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg>';
 const DOCUMENT_FILES = [
-  ['화이트햇스쿨', 'files/whs.jpg'],
-  ['OUTTA', 'files/OUTTA.pdf'],
-  ['현대오토에버', 'files/autoever.pdf'],
-  ['Gopax Guardians', 'files/GOPAX/gopax.pdf'],
 ];
-const DOCUMENT_EXCLUSIONS = ['BackDoor', 'ISSUE', 'Corner'];
+const DOCUMENT_EXCLUSIONS = ['BackDoor', 'ISSUE', 'Corner', '화이트햇스쿨', 'OUTTA', '현대오토에버', 'Gopax Guardians'];
 
 const CARD_DESCRIPTIONS = {
   BackDoor: ['2기 회장으로 활동 운영', '사이버보안 스터디 세션 기획', '팀 프로젝트 진행 및 구성원 협업'],
   '화이트햇스쿨 3기': ['사이버보안 이론 및 실무 학습', '보안 문제 해결 중심 팀 프로젝트', '팀원들과 역할을 나누어 결과물 완성'],
-  Corner: ['Node.js 스터디', '제 3회 코너톤 · 개인 맞춤형 도서 추천 서비스 <a href="https://github.com/inyeongjang/Snoopy" target="_blank" rel="noreferrer">“My Book Planet”</a>', '정규 프로젝트 · 생성형 AI를 활용한 로컬 푸드 판매 플랫폼 <a href="https://github.com/inyeongjang/corner4" target="_blank" rel="noreferrer">“Baro-Farm”</a>'],
-  'AI 부트캠프 멘토': ['학습자의 질문과 진행 상황 파악', '문제 해결에 필요한 맞춤형 피드백', 'AI 학습 과정과 실습 수행 지원'],
+  Corner: ['<a href="https://github.com/inyeongjang/Snoopy" target="_blank" rel="noreferrer">Node.js 및 Git 기초 학습</a>', '<a href="https://github.com/inyeongjang/corner4" target="_blank" rel="noreferrer">제3회 코너톤 · 개인 맞춤형 도서 추천 서비스 “My Book Planet”</a>'],
+  'OUTTA AI Bootcamp 멘토': ['파이썬·선형대수학·머신러닝·딥러닝 기초 스터디', '데이터 크롤링·인공신경망·GAN 과제 채점', '수강생 질의응답'],
   '아인슈타인 클래스 17기 멘토': ['청소년 대상 공학 체험 멘토링', '학습 수준에 맞춘 개념 설명', '실습 진행과 문제 해결 지원'],
-  '스마트모빌리티 공학체험교육 6기 멘토': ['스마트 모빌리티 공학 체험 운영', '소프트웨어 개념과 원리 설명', '교육 대상자의 실습 수행 지원'],
+  '스마트모빌리티 공학체험교육 6기 멘토': ['초등학생 10명 대상 공학 체험 교육', '스마트 모빌리티·SDV·PBV·자율주행·센서 개념 설명', '나만의 모빌리티 제작 지도'],
   ISSUE: ['<a href="files/ISSUE/papers/1.pdf" target="_blank" rel="noreferrer">SK텔레콤</a>', '<a href="files/ISSUE/papers/2.pdf" target="_blank" rel="noreferrer">드림시큐리티</a>', '<a href="files/ISSUE/papers/3.pdf" target="_blank" rel="noreferrer">사이버보안 관련주</a>'],
   '하나증권 글로벌 투자 아카데미': ['산업 및 기업 분석 수행', '모의투자를 통한 투자 전략 검토', '금융 시장과 증권 서비스 이해'],
 };
@@ -701,6 +754,24 @@ document.querySelectorAll('.link-cards-page .focus-panel').forEach(renderCardDet
 document.querySelectorAll('.resume-cols .ritem').forEach(attachDocumentControl);
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+document.querySelectorAll('.adaptive-slideshow').forEach(slideshow => {
+  const images = [...slideshow.querySelectorAll('img')];
+  if (!images.length) return;
+
+  let activeIndex = 0;
+  const showImage = index => {
+    activeIndex = index % images.length;
+    images.forEach((image, imageIndex) => image.classList.toggle('active', imageIndex === activeIndex));
+    slideshow.style.backgroundColor = images[activeIndex].dataset.bg || '#f8fcfe';
+  };
+
+  showImage(0);
+  if (!reduceMotion && images.length > 1) {
+    setInterval(() => showImage(activeIndex + 1), 4000);
+  }
+});
+
 const typewriterStates = new Map();
 
 function initializeTypewriter(statement) {
