@@ -194,15 +194,15 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker,.page-no{font-family:Manrope,"Noto S
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:36px;
   height:calc(100% - 92px)
 }
-.visuals{display:grid;grid-template-rows:1.2fr .8fr;gap:12px}
+.visuals{display:flex;flex-direction:column;justify-content:center;gap:12px;min-height:0}
 .visual{
   border:1px solid #d8e2e9;border-radius:14px;background:linear-gradient(145deg,#f8fafb,#eff4f7);
   display:flex;align-items:center;justify-content:center;
-  color:#748695;font-size:11px;text-align:center;padding:10px;line-height:1.6;overflow:hidden;
+  color:#748695;font-size:11px;text-align:center;padding:0;line-height:1.6;overflow:hidden;
   box-shadow:inset 0 1px 0 #fff
 }
 .visual img{
-  display:block;width:100%;height:100%;max-width:100%;max-height:100%;
+  display:block;width:100%;height:auto;max-width:100%;
   object-fit:contain;object-position:center
 }
 .visual.image-light{background:#ffffff;border-color:#e4e7e9}
@@ -283,7 +283,7 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker,.page-no{font-family:Manrope,"Noto S
   .resume-head{grid-column:1;grid-row:2;padding:0}
   .resume-cols{grid-column:1;grid-row:3}
   .resume-grid{gap:24px}.resume-cols{grid-template-columns:1fr}.resume-head{align-items:flex-start;flex-direction:column;gap:8px}
-  .profile{display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:14px;padding:0}.photo{width:88px;height:104px;margin:0}.link-row{margin:0}.project-grid{gap:22px}.visuals{min-height:330px}
+  .profile{display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:14px;padding:0}.photo{width:88px;height:104px;margin:0}.link-row{margin:0}.project-grid{gap:22px}.visuals{min-height:0}
   .project-copy{padding:0}.section-title{font-size:21px;line-height:1.35}
   .statement{font-size:clamp(25px,7.5vw,36px);line-height:1.42}
   .activity-grid{grid-template-columns:1fr}
@@ -506,10 +506,9 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker,.page-no{font-family:Manrope,"Noto S
   <div class="page">
     <div class="page-no">06 / 09</div>
     <div class="title-row"><div class="title-bar"></div><h1>EXPERIENCE</h1></div>
-    <h2 class="section-title">팀의 방향을 조율하고 결과물을 함께 개선했습니다.</h2>
     <div class="focus-grid"> 
-      <div class="focus-panel"><div class="focus-head"><div><span>덕성여자대학교 사이버보안 동아리</span><h3>BackDoor 2기 회장</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><p>사이버보안 관련 스터디 세션 및 프로젝트를 운영하였습니다.</p></div></div>
-      <div class="focus-panel"><div class="focus-head"><div><span>차세대 보안리더 양성 프로그램</span><h3>화이트햇스쿨 3기</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><p>팀 목표와 역할을 공유하고 협업하며 보안 프로젝트를 수행했습니다.</p></div></div>
+      <div class="focus-panel"><div class="focus-head"><div><span>덕성여자대학교 사이버보안 동아리</span><h3>BackDoor</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><p>2기 회장으로서 사이버보안 관련 스터디 세션 및 프로젝트를 운영하였습니다.</p></div></div>
+      <div class="focus-panel"><div class="focus-head"><div><span>차세대 보안리더 양성 프로그램</span><h3>화이트햇스쿨 3기</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><p>사이버보안 관련 이론과 실무를 학습하고, 팀 프로젝트를 수행했습니다.</p></div></div>
       <div class="focus-panel"><div class="focus-head"><div><span>덕성여자대학교 웹 개발 동아리</span><h3>Corner</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><p>Node.js와 Git 기초를 학습하고 </br> 다양한 웹 개발 프로젝트와 해커톤에 참여했습니다.</p></div></div>
     </div>
   </div>
@@ -520,11 +519,10 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker,.page-no{font-family:Manrope,"Noto S
   <div class="page">
     <div class="page-no">07 / 09</div>
     <div class="title-row"><div class="title-bar"></div><h1>MENTORING</h1></div>
-    <h2 class="section-title">사용자의 눈높이에서 이해하고 전달하는 법을 배웠습니다.</h2>
     <div class="focus-grid">
-      <div class="focus-panel"><div class="focus-head"><div><span>AI EDUCATION</span><h3>OUTTA AI 부트캠프</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><strong>AI 부트캠프 멘토</strong><p>학습자의 질문과 진행 상황을 파악하고 문제 해결에 필요한 피드백을 제공했습니다.</p></div></div>
-      <div class="focus-panel"><div class="focus-head"><div><span>ENGINEERING EDUCATION</span><h3>청소년 공학 교육</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><strong>아인슈타인 클래스 · 스마트 모빌리티</strong><p>한국수력원자력 17기와 현대오토에버 6기 멘토로 참여해 공학 체험과 학습을 지원했습니다.</p></div></div>
-      <div class="focus-panel"><div class="focus-head"><div><span>VOLUNTEERING</span><h3>I-coding</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><strong>덕성여자대학교 코딩 교육 봉사</strong><p>교육 대상자의 이해 수준에 맞춰 소프트웨어 개념을 설명하고 실습을 지원했습니다.</p></div></div>
+      <div class="focus-panel"><div class="focus-head"><div><span>대학생 연합 AI 연구 동아리 OUTTA</span><h3>AI 부트캠프 멘토</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><strong>AI 부트캠프 멘토</strong><p>학습자의 질문과 진행 상황을 파악하고 문제 해결에 필요한 피드백을 제공했습니다.</p></div></div>
+      <div class="focus-panel"><div class="focus-head"><div><span>한국수력원자력</span><h3>아인슈타인 클래스 17기 멘토</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><strong>아인슈타인 클래스 · 스마트 모빌리티</strong><p>한국수력원자력 17기와 현대오토에버 6기 멘토로 참여해 공학 체험과 학습을 지원했습니다.</p></div></div>
+      <div class="focus-panel"><div class="focus-head"><div><span>현대오토에버</span><h3>스마트모빌리티 공학체험교육 6기 멘토</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><strong>덕성여자대학교 코딩 교육 봉사</strong><p>교육 대상자의 이해 수준에 맞춰 소프트웨어 개념을 설명하고 실습을 지원했습니다.</p></div></div>
     </div>
   </div>
 </section>
@@ -542,11 +540,10 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker,.page-no{font-family:Manrope,"Noto S
   <div class="page">
     <div class="page-no">09 / 09</div>
     <div class="title-row"><div class="title-bar"></div><h1>FINANCE</h1></div>
-    <h2 class="section-title">금융 서비스의 정확성과 신뢰성에 관심을 가져왔습니다.</h2>
     <div class="focus-grid">
-      <div class="focus-panel"><div class="focus-head"><div><span>INVESTMENT</span><h3>ISSUE</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><strong>덕성여자대학교 가치투자 동아리</strong><p>기업과 산업을 분석하며 주식 투자에 필요한 기초 지식과 투자 관점을 익혔습니다.</p></div></div>
-      <div class="focus-panel"><div class="focus-head"><div><span>SECURITIES</span><h3>하나증권</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><strong>글로벌 투자 아카데미</strong><p>산업·기업 분석과 모의투자를 수행하며 금융 시장과 증권 서비스에 대한 이해를 넓혔습니다.</p></div></div>
-      <div class="focus-panel"><div class="focus-head"><div><span>DIGITAL ASSET</span><h3>GOPAX Guardians</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><strong>가상자산 리서치</strong><p>가상자산 시장과 주요 이슈를 분석하고 총 3편의 리서치 페이퍼를 발간했습니다.</p></div></div>
+      <div class="focus-panel"><div class="focus-head"><div><span>덕성여자대학교 가치투자 동아리</span><h3>ISSUE</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><p>주식 투자에 필요한 기초 지식을 익혔습니다.</p></div></div>
+      <div class="focus-panel"><div class="focus-head"><div><span>덕성여자대학교 가치투자 동아리</span><h3>하나증권 글로벌 투자 아카데미</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><p>산업·기업 분석과 모의투자를 수행하며 <br> 금융 시장과 증권 서비스에 대한 이해를 넓혔습니다.</p></div></div>
+      <div class="focus-panel"><div class="focus-head"><div><span>가상자산 거래소 고팍스 서포터즈</span><h3>GOPAX Guardians</h3></div></div><div class="focus-photo">활동 사진</div><div class="focus-item"><p>가상자산 시장과 주요 이슈를 분석하고 <br> 총 3편의 리서치 페이퍼를 발간했습니다.</p></div></div>
     </div>
   </div>
 </section>
