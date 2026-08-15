@@ -30,8 +30,9 @@ body{
   word-break:keep-all;
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
+  letter-spacing:-.012em;
 }
-h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",sans-serif}
+h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-serif}
 .deck{
   width:100vw;height:100vh;
   display:flex;overflow-x:auto;overflow-y:hidden;
@@ -88,22 +89,20 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
 .dot.active{width:24px;background:var(--blue)}
 
 .title-row{
-  display:flex;align-items:center;gap:12px;margin-bottom:10px
+  display:flex;align-items:center;gap:12px;margin-bottom:12px
 }
 .title-bar{width:5px;height:30px;background:linear-gradient(var(--blue-dark),var(--mint));border-radius:999px}
 .title-row h1{
   margin:0;font-size:15px;letter-spacing:.08em;color:var(--navy);text-transform:uppercase
 }
 .section-title{
-  color:var(--navy);font-size:26px;font-weight:850;margin:0 0 22px;letter-spacing:-.04em;line-height:1.3
+  color:var(--navy);font-size:26px;font-weight:850;margin:0 0 24px;letter-spacing:-.04em;line-height:1.36
 }
 .subhead{
   font-size:11px;font-weight:850;color:var(--blue-dark);letter-spacing:.08em;
-  text-transform:uppercase;margin:0 0 7px
+  text-transform:uppercase;margin:0 0 8px;line-height:1.45
 }
 .subhead-spaced{margin-top:10px}
-.small{font-size:11.5px;color:var(--text);line-height:1.72}
-.muted{color:var(--muted)}
 
 /* 1 page */
 .resume-grid{display:grid;grid-template-columns:104px minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);column-gap:20px;row-gap:14px;height:100%}
@@ -119,11 +118,7 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
 .photo img{
   display:block;width:100%;height:100%;object-fit:cover;object-position:center 30%
 }
-.name{font-size:22px;font-weight:850;letter-spacing:-.04em}
-.tagline{
-  margin-top:18px;padding:13px 14px;background:#ffffff12;border:1px solid #ffffff18;border-radius:10px;
-  font-size:11.5px;line-height:1.6;color:#e6f4fa;font-weight:650;text-align:left
-}
+.name{font-size:24px;font-weight:850;letter-spacing:-.04em}
 .link-row{display:flex;gap:6px;margin-top:13px;flex-wrap:wrap;justify-content:flex-start}
 .link-row a{
   display:grid;place-items:center;
@@ -134,52 +129,31 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
 .link-row a:hover{background:#fff;color:var(--blue-dark)}
 .resume-right{display:contents}
 .resume-head{grid-column:2;grid-row:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
-.identity-row{display:flex;align-items:center;gap:10px;margin-bottom:7px}
+.identity-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
 .identity-row .link-row{margin-top:0}
-.resume-head h2{margin:0;font-size:24px;line-height:1.32;letter-spacing:-.04em;color:var(--navy)}
+.resume-head h2{margin:0;font-size:25px;line-height:1.38;letter-spacing:-.04em;color:var(--navy)}
 .resume-head span{font-size:10.5px;color:var(--muted)}
-.kicker{font-size:10px;color:var(--blue);font-weight:900;letter-spacing:.18em}
 .resume-cols{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:24px;border-top:0;padding-top:2px}
-.rsec{margin-bottom:12px}
+.rsec{margin-bottom:13px}
 .rsec:last-child{margin-bottom:0}
 .rsec-title{
-  display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:850;color:var(--blue-dark);
-  margin-bottom:7px;letter-spacing:-.01em
+  display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:850;color:var(--blue-dark);
+  margin-bottom:7px;letter-spacing:-.01em;line-height:1.4
 }
-.rsec-title::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,var(--line),transparent)}
+.rsec-title::after{content:"";height:1px;min-height:1px;flex:1;background:var(--line)}
 .ritem{margin-bottom:6px;padding:2px 0;border-left:0}
-.ritem strong{display:block;font-size:11.2px}
-.ritem span{display:block;font-size:10.2px;color:var(--muted);line-height:1.48}
+.ritem strong{display:block;font-size:11.4px;line-height:1.46;font-weight:700}
+.ritem span{display:block;font-size:10px;color:var(--muted);line-height:1.46}
 .ritem a{color:inherit;text-decoration:none}
 .ritem a:hover{text-decoration:underline;text-decoration-color:var(--blue);text-underline-offset:3px}
 .project-heading{display:flex;align-items:center;gap:5px;margin-bottom:2px;min-width:0;width:100%}
 .project-heading strong{margin-right:auto;min-width:0}
-.work-type{flex:none;font-size:8px!important;font-weight:850;line-height:1!important;padding:4px 6px;border-radius:999px;color:var(--blue-dark)!important;background:var(--pale);border:1px solid var(--line)}
-.resource-link{flex:none;width:16px;height:16px;border:1px solid var(--line);border-radius:4px;display:grid!important;place-items:center;color:#52758e!important;background:#fff}
-.resource-link:hover{color:var(--blue-dark)!important;border-color:#abd8ef;text-decoration:none!important;background:var(--pale)}
-.resource-link svg{width:10px;height:10px;fill:currentColor}
-.resource-link.paper svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .dense-list .rsec-title{margin-bottom:5px}
 .dense-list .ritem{margin-bottom:3px;padding:2px 0}
-.dense-list .ritem strong{font-size:10px;line-height:1.28}
 .compact-list .ritem{display:grid;grid-template-columns:82px minmax(0,1fr) 16px;column-gap:7px;align-items:center}
-.compact-list .ritem .date{font-size:8.8px;line-height:1.25;color:var(--muted);white-space:nowrap}
+.compact-list .ritem .date{font-size:10px;line-height:1.46;color:var(--muted);white-space:nowrap}
 .compact-list .ritem strong{min-width:0}
 .compact-list .ritem .project-heading{grid-column:2/4}
-.ritem.has-document{padding-right:0}
-.document-link{
-  position:static;grid-column:3;flex:none;width:16px;height:16px;padding:0;border:1px solid var(--line);border-radius:4px;
-  display:grid;place-items:center;background:#fff;color:#52758e;text-decoration:none;cursor:pointer
-}
-.document-link:hover{color:var(--blue-dark);border-color:#abd8ef;background:var(--pale);text-decoration:none}
-.document-link svg{width:10px;height:10px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.document-link:disabled{opacity:1;color:#52758e;cursor:default;background:#fff}
-.badges{display:flex;flex-wrap:wrap;gap:5px}
-.badge{
-  font-size:9.7px;color:#31698f;background:var(--pale);
-  border:1px solid #d7ecf8;border-radius:999px;padding:4px 7px
-}
-.language-score{font-size:11.2px;font-weight:750;color:var(--navy);padding-left:10px;border-left:2px solid #e7eef3}
 
 /* statement page */
 .statement-page{display:flex;align-items:center;justify-content:center;text-align:center}
@@ -204,7 +178,7 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
 
 /* project pages */
 .project-grid{
-  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:36px;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:40px;
   height:calc(100% - 92px)
 }
 .visuals{display:flex;flex-direction:column;justify-content:center;gap:12px;min-height:0}
@@ -222,143 +196,60 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
 .visual.image-dark{background:#243238;border-color:#243238}
 .patch-correctness-page .visual img,
 .autofic-page .visual img{transform:scale(.86)}
-.visual.dark{
-  background:linear-gradient(145deg,#d8f1fd,#bfe5f7);color:#356b89;border-color:#b7ddec
-}
-.project-copy{padding:3px 18px 0 0;display:flex;flex-direction:column;justify-content:center}
-.bullets{margin:0;padding-left:17px}
+.autofic-page .visual{flex:1 1 0;min-height:0}
+.autofic-page .visual img{height:100%}
+.project-copy{padding:3px 14px 0 0;display:flex;flex-direction:column;justify-content:center}
+.bullets{margin:0;padding-left:1.25em}
 .project-copy .subhead{color:#176b9e}
 .project-copy .subhead-spaced{margin-top:10px}
-.bullets li{font-size:11.8px;line-height:1.74;color:#294f6b;margin-bottom:8px}
+.bullets li{font-size:11.8px;line-height:1.72;color:#294f6b;margin-bottom:7px;padding-left:2px}
 .bullets li:last-child{margin-bottom:0}
 .bullets strong{color:#102f49;font-weight:800}
 .bullets li::marker{color:#258dcc}
 .autofic-page .section-title,.patch-correctness-page .section-title{font-size:29px;margin-bottom:24px}
-.autofic-page .project-copy .subhead,.patch-correctness-page .project-copy .subhead{font-size:12px;margin-bottom:9px}
-.autofic-page .project-copy .subhead-spaced,.patch-correctness-page .project-copy .subhead-spaced{margin-top:14px}
-.autofic-page .project-copy .bullets li,.patch-correctness-page .project-copy .bullets li{font-size:13px;line-height:1.82;margin-bottom:9px}
-.autofic-page .project-copy .bullets li{line-height:1.62;margin-bottom:7px}
-.autofic-page .award,.patch-correctness-page .award{font-size:12.5px}
+.title-links{display:inline-flex;align-items:center;gap:6px;margin-left:8px;vertical-align:.12em;white-space:nowrap}
+.title-link{
+  display:inline-grid!important;place-items:center;width:27px;height:27px;border:1px solid #b9dff1;border-radius:7px;
+  color:var(--blue-dark)!important;background:#fff;text-decoration:none!important;transition:background .2s,border-color .2s,transform .2s
+}
+.title-link:hover{background:var(--pale);border-color:#8fcce8;transform:translateY(-1px)}
+.title-link svg{width:14px;height:14px;fill:currentColor}
+.title-link.document svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+:is(.autofic-page,.patch-correctness-page) .project-copy .subhead{font-size:12px;margin-bottom:9px}
+:is(.autofic-page,.patch-correctness-page) .project-copy .subhead-spaced{margin-top:14px}
+:is(.autofic-page,.patch-correctness-page) .project-copy .bullets li{font-size:13px;line-height:1.72;margin-bottom:8px}
+:is(.autofic-page,.patch-correctness-page) .award{font-size:12.5px}
 .award{
   margin-top:12px;background:linear-gradient(90deg,#e7f5ff,#effbf9);border:1px solid #c9e6f3;
   border-radius:10px;padding:10px 12px;font-size:11.5px;font-weight:850;color:#174f78;
   box-shadow:0 5px 14px rgba(61,151,199,.08)
 }
-.stack{
-  display:flex;flex-wrap:wrap;gap:5px;margin-top:10px
-}
-.stack span{
-  font-size:9.5px;padding:4px 7px;border-radius:999px;
-  background:#f4f8fb;border:1px solid var(--line);color:#587082
-}
-.project-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;height:calc(100% - 92px)}
-.project-card{border:1px solid var(--line);border-radius:14px;background:#f9fdff;padding:18px;display:flex;flex-direction:column;box-shadow:0 6px 18px rgba(66,145,190,.06)}
-.project-card .mini-visual{height:105px;border-radius:10px;background:linear-gradient(145deg,#d8f1fd,#bfe5f7);display:grid;place-items:center;text-align:center;padding:14px;color:#47758f;font-size:10.5px;line-height:1.5;margin-bottom:14px}
-.project-card h3{font-size:14px;line-height:1.4;margin:0 0 9px;color:var(--navy)}
-.project-card p{font-size:10.7px;line-height:1.62;color:var(--text);margin:0 0 10px}
-.project-card .stack{margin-top:auto}
-
-/* leadership */
-.activity-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:18px
-}
-.activity{
-  border:1px solid var(--line);border-radius:14px;background:#fff;padding:16px;
-  min-height:145px;transition:.2s;box-shadow:0 5px 14px rgba(46,69,86,.04)
-}
-.activity:hover{transform:translateY(-3px);border-color:#bcdced;box-shadow:0 10px 24px rgba(46,69,86,.09)}
-.activity h3{font-size:14px;margin:8px 0 6px}
-.activity p{font-size:10.8px;line-height:1.65;color:var(--text);margin:0}
-.activity .role{font-size:10px;color:var(--blue-dark);font-weight:800}
-.activity .icon{
-  width:34px;height:34px;border-radius:9px;background:var(--pale);
-  display:grid;place-items:center;color:var(--blue-dark);font-weight:800
-}
-.footer-note{
-  margin-top:16px;background:#f7fafc;border:1px solid var(--line);
-  border-radius:10px;padding:11px 13px;font-size:10.7px;color:var(--muted)
-}
-.focus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
-.activity-page .project-grid{height:calc(100% - 92px)}
-.activity-page .visual{position:relative;min-height:0;background:#f8fcfe;flex:1}
-.activity-page .visual img{width:100%;height:100%;object-fit:contain}
-.activity-page .visuals.single-visual .visual{flex:1}
-.activity-page .visual.slideshow img{position:absolute;inset:0;opacity:0;animation:focus-slides 12s infinite}
-.activity-page .visual.slideshow img:nth-child(2){animation-delay:4s}
-.activity-page .visual.slideshow img:nth-child(3){animation-delay:8s}
-.activity-page .visual.slideshow.two-images img{animation-name:two-slides;animation-duration:8s}
-.activity-page .visual.slideshow.two-images img:nth-child(2){animation-delay:4s}
-.activity-page .visual.adaptive-slideshow{transition:background-color .65s ease}
-.activity-page .visual.adaptive-slideshow img{animation:none;opacity:0;transition:opacity .65s ease}
-.activity-page .visual.adaptive-slideshow img.active{opacity:1}
-.activity-copy{justify-content:flex-start;padding-top:0;gap:12px}
-.activity-entry{display:grid;grid-template-columns:max-content minmax(0,1fr);column-gap:8px;align-items:baseline;padding-bottom:11px;border-bottom:1px solid var(--line)}
+.activity-entry{display:grid;grid-template-columns:max-content minmax(0,1fr);column-gap:9px;align-items:baseline;padding-bottom:12px;border-bottom:1px solid var(--line)}
 .activity-entry:last-child{padding-bottom:0;border-bottom:0}
 .activity-entry .subhead{margin:0;white-space:nowrap}
 .activity-entry .subhead::after{content:"·";margin-left:8px;color:#9eb3c1}
-.activity-entry h3{margin:0 0 6px;font-size:14px;line-height:1.35;letter-spacing:-.025em}
+.activity-entry h3{margin:0 0 7px;font-size:14px;line-height:1.42;letter-spacing:-.025em}
 .activity-entry .bullets{grid-column:1/-1}
-.activity-entry .bullets li{font-size:10.8px;line-height:1.68;margin-bottom:4px}
+.activity-entry .bullets li{font-size:10.8px;line-height:1.7;margin-bottom:5px}
 .activity-entry a,.section-title a{color:inherit;text-decoration:none}
 .activity-entry a:hover,.section-title a:hover{color:var(--blue-dark);text-decoration:underline;text-underline-offset:3px}
 .external-mark{font-size:.78em;color:var(--blue-dark);margin-left:3px}
 .experience-mentoring-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;height:100%}
 .activity-column{min-width:0}
-.activity-column > .title-row{margin-bottom:28px}
+.activity-column > .title-row{margin-bottom:24px}
 .activity-column > .title-row .title-bar,.finance-page > .title-row .title-bar{height:38px;width:6px}
 .activity-column > .title-row h1,.finance-page > .title-row h1{font-size:20px;letter-spacing:.1em}
-.experience-mentoring-grid .activity-entry{padding-bottom:15px;margin-bottom:15px}
+.experience-mentoring-grid .activity-entry{padding-bottom:13px;margin-bottom:13px}
 .experience-mentoring-grid .activity-entry .subhead{font-size:11.5px}
-.experience-mentoring-grid .activity-entry h3{font-size:14.5px;margin-bottom:7px}
-.experience-mentoring-grid .activity-entry .bullets li{font-size:11.2px;line-height:1.95;margin-bottom:6px}
+.experience-mentoring-grid .activity-entry h3{font-size:14.5px;line-height:1.45;margin-bottom:7px}
+.experience-mentoring-grid .activity-entry .bullets li{font-size:11.2px;line-height:1.72;margin-bottom:5px}
 .finance-page > .title-row{margin-bottom:24px}
-.finance-grid{display:grid;grid-template-columns:1fr;grid-template-rows:repeat(3,minmax(0,auto));gap:12px;height:calc(100% - 62px)}
-.finance-grid .activity-entry{display:grid;grid-template-columns:max-content minmax(0,1fr);column-gap:8px;align-items:baseline;padding:0 0 11px;margin:0}
+.finance-grid{display:grid;grid-template-columns:1fr;grid-template-rows:repeat(3,minmax(0,auto));gap:14px;height:calc(100% - 62px)}
+.finance-grid .activity-entry{column-gap:8px;padding:0 0 11px;margin:0}
 .finance-grid .activity-entry .subhead{font-size:11.5px;line-height:1.5;white-space:normal;margin:0}
-.finance-grid .activity-entry .subhead::after{content:"·";margin-left:8px;color:#9eb3c1}
-.finance-grid .activity-entry h3{font-size:14.5px;line-height:1.45;margin-bottom:7px}
-.finance-grid .activity-entry .bullets li{font-size:11.5px;line-height:1.8;margin-bottom:4px}
-.finance-grid .activity-entry .bullets{grid-column:1/-1}
-.focus-panel{border:1px solid #d4e9f4;border-radius:18px;background:linear-gradient(155deg,#fff 30%,#f3faff);padding:18px;box-shadow:0 9px 24px rgba(66,145,190,.08);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
-.focus-panel:hover{transform:translateY(-3px);border-color:#abd7eb;box-shadow:0 15px 32px rgba(49,126,169,.13)}
-.focus-head{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)}
-.focus-head .icon{width:42px;height:42px;border-radius:12px;background:#dff3fd;display:grid;place-items:center;color:var(--blue-dark);font-weight:850}
-.focus-head span{display:block;font-size:9.5px;font-weight:850;letter-spacing:.1em;color:var(--blue-dark);margin-bottom:4px}
-.focus-head h3{font-size:15px;line-height:1.38;margin:0;letter-spacing:-.03em}
-.focus-photo{width:100%;aspect-ratio:16/8;margin-top:14px;border:1px solid #d5e9f3;border-radius:12px;background:linear-gradient(145deg,#edf8fd,#dff2fa);display:grid;place-items:center;color:#789aad;font-size:10px;font-weight:700;letter-spacing:.08em;overflow:hidden}
-.focus-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
-.focus-photo.slideshow{position:relative;background:#20242e}
-.focus-photo.issue-slideshow{background:#fff}
-.focus-photo.slideshow img{
-  position:absolute;inset:0;object-fit:contain;opacity:0;
-  animation:focus-slides 12s infinite
-}
-.focus-photo.slideshow img:nth-child(2){animation-delay:4s}
-.focus-photo.slideshow img:nth-child(3){animation-delay:8s}
-.research-lines{display:grid;gap:5px;margin:10px 0 0;padding:0;list-style:none}
-.research-lines li{display:grid;grid-template-columns:16px minmax(0,1fr);gap:4px;color:#496b82;font-size:9px;font-weight:650;line-height:1.42}
-.research-lines .research-no{color:var(--blue-dark);font-weight:800}
-.research-lines a{color:inherit;text-decoration:none}
-.research-lines a:hover{color:var(--blue-dark);text-decoration:underline;text-underline-offset:2px}
-@keyframes focus-slides{
-  0%,29%{opacity:1}
-  33%,96%{opacity:0}
-  100%{opacity:1}
-}
-@keyframes two-slides{
-  0%,45%{opacity:1}
-  50%,95%{opacity:0}
-  100%{opacity:1}
-}
-@media(prefers-reduced-motion:reduce){
-  .focus-photo.slideshow img,.activity-page .visual.slideshow img{animation:none;opacity:0}
-  .focus-photo.slideshow img:first-child,.activity-page .visual.slideshow img:first-child{opacity:1}
-}
-.focus-item{padding:12px 0;border-bottom:1px solid #deedf5}
-.focus-item:last-child{border-bottom:0;padding-bottom:0}
-.focus-item strong{display:block;font-size:12px;margin-bottom:4px}
-.focus-item p{font-size:10.8px;line-height:1.65;color:#405d72;margin:0}
-.focus-panel a:focus-visible,.resource-link:focus-visible,.document-link:focus-visible,.nav-btn:focus-visible,.dot:focus-visible{outline:2px solid var(--blue-dark);outline-offset:3px}
+.finance-grid .activity-entry h3{font-size:14.5px;line-height:1.45;margin-bottom:8px}
+.finance-grid .activity-entry .bullets li{font-size:11.5px;line-height:1.68;margin-bottom:5px}
+.title-link:focus-visible,.nav-btn:focus-visible,.dot:focus-visible{outline:2px solid var(--blue-dark);outline-offset:3px}
 .closing-kicker{margin:0 0 18px;font-size:10px;font-weight:800;letter-spacing:.22em;color:var(--blue-dark)}
 .closing-page{flex-direction:column}
 
@@ -382,11 +273,15 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
   .resume-cols{grid-column:1;grid-row:3}
   .resume-grid{gap:24px}.resume-cols{grid-template-columns:1fr}.resume-head{align-items:flex-start;flex-direction:column;gap:8px}
   .profile{display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:14px;padding:0}.photo{width:88px;height:104px;margin:0}.link-row{margin:0}.project-grid{gap:22px}.visuals{min-height:0}
-  .project-copy{padding:0}.section-title{font-size:21px;line-height:1.35}
+  .project-copy{padding:0}.section-title,.autofic-page .section-title,.patch-correctness-page .section-title{font-size:21px;line-height:1.42;margin-bottom:20px}
+  .title-links{gap:5px;margin-left:5px;vertical-align:.08em}
+  .title-link{width:25px;height:25px}
+  .bullets li{line-height:1.72}
+  .activity-column > .title-row{margin-bottom:20px}
+  .experience-mentoring-grid .activity-entry{padding-bottom:14px;margin-bottom:14px}
+  .finance-page > .title-row{margin-bottom:20px}
+  .finance-grid{gap:18px}
   .statement{font-size:clamp(25px,7.5vw,36px);line-height:1.42}
-  .activity-grid{grid-template-columns:1fr}
-  .project-cards{grid-template-columns:1fr;height:auto}
-  .focus-grid{grid-template-columns:1fr;height:auto}
   .experience-mentoring-grid{grid-template-columns:1fr;height:auto;gap:28px}
   .finance-grid{grid-template-columns:1fr;grid-template-rows:none;height:auto}
   .nav-btn,.dots{display:none}
@@ -436,27 +331,24 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
           <div>
             <div class="rsec dense-list compact-list">
               <div class="rsec-title">학력</div>
-              <div class="ritem has-document">
+              <div class="ritem">
                 <span class="date">2023.03–2028.02</span>
                 <strong>덕성여자대학교 디지털소프트웨어공학부 (4.43 / 4.5)</strong>
-                <a class="document-link" href="files/성적증명서.pdf" target="_blank" rel="noreferrer" aria-label="성적증명서 보기" title="성적증명서 보기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v18H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a>
               </div>
             </div>
 
             <div class="rsec dense-list compact-list">
               <div class="rsec-title">어학</div>
-              <div class="ritem has-document"><span class="date">2024.08.25</span><strong>TOEIC 840</strong><a class="document-link" href="files/TOEIC.pdf" target="_blank" rel="noreferrer" aria-label="TOEIC 성적표 보기" title="TOEIC 성적표 보기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v18H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a></div>
+              <div class="ritem"><span class="date">2024.08.25</span><strong>TOEIC 840</strong></div>
             </div>
 
-            <div class="rsec compact-list">
+            <div class="rsec dense-list compact-list">
               <div class="rsec-title">프로젝트 · 연구</div>
 
               <div class="ritem">
                 <span class="date">2025.05–2026.02</span>
                 <div class="project-heading">
                   <strong>AutoFiC: 취약점 탐지부터 PR 생성까지 자동화된 보안 패치 파이프라인</strong>
-                  <a class="resource-link" href="https://github.com/AutoFiC/autofic-core" target="_blank" rel="noreferrer" aria-label="AutoFiC GitHub 저장소" title="GitHub 저장소"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7A11.5 11.5 0 0 0 8.36 23c.58.1.79-.25.79-.56v-2.23c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.74-1.56-2.58-.3-5.29-1.29-5.29-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.16 1.18A10.9 10.9 0 0 1 12 6c.98 0 1.95.13 2.87.38 2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.72 5.39-5.31 5.68.42.36.79 1.07.79 2.16v3.24c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg></a>
-                  <a class="resource-link paper" href="https://inyeongjang.github.io/papers/KCSE-2026.pdf" target="_blank" rel="noreferrer" aria-label="AutoFiC 논문 정보" title="논문 정보"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a>
                 </div>
               </div>
 
@@ -464,8 +356,6 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
                 <span class="date">2025.08–2026.05</span>
                 <div class="project-heading">
                   <strong>자동 패치 정확성 검증을 위한 LLM Oracle 설계</strong>
-                  <a class="resource-link" href="https://github.com/inyeongjang/LLM-Oracle/tree/v1.0" target="_blank" rel="noreferrer" aria-label="LLM Oracle GitHub 저장소" title="GitHub 저장소"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7A11.5 11.5 0 0 0 8.36 23c.58.1.79-.25.79-.56v-2.23c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.74-1.56-2.58-.3-5.29-1.29-5.29-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.16 1.18A10.9 10.9 0 0 1 12 6c.98 0 1.95.13 2.87.38 2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.72 5.39-5.31 5.68.42.36.79 1.07.79 2.16v3.24c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg></a>
-                  <a class="resource-link paper" href="https://inyeongjang.github.io/papers/ICST-2026.pdf" target="_blank" rel="noreferrer" aria-label="ICST 2026 논문 PDF" title="논문 PDF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a>
                 </div>
               </div>
 
@@ -479,10 +369,10 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
 
             <div class="rsec dense-list compact-list">
               <div class="rsec-title">수상 내역</div>
-              <div class="ritem has-document"><span class="date">2026.03.20</span><strong>KT 디지털 인재 장학생</strong><a class="document-link" href="files/award-2.jpg" target="_blank" rel="noreferrer" aria-label="KT 디지털 인재 장학증서 보기" title="장학증서 보기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v18H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a></div>
-              <div class="ritem has-document"><span class="date">2026.02.05</span><strong>KCSE 2026 우수 학부생 논문상</strong><a class="document-link" href="files/award-1.jpg" target="_blank" rel="noreferrer" aria-label="KCSE 2026 우수 학부생 논문상 상장 보기" title="상장 보기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v18H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a></div>
+              <div class="ritem"><span class="date">2026.03.20</span><strong>KT 디지털 인재 장학생</strong></div>
+              <div class="ritem"><span class="date">2026.02.05</span><strong>KCSE 2026 우수 학부생 논문상</strong></div>
               <div class="ritem"><span class="date">2024.11.23</span><strong>제 1회 디지털소프트웨어공학부 해커톤 2위</strong></div>
-              <div class="ritem has-document"><span class="date">2023–2026</span><strong>학과 수석(24-1) · 단과대학 성적우수(23-1, 23-2) · 학과 성적우수 (24-2, 26-1)</strong><a class="document-link" href="files/성적증명서.pdf" target="_blank" rel="noreferrer" aria-label="성적증명서 보기" title="성적증명서 보기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v18H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a></div>
+              <div class="ritem"><span class="date">2023–2026</span><strong>학과 수석(24-1) · 단과대학 성적우수(23-1, 23-2) · 학과 성적우수 (24-2, 26-1)</strong></div>
             </div>
 
           </div>
@@ -500,7 +390,7 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
               <div class="ritem"><span class="date">2023.11–2026.08</span><strong>OUTTA AI 부트캠프 멘토</strong></div>
               <div class="ritem"><span class="date">2026.01–2026.02</span><strong>한국수력원자력 아인슈타인 클래스 17기 멘토</strong></div>
               <div class="ritem"><span class="date">2023.06–2023.09</span><strong>현대오토에버 스마트 모빌리티 공학체험교육 6기 멘토</strong></div>
-              <div class="ritem"><span class="date">2023.03–2024.06</span><strong>덕성여자대학교 코딩 교육 봉사 동아리 I-Coding</strong></div>
+              <div class="ritem"><span class="date">2023.03–2024.06</span><strong>덕성여자대학교 코딩 교육 봉사 동아리 I-coding</strong></div>
             </div>
 
             <div class="rsec dense-list compact-list">
@@ -527,7 +417,14 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
 <section class="slide">
   <div class="page autofic-page">
     <div class="title-row"><div class="title-bar"></div><h1>RESEARCH & PROJECT · 01</h1></div>
-    <h2 class="section-title"><a href="https://autofic.github.io/" target="_blank" rel="noreferrer">AutoFiC : 취약점 탐지부터 PR 생성까지 자동화된 보안 패치 파이프라인 <span class="external-mark">↗</span></a></h2>
+    <h2 class="section-title">
+      AutoFiC : 취약점 탐지부터 PR 생성까지 자동화된 보안 패치 파이프라인
+      <span class="title-links">
+        <a class="title-link" href="https://autofic.github.io/" target="_blank" rel="noreferrer" aria-label="AutoFiC 홈페이지" title="홈페이지"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.92 6h-3.04a15.7 15.7 0 0 0-1.38-3.56A8.04 8.04 0 0 1 18.92 8ZM12 4c.83 1.2 1.46 2.54 1.84 4H10.16A13.68 13.68 0 0 1 12 4ZM4.26 14a7.76 7.76 0 0 1 0-4h3.39a16.52 16.52 0 0 0 0 4H4.26Zm.82 2h3.04c.3 1.25.77 2.45 1.38 3.56A8.04 8.04 0 0 1 5.08 16ZM8.12 8H5.08A8.04 8.04 0 0 1 9.5 4.44 15.7 15.7 0 0 0 8.12 8ZM12 20a13.68 13.68 0 0 1-1.84-4h3.68A13.68 13.68 0 0 1 12 20Zm2.25-6h-4.5a14.4 14.4 0 0 1 0-4h4.5a14.4 14.4 0 0 1 0 4Zm.25 5.56A15.7 15.7 0 0 0 15.88 16h3.04a8.04 8.04 0 0 1-4.42 3.56ZM16.35 14a16.52 16.52 0 0 0 0-4h3.39a7.76 7.76 0 0 1 0 4h-3.39Z"/></svg></a>
+        <a class="title-link" href="https://github.com/AutoFiC/autofic-core" target="_blank" rel="noreferrer" aria-label="AutoFiC GitHub 저장소" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7A11.5 11.5 0 0 0 8.36 23c.58.1.79-.25.79-.56v-2.23c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.74-1.56-2.58-.3-5.29-1.29-5.29-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.16 1.18A10.9 10.9 0 0 1 12 6c.98 0 1.95.13 2.87.38 2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.72 5.39-5.31 5.68.42.36.79 1.07.79 2.16v3.24c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg></a>
+        <a class="title-link document" href="https://inyeongjang.github.io/papers/KCSE-2026.pdf" target="_blank" rel="noreferrer" aria-label="AutoFiC 논문 PDF" title="논문"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a>
+      </span>
+    </h2>
 
     <div class="project-grid">
       <div class="visuals">
@@ -563,7 +460,13 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
 <section class="slide">
   <div class="page patch-correctness-page">
     <div class="title-row"><div class="title-bar"></div><h1>RESEARCH & PROJECT · 02</h1></div>
-    <h2 class="section-title">자동 패치 정확성 검증을 위한 LLM Oracle 설계</h2>
+    <h2 class="section-title">
+      자동 패치 정확성 검증을 위한 LLM Oracle 설계
+      <span class="title-links">
+        <a class="title-link" href="https://github.com/inyeongjang/LLM-Oracle/tree/v1.0" target="_blank" rel="noreferrer" aria-label="LLM Oracle GitHub 저장소" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7A11.5 11.5 0 0 0 8.36 23c.58.1.79-.25.79-.56v-2.23c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.74-1.56-2.58-.3-5.29-1.29-5.29-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.16 1.18A10.9 10.9 0 0 1 12 6c.98 0 1.95.13 2.87.38 2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.72 5.39-5.31 5.68.42.36.79 1.07.79 2.16v3.24c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg></a>
+        <a class="title-link document" href="https://inyeongjang.github.io/papers/ICST-2026.pdf" target="_blank" rel="noreferrer" aria-label="LLM Oracle 논문 PDF" title="논문"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a>
+      </span>
+    </h2>
 
     <div class="project-grid">
       <div class="visuals">
@@ -605,7 +508,7 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
 
 <!-- 6. Experience & Mentoring -->
 <section class="slide">
-  <div class="page link-cards-page activity-page">
+  <div class="page">
     <div class="experience-mentoring-grid">
       <div class="activity-column">
         <div class="title-row"><div class="title-bar"></div><h1>EXPERIENCE</h1></div>
@@ -645,7 +548,7 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
       <div class="activity-column">
         <div class="title-row"><div class="title-bar"></div><h1>MENTORING</h1></div>
         <div class="activity-entry">
-          <div class="subhead">대학생 연합 AI 연구 동아리 OUTTA</div>
+          <div class="subhead">대학생 연합 AI 연구 동아리</div>
           <h3>OUTTA AI Bootcamp 멘토</h3>
           <ul class="bullets">
             <li>파이썬, 선형대수학, 머신러닝, 딥러닝 기초 스터디</li>
@@ -665,8 +568,15 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
           <h3>스마트모빌리티 공학체험교육 6기 멘토</h3>
           <ul class="bullets">
             <li>구립푸르름지역아동센터 초등학생 10명을 대상으로 스마트 모빌리티 공학 체험 교육 진행</li>
-            <li>스마트 모빌리티, SDV, PBV, 자율주행, 센서의 개념 설명</li>
-            <li>학습한 개념을 바탕으로 ‘나만의 모빌리티’를 제작할 수 있도록 지도</li>
+            <li>SDV·PBV·자율주행·센서의 개념을 설명하고 ‘나만의 모빌리티’ 제작 지도</li>
+          </ul>
+        </div>
+        <div class="activity-entry">
+          <div class="subhead">덕성여자대학교 코딩 교육 봉사 동아리</div>
+          <h3>I-coding</h3>
+          <ul class="bullets">
+            <li>우리동네키움센터 강북 1호점 초등학생 대상 일대일 코딩 교육 봉사</li>
+            <li>코딩에 대한 흥미가 지속되도록 학생의 관심사를 반영한 맞춤형 커리큘럼 기획</li>
           </ul>
         </div>
       </div>
@@ -683,7 +593,7 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
 
 <!-- 8. Finance -->
 <section class="slide">
-  <div class="page link-cards-page activity-page finance-page">
+  <div class="page finance-page">
     <div class="title-row"><div class="title-bar"></div><h1>FINANCE</h1></div>
     <div class="finance-grid">
         <div class="activity-entry">
@@ -691,16 +601,19 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
           <h3>ISSUE</h3>
           <ul class="bullets">
             <li>산업·기업 분석과 모의투자를 수행하며 주식 투자에 필요한 기초 지식을 익혔습니다.</li>
-            <li><a href="files/ISSUE/papers/1.pdf" target="_blank" rel="noreferrer">SK텔레콤 <span class="external-mark">↗</span></a></li>
-            <li><a href="files/ISSUE/papers/2.pdf" target="_blank" rel="noreferrer">드림시큐리티 <span class="external-mark">↗</span></a></li>
-            <li><a href="files/ISSUE/papers/3.pdf" target="_blank" rel="noreferrer">사이버보안 관련주 <span class="external-mark">↗</span></a></li>
+            <li><a href="files/ISSUE/1.pdf" target="_blank" rel="noreferrer">드림시큐리티 <span class="external-mark">↗</span></a></li>
+            <li><a href="files/ISSUE/2.pdf" target="_blank" rel="noreferrer">SK텔레콤 <span class="external-mark">↗</span></a></li>
+            <li><a href="files/ISSUE/3.pdf" target="_blank" rel="noreferrer">사이버보안 관련주 <span class="external-mark">↗</span></a></li>
           </ul>
         </div>
         <div class="activity-entry">
           <div class="subhead">덕성여자대학교 가치투자 동아리</div>
           <h3>하나증권 글로벌 투자 아카데미</h3>
           <ul class="bullets">
-            <li>산업·기업 분석과 모의투자를 수행하며 금융 시장과 증권 서비스에 대한 이해를 넓혔습니다.</li>
+            <li>클라우드 산업과 마이크로소프트를 분석해 모의투자를 수행하고, Z세대 거래 활성화 및 HTS·MTS 개선 방안을 제안했습니다.</li>
+            <li><a href="files/ISSUE/4.pdf" target="_blank" rel="noreferrer">클라우드 산업 및 마이크로소프트 투자 분석 <span class="external-mark">↗</span></a></li>
+            <li><a href="files/ISSUE/5.pdf" target="_blank" rel="noreferrer">Z세대의 해외주식·해외파생 거래 활성화 방안 <span class="external-mark">↗</span></a></li>
+            <li><a href="files/ISSUE/6.pdf" target="_blank" rel="noreferrer">1Q HTS·MTS 사용성 개선 방안 <span class="external-mark">↗</span></a></li>
           </ul>
         </div>
         <div class="activity-entry">
@@ -744,98 +657,7 @@ const dotsContainer = document.querySelector(SELECTORS.dots);
 const previousButton = document.querySelector(SELECTORS.previousButton);
 const nextButton = document.querySelector(SELECTORS.nextButton);
 
-const DOCUMENT_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v18H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg>';
-const DOCUMENT_FILES = [
-];
-const DOCUMENT_EXCLUSIONS = ['BackDoor', 'ISSUE', 'Corner', '화이트햇스쿨', 'OUTTA', '현대오토에버', 'Gopax Guardians'];
-
-const CARD_DESCRIPTIONS = {
-  BackDoor: ['2기 회장으로 활동 운영', '사이버보안 스터디 세션 기획', '팀 프로젝트 진행 및 구성원 협업'],
-  '화이트햇스쿨 3기': ['사이버보안 이론 및 실무 학습', '보안 문제 해결 중심 팀 프로젝트', '팀원들과 역할을 나누어 결과물 완성'],
-  Corner: ['<a href="https://github.com/inyeongjang/Snoopy" target="_blank" rel="noreferrer">Node.js 및 Git 기초 학습</a>', '<a href="https://github.com/inyeongjang/corner4" target="_blank" rel="noreferrer">제3회 코너톤 · 개인 맞춤형 도서 추천 서비스 “My Book Planet”</a>'],
-  'OUTTA AI Bootcamp 멘토': ['파이썬·선형대수학·머신러닝·딥러닝 기초 스터디', '데이터 크롤링·인공신경망·GAN 과제 채점', '수강생 질의응답'],
-  '아인슈타인 클래스 17기 멘토': ['원전 주변 지역 청소년 대상 AI 활용 교육', '기초 문해력 교육 및 진로 탐색 멘토링'],
-  '스마트모빌리티 공학체험교육 6기 멘토': ['초등학생 10명 대상 공학 체험 교육', '스마트 모빌리티·SDV·PBV·자율주행·센서 개념 설명', '나만의 모빌리티 제작 지도'],
-  ISSUE: ['<a href="files/ISSUE/papers/1.pdf" target="_blank" rel="noreferrer">SK텔레콤</a>', '<a href="files/ISSUE/papers/2.pdf" target="_blank" rel="noreferrer">드림시큐리티</a>', '<a href="files/ISSUE/papers/3.pdf" target="_blank" rel="noreferrer">사이버보안 관련주</a>'],
-  '하나증권 글로벌 투자 아카데미': ['산업 및 기업 분석 수행', '모의투자를 통한 투자 전략 검토', '금융 시장과 증권 서비스 이해'],
-};
-
-function renderCardDetails(panel) {
-  const summary = panel.querySelector('.focus-item');
-  const existingList = panel.querySelector('.research-lines');
-
-  if (existingList) {
-    summary?.insertAdjacentElement('afterend', existingList);
-    return;
-  }
-
-  const title = panel.querySelector('.focus-head h3')?.textContent.trim();
-  const descriptions = CARD_DESCRIPTIONS[title];
-  if (!descriptions || !summary) return;
-
-  const list = document.createElement('ol');
-  list.className = 'research-lines detail-lines';
-  list.innerHTML = descriptions
-    .map((description, index) => `<li><span class="research-no">${index + 1}.</span><span>${description}</span></li>`)
-    .join('');
-  summary.insertAdjacentElement('afterend', list);
-}
-
-function createDocumentControl(label, matchedDocument) {
-  const control = document.createElement(matchedDocument ? 'a' : 'button');
-  control.className = 'document-link';
-  control.innerHTML = DOCUMENT_ICON;
-
-  if (matchedDocument) {
-    const [, path] = matchedDocument;
-    control.href = path;
-    control.target = '_blank';
-    control.rel = 'noreferrer';
-    control.title = '증빙 자료 보기';
-    control.setAttribute('aria-label', `${label} 증빙 자료 보기`);
-  } else {
-    control.type = 'button';
-    control.disabled = true;
-    control.title = '첨부 자료 준비 중';
-    control.setAttribute('aria-label', `${label} 첨부 자료 준비 중`);
-  }
-
-  return control;
-}
-
-function attachDocumentControl(item) {
-  if (item.querySelector('.resource-link, .document-link')) return;
-
-  const label = item.querySelector('strong')?.textContent.trim() || '항목';
-  if (DOCUMENT_EXCLUSIONS.some(keyword => label.includes(keyword))) return;
-
-  const matchedDocument = DOCUMENT_FILES.find(([keyword]) => label.includes(keyword));
-  const control = createDocumentControl(label, matchedDocument);
-  item.classList.add('has-document');
-  (item.querySelector('.project-heading') || item).appendChild(control);
-}
-
-document.querySelectorAll('.link-cards-page .focus-panel').forEach(renderCardDetails);
-document.querySelectorAll('.resume-cols .ritem').forEach(attachDocumentControl);
-
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-document.querySelectorAll('.adaptive-slideshow').forEach(slideshow => {
-  const images = [...slideshow.querySelectorAll('img')];
-  if (!images.length) return;
-
-  let activeIndex = 0;
-  const showImage = index => {
-    activeIndex = index % images.length;
-    images.forEach((image, imageIndex) => image.classList.toggle('active', imageIndex === activeIndex));
-    slideshow.style.backgroundColor = images[activeIndex].dataset.bg || '#f8fcfe';
-  };
-
-  showImage(0);
-  if (!reduceMotion && images.length > 1) {
-    setInterval(() => showImage(activeIndex + 1), 4000);
-  }
-});
 
 const typewriterStates = new Map();
 
@@ -867,7 +689,7 @@ function resetTypewriter(statement) {
   clearTimeout(state.timer);
   state.caret.remove();
   state.segments.forEach(segment => { segment.node.nodeValue = ''; });
-  statement.classList.remove('play', 'typing');
+  statement.classList.remove('play');
 }
 
 function playTypewriter(statement) {
@@ -875,7 +697,7 @@ function playTypewriter(statement) {
   if (!state || reduceMotion) return;
 
   resetTypewriter(statement);
-  statement.classList.add('play', 'typing');
+  statement.classList.add('play');
   let segmentIndex = 0;
   let characterIndex = 0;
 
@@ -883,7 +705,6 @@ function playTypewriter(statement) {
     const segment = state.segments[segmentIndex];
     if (!segment) {
       state.caret.remove();
-      statement.classList.remove('typing');
       return;
     }
 
