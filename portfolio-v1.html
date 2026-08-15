@@ -233,6 +233,12 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
 .bullets li:last-child{margin-bottom:0}
 .bullets strong{color:#102f49;font-weight:800}
 .bullets li::marker{color:#258dcc}
+.autofic-page .section-title,.patch-correctness-page .section-title{font-size:29px;margin-bottom:24px}
+.autofic-page .project-copy .subhead,.patch-correctness-page .project-copy .subhead{font-size:12px;margin-bottom:9px}
+.autofic-page .project-copy .subhead-spaced,.patch-correctness-page .project-copy .subhead-spaced{margin-top:14px}
+.autofic-page .project-copy .bullets li,.patch-correctness-page .project-copy .bullets li{font-size:13px;line-height:1.82;margin-bottom:9px}
+.autofic-page .project-copy .bullets li{line-height:1.62;margin-bottom:7px}
+.autofic-page .award,.patch-correctness-page .award{font-size:12.5px}
 .award{
   margin-top:12px;background:linear-gradient(90deg,#e7f5ff,#effbf9);border:1px solid #c9e6f3;
   border-radius:10px;padding:10px 12px;font-size:11.5px;font-weight:850;color:#174f78;
@@ -296,6 +302,23 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
 .activity-entry a,.section-title a{color:inherit;text-decoration:none}
 .activity-entry a:hover,.section-title a:hover{color:var(--blue-dark);text-decoration:underline;text-underline-offset:3px}
 .external-mark{font-size:.78em;color:var(--blue-dark);margin-left:3px}
+.experience-mentoring-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;height:100%}
+.activity-column{min-width:0}
+.activity-column > .title-row{margin-bottom:28px}
+.activity-column > .title-row .title-bar,.finance-page > .title-row .title-bar{height:38px;width:6px}
+.activity-column > .title-row h1,.finance-page > .title-row h1{font-size:20px;letter-spacing:.1em}
+.experience-mentoring-grid .activity-entry{padding-bottom:15px;margin-bottom:15px}
+.experience-mentoring-grid .activity-entry .subhead{font-size:11.5px}
+.experience-mentoring-grid .activity-entry h3{font-size:14.5px;margin-bottom:7px}
+.experience-mentoring-grid .activity-entry .bullets li{font-size:11.2px;line-height:1.95;margin-bottom:6px}
+.finance-page > .title-row{margin-bottom:24px}
+.finance-grid{display:grid;grid-template-columns:1fr;grid-template-rows:repeat(3,minmax(0,auto));gap:12px;height:calc(100% - 62px)}
+.finance-grid .activity-entry{display:grid;grid-template-columns:max-content minmax(0,1fr);column-gap:8px;align-items:baseline;padding:0 0 11px;margin:0}
+.finance-grid .activity-entry .subhead{font-size:11.5px;line-height:1.5;white-space:normal;margin:0}
+.finance-grid .activity-entry .subhead::after{content:"·";margin-left:8px;color:#9eb3c1}
+.finance-grid .activity-entry h3{font-size:14.5px;line-height:1.45;margin-bottom:7px}
+.finance-grid .activity-entry .bullets li{font-size:11.5px;line-height:1.8;margin-bottom:4px}
+.finance-grid .activity-entry .bullets{grid-column:1/-1}
 .focus-panel{border:1px solid #d4e9f4;border-radius:18px;background:linear-gradient(155deg,#fff 30%,#f3faff);padding:18px;box-shadow:0 9px 24px rgba(66,145,190,.08);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
 .focus-panel:hover{transform:translateY(-3px);border-color:#abd7eb;box-shadow:0 15px 32px rgba(49,126,169,.13)}
 .focus-head{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)}
@@ -364,6 +387,8 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
   .activity-grid{grid-template-columns:1fr}
   .project-cards{grid-template-columns:1fr;height:auto}
   .focus-grid{grid-template-columns:1fr;height:auto}
+  .experience-mentoring-grid{grid-template-columns:1fr;height:auto;gap:28px}
+  .finance-grid{grid-template-columns:1fr;grid-template-rows:none;height:auto}
   .nav-btn,.dots{display:none}
 }
 @media print{
@@ -480,7 +505,6 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
 
             <div class="rsec dense-list compact-list">
               <div class="rsec-title">기타 활동</div>
-              <div class="ritem"><span class="date">2024.03–2024.12</span><strong>덕성여자대학교 디지털소프트웨어공학부 학생회 DEBUG 집행부원</strong></div>
               <div class="ritem"><span class="date">2023.03–2023.12</span><strong>덕성여자대학교 가치투자 동아리 ISSUE</strong></div>
               <div class="ritem"><span class="date">2023.09–2023.12</span><strong>하나증권 글로벌 투자 아카데미</strong></div>
               <div class="ritem"><span class="date">2023.06–2023.12</span><strong>Gopax Guardians 1기</strong></div>
@@ -514,21 +538,20 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
       <div class="project-copy">
         <div class="subhead">프로젝트 소개</div>
         <ul class="bullets">
-          <li>정적 분석 도구(SAST)의 취약점 탐지 결과를 LLM으로 분석해 <br> 자동 패치부터 Pull Request 생성까지 연계하는 End-to-End 파이프라인을 구현했습니다.</li>
-          <li>XML 기반 구조화 컨텍스트와 Annotation 기반 위치 강조로 <br> 취약 구간을 명확히 전달하고 수정 범위를 한정했습니다.</li>
+          <li>정적 분석 도구(SAST)의 취약점 탐지 결과를 LLM으로 분석해 <br> 자동 패치부터 Pull Request 생성까지 연계하는 End-to-End 파이프라인 구현</li>
+          <li>XML 기반 구조화 컨텍스트와 Annotation 기반 위치 강조로 <br> 취약 구간을 명확히 전달하고 수정 범위를 한정</li>
         </ul>
 
         <div class="subhead subhead-spaced">담당 역할</div>
         <ul class="bullets">
           <li><strong>Project Manager</strong> : 일정 관리 및 업무 분담</li>
-          <li><strong>SAST 자동화 설계 및 전처리</strong> : 정적 분석 결과를 LLM 입력에 적합한 형태로 구조화하는 로직 구현</li>
+          <li><strong>SAST 자동화 설계</strong> : 정적 분석 결과를 LLM 입력에 적합한 형태로 구조화하는 로직 구현</li>
         </ul>
 
         <div class="subhead subhead-spaced">성과</div>
         <ul class="bullets">
-          <li>91개 실제 GitHub 오픈소스 저장소를 대상으로 파이프라인을 평가했습니다.</li>
-          <li>파이프라인 성공률 <strong>94.5%</strong>, 취약점 해결률 <strong>90.0%</strong>를 기록했습니다.</li>
-          <li>AutoFiC이 생성한 Pull Request 중 <strong>7건</strong>이 실제 저장소에 병합되었습니다.</li>
+          <li>파이프라인 성공률 <strong>94.5%</strong>, 취약점 해결률 <strong>90.0%</strong> 기록</li>
+          <li>AutoFiC이 생성한 Pull Request 중 <strong>7건</strong>이 실제 저장소에 병합</li>
         </ul>
         <div class="award">🏆 KCSE 2026 우수 학부생 논문상 수상</div>
       </div>
@@ -551,7 +574,7 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
       <div class="project-copy">
         <div class="subhead">연구 소개</div>
         <ul class="bullets">
-          <li><strong>부정확한 패치를 자동으로 식별</strong>하기 위해 다양한 <strong>LLM 프롬프트 전략</strong>을 비교·분석한 연구입니다.</li>
+          <li><strong>부정확한 패치를 자동으로 식별</strong>하기 위한 다양한 <strong>LLM 프롬프트 전략</strong> 비교·분석</li>
         </ul>
 
         <div class="subhead subhead-spaced">담당 역할</div>
@@ -563,9 +586,9 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
 
         <div class="subhead subhead-spaced">성과</div>
         <ul class="bullets">
-          <li><strong>Defects4J의 부정확한 패치 109개</strong>와 서로 다른 규모의 LLM을 대상으로 <strong>6가지 전략</strong>을 평가했습니다.</li>
-          <li>역할 정의로 목표를 명시해 GPT 계열 모델의 식별 성능을 <strong>최대 7.5% 향상</strong>시켰습니다.</li>
-          <li>엄격한 출력 형식과 예시를 적용해 Llama 계열 모델의 식별 성능을 <strong>최대 19.9% 향상</strong>시켰습니다.</li>
+          <li><strong>Defects4J의 부정확한 패치 109개</strong>와 서로 다른 규모의 LLM을 대상으로 <strong>6가지 전략</strong> 평가</li>
+          <li>역할 정의로 목표를 명시해 GPT 계열 모델의 식별 성능을 <strong>최대 7.5% 향상</strong></li>
+          <li>엄격한 출력 형식과 예시를 적용해 Llama 계열 모델의 식별 성능을 <strong>최대 19.9% 향상</strong></li>
         </ul>
         <div class="award">🏆 IEEE ICST 2026 Research Track 논문 투고</div>
       </div>
@@ -580,79 +603,121 @@ h1,h2,h3,.name,.rsec-title,.subhead,.kicker{font-family:Manrope,"Noto Sans KR",s
   </div>
 </section>
 
-<!-- 6. Experience -->
+<!-- 6. Experience & Mentoring -->
 <section class="slide">
   <div class="page link-cards-page activity-page">
-    <div class="title-row"><div class="title-bar"></div><h1>EXPERIENCE</h1></div>
-    <h2 class="section-title">보안·개발 역량을 넓힌 교내·외 활동</h2>
-    <div class="project-grid">
-      <div class="visuals single-visual">
-        <div class="visual slideshow adaptive-slideshow" aria-label="보안 및 개발 활동 이미지">
-          <img class="active" src="files/autofic-3.png" alt="AutoFiC 소개 페이지" data-bg="#001329">
-          <img src="files/autofic-4.png" alt="AutoFiC 대시보드" data-bg="#0b0924">
+    <div class="experience-mentoring-grid">
+      <div class="activity-column">
+        <div class="title-row"><div class="title-bar"></div><h1>EXPERIENCE</h1></div>
+        <div class="activity-entry">
+          <div class="subhead">덕성여자대학교 사이버보안 동아리</div>
+          <h3>BackDoor</h3>
+          <ul class="bullets">
+            <li>2기 회장으로서 사이버보안 관련 스터디 세션과 팀 프로젝트 기획·운영</li>
+            <li>CCA, HSPACE, INGOGNITO, WUISP와 파트너십 체결</li>
+          </ul>
+        </div>
+        <div class="activity-entry">
+          <div class="subhead">차세대 보안리더 양성 프로그램</div>
+          <h3>화이트햇스쿨 3기</h3>
+          <ul class="bullets">
+            <li>사이버보안 이론·실무 학습 및 팀 프로젝트 수행</li>
+            <li><a href="https://autofic.github.io/" target="_blank" rel="noreferrer">AutoFiC: 취약점 탐지부터 PR 생성까지 자동화된 보안 패치 파이프라인 <span class="external-mark">↗</span></a></li>
+          </ul>
+        </div>
+        <div class="activity-entry">
+          <div class="subhead">덕성여자대학교 웹 개발 동아리</div>
+          <h3>Corner</h3>
+          <ul class="bullets">
+            <li><a href="https://github.com/inyeongjang/Snoopy" target="_blank" rel="noreferrer">Node.js 및 Git 기초 학습 <span class="external-mark">↗</span></a></li>
+            <li><a href="https://github.com/inyeongjang/corner4" target="_blank" rel="noreferrer">제3회 코너톤: 개인 맞춤형 도서 추천 서비스 “My Book Planet” <span class="external-mark">↗</span></a></li>
+          </ul>
+        </div>
+        <div class="activity-entry">
+          <div class="subhead">덕성여자대학교 디지털소프트웨어공학부</div>
+          <h3>제 1회 해커톤</h3>
+          <ul class="bullets">
+            <li><a href="https://github.com/inyeongjang/NextBridge_Hackathon" target="_blank" rel="noreferrer">지방 소멸 문제를 해결하기 위한 외국인 노동자 커뮤니티 “Next Bridge” <span class="external-mark">↗</span></a></li>
+            <li>Django 백엔드 개발 및 BeautifulSoup·Selenium 기반 데이터 크롤링</li>
+          </ul>
         </div>
       </div>
-      <div class="project-copy activity-copy">
-        <div class="activity-entry"><div class="subhead">덕성여자대학교 사이버보안 동아리</div><h3>BackDoor</h3><ul class="bullets"><li>2기 회장으로서 사이버보안 관련 스터디 세션과 팀 프로젝트 기획·운영</li><li>CCA, HSPACE, INGOGNITO, WUISP와 파트너십 체결</li></ul></div>
-        <div class="activity-entry"><div class="subhead">차세대 보안리더 양성 프로그램</div><h3>화이트햇스쿨 3기</h3><ul class="bullets"><li>사이버보안 이론·실무 학습 및 팀 프로젝트 수행</li><li><a href="https://autofic.github.io/" target="_blank" rel="noreferrer">AutoFiC: 취약점 탐지부터 PR 생성까지 자동화된 보안 패치 파이프라인 <span class="external-mark">↗</span></a></li></ul></div>
-        <div class="activity-entry"><div class="subhead">덕성여자대학교 웹 개발 동아리</div><h3>Corner</h3><ul class="bullets"><li><a href="https://github.com/inyeongjang/Snoopy" target="_blank" rel="noreferrer">Node.js 및 Git 기초 학습 <span class="external-mark">↗</span></a></li><li><a href="https://github.com/inyeongjang/corner4" target="_blank" rel="noreferrer">제3회 코너톤: 개인 맞춤형 도서 추천 서비스 “My Book Planet” <span class="external-mark">↗</span></a></li></ul></div>
-        <div class="activity-entry"><div class="subhead">덕성여자대학교 디지털소프트웨어공학부</div><h3>제 1회 해커톤</h3><ul class="bullets"><li><a href="https://github.com/inyeongjang/NextBridge_Hackathon" target="_blank" rel="noreferrer">지방 소멸 문제를 해결하기 위한 외국인 노동자 커뮤니티 “Next Bridge” <span class="external-mark">↗</span></a></li><li>Django 백엔드 개발 및 BeautifulSoup·Selenium 기반 데이터 크롤링</li></ul></div>
+      <div class="activity-column">
+        <div class="title-row"><div class="title-bar"></div><h1>MENTORING</h1></div>
+        <div class="activity-entry">
+          <div class="subhead">대학생 연합 AI 연구 동아리 OUTTA</div>
+          <h3>OUTTA AI Bootcamp 멘토</h3>
+          <ul class="bullets">
+            <li>파이썬, 선형대수학, 머신러닝, 딥러닝 기초 스터디</li>
+            <li>‘데이터 크롤링’, ‘인공신경망’, ‘GAN’ 과목의 과제 채점 및 질의응답</li>
+          </ul>
+        </div>
+        <div class="activity-entry">
+          <div class="subhead">한국수력원자력</div>
+          <h3>아인슈타인 클래스 17기 멘토</h3>
+          <ul class="bullets">
+            <li>원전 주변 지역 청소년 대상 AI 활용 교육</li>
+            <li>기초 문해력 교육 및 진로 탐색 멘토링</li>
+          </ul>
+        </div>
+        <div class="activity-entry">
+          <div class="subhead">현대오토에버</div>
+          <h3>스마트모빌리티 공학체험교육 6기 멘토</h3>
+          <ul class="bullets">
+            <li>구립푸르름지역아동센터 초등학생 10명을 대상으로 스마트 모빌리티 공학 체험 교육 진행</li>
+            <li>스마트 모빌리티, SDV, PBV, 자율주행, 센서의 개념 설명</li>
+            <li>학습한 개념을 바탕으로 ‘나만의 모빌리티’를 제작할 수 있도록 지도</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 7. Mentoring -->
-<section class="slide">
-  <div class="page link-cards-page activity-page">
-    <div class="title-row"><div class="title-bar"></div><h1>MENTORING</h1></div>
-    <h2 class="section-title">배운 지식을 나누며 함께 성장한 경험</h2>
-    <div class="project-grid">
-      <div class="visuals single-visual">
-        <div class="visual image-light"><img src="files/autoever-1.jpg" alt="현대오토에버 스마트모빌리티 공학체험교육"></div>
-      </div>
-      <div class="project-copy activity-copy">
-        <div class="activity-entry"><div class="subhead">대학생 연합 AI 연구 동아리 OUTTA</div><h3>OUTTA AI Bootcamp 멘토</h3><ul class="bullets"><li>파이썬, 선형대수학, 머신러닝, 딥러닝 기초 스터디</li><li>‘데이터 크롤링’, ‘인공신경망’, ‘GAN’ 과목의 과제 채점 및 질의응답</li></ul></div>
-        <div class="activity-entry"><div class="subhead">한국수력원자력</div><h3>아인슈타인 클래스 17기 멘토</h3><ul class="bullets"><li>청소년의 눈높이에 맞춰 공학 개념을 설명했습니다.</li><li>프로젝트 기반 AI 학습과 문제 해결을 지원했습니다.</li></ul></div>
-        <div class="activity-entry"><div class="subhead">현대오토에버</div><h3>스마트모빌리티 공학체험교육 6기 멘토</h3><ul class="bullets"><li>구립푸르름지역아동센터 초등학생 10명을 대상으로 스마트 모빌리티 공학 체험 교육 진행</li><li>스마트 모빌리티, SDV, PBV, 자율주행, 센서의 개념 설명</li><li>학습한 개념을 바탕으로 ‘나만의 모빌리티’를 제작할 수 있도록 지도</li></ul></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 8. Finance Statement -->
+<!-- 7. Finance Statement -->
 <section class="slide">
   <div class="page statement-page">
     <h2 class="statement typewriter">높은 신뢰성이 요구되는<br><br><span>금융 서비스로 확장</span>하고 싶습니다.</h2>
   </div>
 </section>
 
-<!-- 9. Finance -->
+<!-- 8. Finance -->
 <section class="slide">
-  <div class="page link-cards-page activity-page">
+  <div class="page link-cards-page activity-page finance-page">
     <div class="title-row"><div class="title-bar"></div><h1>FINANCE</h1></div>
-    <h2 class="section-title">분석과 리서치로 쌓은 금융 도메인 경험</h2>
-    <div class="project-grid">
-      <div class="visuals single-visual">
-        <div class="visual slideshow adaptive-slideshow" aria-label="금융 활동 이미지">
-          <img class="active" src="files/ISSUE/images/1.png" alt="SK텔레콤 분석 자료" data-bg="#ffffff">
-          <img src="files/ISSUE/images/2.png" alt="드림시큐리티 분석 자료" data-bg="#ffffff">
-          <img src="files/ISSUE/images/3.png" alt="사이버보안 관련주 분석 자료" data-bg="#ffffff">
-          <img src="files/GOPAX/1.png" alt="바이낸스 리서치" data-bg="#20242e">
-          <img src="files/GOPAX/2.jpg" alt="위믹스 리서치" data-bg="#20242e">
-          <img src="files/GOPAX/3.jpg" alt="영지식 증명 리서치" data-bg="#20242e">
+    <div class="finance-grid">
+        <div class="activity-entry">
+          <div class="subhead">덕성여자대학교 가치투자 동아리</div>
+          <h3>ISSUE</h3>
+          <ul class="bullets">
+            <li>산업·기업 분석과 모의투자를 수행하며 주식 투자에 필요한 기초 지식을 익혔습니다.</li>
+            <li><a href="files/ISSUE/papers/1.pdf" target="_blank" rel="noreferrer">SK텔레콤 <span class="external-mark">↗</span></a></li>
+            <li><a href="files/ISSUE/papers/2.pdf" target="_blank" rel="noreferrer">드림시큐리티 <span class="external-mark">↗</span></a></li>
+            <li><a href="files/ISSUE/papers/3.pdf" target="_blank" rel="noreferrer">사이버보안 관련주 <span class="external-mark">↗</span></a></li>
+          </ul>
         </div>
-      </div>
-      <div class="project-copy activity-copy">
-        <div class="activity-entry"><div class="subhead">덕성여자대학교 가치투자 동아리</div><h3>ISSUE</h3><ul class="bullets"><li>산업·기업 분석과 모의투자를 수행하며 주식 투자에 필요한 기초 지식을 익혔습니다.</li><li><a href="files/ISSUE/papers/1.pdf" target="_blank" rel="noreferrer">SK텔레콤 <span class="external-mark">↗</span></a></li><li><a href="files/ISSUE/papers/2.pdf" target="_blank" rel="noreferrer">드림시큐리티 <span class="external-mark">↗</span></a></li><li><a href="files/ISSUE/papers/3.pdf" target="_blank" rel="noreferrer">사이버보안 관련주 <span class="external-mark">↗</span></a></li></ul></div>
-        <div class="activity-entry"><div class="subhead">덕성여자대학교 가치투자 동아리</div><h3>하나증권 글로벌 투자 아카데미</h3><ul class="bullets"><li>산업·기업 분석과 모의투자를 수행하며 금융 시장과 증권 서비스에 대한 이해를 넓혔습니다.</li></ul></div>
-        <div class="activity-entry"><div class="subhead">가상자산 거래소 고팍스 서포터즈</div><h3>GOPAX Guardians</h3><ul class="bullets"><li><a href="https://xangle.io/research/detail/1612" target="_blank" rel="noreferrer">영지식 증명의 이해와 활용 사례 <span class="external-mark">↗</span></a></li><li><a href="https://academy.gopax.co.kr/bainaenseuneun-wae-hangugsijangeul-ggumgguna/" target="_blank" rel="noreferrer">바이낸스는 왜 한국 시장을 꿈꾸나? <span class="external-mark">↗</span></a></li><li><a href="https://medium.com/gopax/위메이드가-꿈꾸는-블록체인-메가-에코-시스템-위믹스-wemix-생태계-톺아보기-e44922395010" target="_blank" rel="noreferrer">위메이드가 꿈꾸는 블록체인 메가 에코 시스템 — 위믹스(WEMIX) 생태계 톺아보기 <span class="external-mark">↗</span></a></li><li>가상자산 시장과 주요 이슈를 분석하고 총 3편의 리서치 페이퍼를 발간했습니다.</li></ul></div>
-      </div>
+        <div class="activity-entry">
+          <div class="subhead">덕성여자대학교 가치투자 동아리</div>
+          <h3>하나증권 글로벌 투자 아카데미</h3>
+          <ul class="bullets">
+            <li>산업·기업 분석과 모의투자를 수행하며 금융 시장과 증권 서비스에 대한 이해를 넓혔습니다.</li>
+          </ul>
+        </div>
+        <div class="activity-entry">
+          <div class="subhead">가상자산 거래소 고팍스 서포터즈</div>
+          <h3>GOPAX Guardians</h3>
+          <ul class="bullets">
+            <li>가상자산 시장과 주요 이슈를 분석하고 총 3편의 리서치 페이퍼를 발간했습니다.</li>
+            <li><a href="https://xangle.io/research/detail/1612" target="_blank" rel="noreferrer">영지식 증명의 이해와 활용 사례 <span class="external-mark">↗</span></a></li>
+            <li><a href="https://academy.gopax.co.kr/bainaenseuneun-wae-hangugsijangeul-ggumgguna/" target="_blank" rel="noreferrer">바이낸스는 왜 한국 시장을 꿈꾸나? <span class="external-mark">↗</span></a></li>
+            <li><a href="https://medium.com/gopax/위메이드가-꿈꾸는-블록체인-메가-에코-시스템-위믹스-wemix-생태계-톺아보기-e44922395010" target="_blank" rel="noreferrer">위메이드가 꿈꾸는 블록체인 메가 에코 시스템 — 위믹스(WEMIX) 생태계 톺아보기 <span class="external-mark">↗</span></a></li>
+          </ul>
+        </div>
     </div>
   </div>
 </section>
 
-<!-- 10. Closing -->
+<!-- 9. Closing -->
 <section class="slide">
   <div class="page statement-page closing-page">
     <p class="closing-kicker">MY NEXT STEP</p>
@@ -689,7 +754,7 @@ const CARD_DESCRIPTIONS = {
   '화이트햇스쿨 3기': ['사이버보안 이론 및 실무 학습', '보안 문제 해결 중심 팀 프로젝트', '팀원들과 역할을 나누어 결과물 완성'],
   Corner: ['<a href="https://github.com/inyeongjang/Snoopy" target="_blank" rel="noreferrer">Node.js 및 Git 기초 학습</a>', '<a href="https://github.com/inyeongjang/corner4" target="_blank" rel="noreferrer">제3회 코너톤 · 개인 맞춤형 도서 추천 서비스 “My Book Planet”</a>'],
   'OUTTA AI Bootcamp 멘토': ['파이썬·선형대수학·머신러닝·딥러닝 기초 스터디', '데이터 크롤링·인공신경망·GAN 과제 채점', '수강생 질의응답'],
-  '아인슈타인 클래스 17기 멘토': ['청소년 대상 공학 체험 멘토링', '학습 수준에 맞춘 개념 설명', '실습 진행과 문제 해결 지원'],
+  '아인슈타인 클래스 17기 멘토': ['원전 주변 지역 청소년 대상 AI 활용 교육', '기초 문해력 교육 및 진로 탐색 멘토링'],
   '스마트모빌리티 공학체험교육 6기 멘토': ['초등학생 10명 대상 공학 체험 교육', '스마트 모빌리티·SDV·PBV·자율주행·센서 개념 설명', '나만의 모빌리티 제작 지도'],
   ISSUE: ['<a href="files/ISSUE/papers/1.pdf" target="_blank" rel="noreferrer">SK텔레콤</a>', '<a href="files/ISSUE/papers/2.pdf" target="_blank" rel="noreferrer">드림시큐리티</a>', '<a href="files/ISSUE/papers/3.pdf" target="_blank" rel="noreferrer">사이버보안 관련주</a>'],
   '하나증권 글로벌 투자 아카데미': ['산업 및 기업 분석 수행', '모의투자를 통한 투자 전략 검토', '금융 시장과 증권 서비스 이해'],
