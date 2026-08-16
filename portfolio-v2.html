@@ -131,7 +131,8 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 .resume-head{grid-column:2;grid-row:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
 .identity-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
 .identity-row .link-row{margin-top:0}
-.resume-head h2{margin:0;font-size:25px;line-height:1.38;letter-spacing:-.04em;color:var(--navy)}
+.resume-head h2{margin:0;font-size:22px;line-height:1.5;letter-spacing:-.04em;color:var(--navy)}
+.resume-head h2 .headline-highlight{font-size:inherit;color:inherit;padding:0 .08em;background:linear-gradient(transparent 55%,rgba(123,203,212,.38) 55%,rgba(123,203,212,.38) 91%,transparent 91%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .resume-head span{font-size:10.5px;color:var(--muted)}
 .resume-cols{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:24px;border-top:0;padding-top:2px}
 .rsec{margin-bottom:13px}
@@ -159,22 +160,15 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 .statement-page{display:flex;align-items:center;justify-content:center;text-align:center}
 .statement-page::after{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(82,174,232,.10),transparent 68%);z-index:0;pointer-events:none}
 .statement{
-  max-width:760px;margin:0;font-size:clamp(28px,3.4vw,44px);font-weight:800;
-  line-height:1.35;letter-spacing:-.055em;color:var(--navy)
+  max-width:800px;margin:0;font-size:clamp(25px,2.6vw,34px);font-weight:800;
+  line-height:1.45;letter-spacing:-.05em;color:var(--navy)
 }
 .statement span{color:var(--blue-dark);text-decoration:underline;text-decoration-color:rgba(82,174,232,.28);text-decoration-thickness:.18em;text-underline-offset:.12em}
 .statement.typewriter{position:relative;opacity:0;min-height:2.8em}
 .statement.typewriter.play{opacity:1}
-.typing-caret{
-  display:inline-block;width:2px;height:.9em;margin-left:7px;
-  vertical-align:-.08em;background:var(--blue-dark);
-  animation:caret-blink .7s step-end infinite
-}
+.typing-caret{display:inline-block;width:2px;height:.9em;margin-left:7px;vertical-align:-.08em;background:var(--blue-dark);animation:caret-blink .7s step-end infinite}
 @keyframes caret-blink{50%{opacity:0}}
-@media(prefers-reduced-motion:reduce){
-  .statement.typewriter{opacity:1}
-  .typing-caret{display:none}
-}
+@media(prefers-reduced-motion:reduce){.statement.typewriter{opacity:1}.typing-caret{display:none}}
 
 /* project pages */
 .project-grid{
@@ -206,7 +200,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 .bullets li:last-child{margin-bottom:0}
 .bullets strong{color:#102f49;font-weight:800}
 .bullets li::marker{color:#258dcc}
-.autofic-page .section-title,.patch-correctness-page .section-title{font-size:29px;margin-bottom:24px}
+.autofic-page .section-title,.patch-correctness-page .section-title{font-size:24px;margin-bottom:24px}
 .title-links{display:inline-flex;align-items:center;gap:6px;margin-left:8px;vertical-align:.12em;white-space:nowrap}
 .title-link{
   display:inline-grid!important;place-items:center;width:27px;height:27px;border:1px solid #b9dff1;border-radius:7px;
@@ -246,6 +240,23 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 .title-link:focus-visible,.nav-btn:focus-visible,.dot:focus-visible{outline:2px solid var(--blue-dark);outline-offset:3px}
 .closing-kicker{margin:0 0 18px;font-size:10px;font-weight:800;letter-spacing:.22em;color:var(--blue-dark)}
 .closing-page{flex-direction:column}
+.point-label{margin:0 0 8px;font-family:Manrope,sans-serif;font-size:14px;font-weight:800;letter-spacing:.12em;color:var(--blue-dark)}
+.point-title{margin:0 0 8px;font-size:30px;line-height:1.35;letter-spacing:-.045em;color:var(--navy)}
+.point-desc{margin:0 0 25px;font-size:13px;line-height:1.65;color:var(--text)}
+.point-project{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:36px;height:calc(100% - 116px);align-items:center}
+.point-visual{display:grid;grid-template-columns:1fr 1fr;gap:10px;min-height:0}
+.point-visual .visual{height:190px}
+.point-copy{min-width:0}
+.point-project-name{margin:0 0 18px;font-size:18px;line-height:1.45;letter-spacing:-.03em;color:var(--navy)}
+.point-list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.point-list li{padding:13px 15px;border-left:3px solid var(--blue);border-radius:0 9px 9px 0;background:#f5fbff;font-size:12.5px;line-height:1.6;color:#315872}
+.point-list strong{color:#123853}
+.point-result{margin-top:14px;padding:13px 16px;border:1px solid #c9e6f3;border-radius:10px;background:linear-gradient(90deg,#e7f5ff,#effbf9);font-size:12px;font-weight:800;color:#174f78}
+.comparison-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;height:calc(100% - 116px)}
+.comparison-card{padding:22px;border:1px solid #cfe4f1;border-radius:15px;background:linear-gradient(145deg,#fff,#f4faff);box-shadow:0 7px 18px rgba(53,95,118,.07)}
+.comparison-card h3{margin:0 0 6px;font-size:18px;line-height:1.4;color:var(--navy)}
+.comparison-card .project-tag{display:block;margin-bottom:16px;font-size:10px;font-weight:800;letter-spacing:.09em;color:var(--blue-dark)}
+.comparison-card .point-list li{font-size:11.5px;padding:11px 13px}
 
 @media(max-width:900px){
   .page{width:92vw;height:86vh;padding:30px}
@@ -253,7 +264,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
   .photo{width:86px;height:101px}
   .resume-cols{grid-template-columns:minmax(0,1fr) minmax(185px,.9fr);gap:18px}
   .compact-list .ritem{grid-template-columns:72px minmax(0,1fr) 16px;column-gap:5px}
-  .resume-head h2{font-size:22px}
+  .resume-head h2{font-size:19px}
   .project-grid{grid-template-columns:46% 54%}
 }
 @media(max-width:700px){
@@ -273,7 +284,8 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
   .bullets li{line-height:1.72}
   .activity-column > .title-row{margin-bottom:20px}
   .experience-mentoring-grid .activity-entry{padding-bottom:14px;margin-bottom:14px}
-  .statement{font-size:clamp(25px,7.5vw,36px);line-height:1.42}
+  .statement{font-size:clamp(22px,6vw,28px);line-height:1.48}
+  .point-project,.comparison-grid{grid-template-columns:1fr;height:auto}.point-visual .visual{height:auto}.point-title{font-size:24px}
   .experience-mentoring-grid{grid-template-columns:1fr;height:auto;gap:28px}
   .nav-btn,.dots{display:none}
 }
@@ -315,7 +327,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
               </a>
             </div>
           </div>
-          <h2>안전하고 신뢰할 수 있는 소프트웨어를 개발합니다.</h2>
+          <h2><span class="headline-highlight">안전하고 신뢰할 수 있는 소프트웨어를 개발합니다.</span></h2>
         </div>
 
         <div class="resume-cols">
@@ -397,17 +409,17 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
   </div>
 </section>
 
-<!-- 2. Statement -->
+<!-- 2. Motivation Statement -->
 <section class="slide">
   <div class="page statement-page">
-    <h2 class="statement typewriter"><span>AI</span>를 활용해 소프트웨어의 <span>품질과 신뢰성</span>을 <br><br> 높이는 방법을 연구해왔습니다.</h2>
+    <h2 class="statement typewriter">AI를 활용해 소프트웨어의 <span>품질과 신뢰성</span>을<br><br>높이는 방법을 연구해왔습니다.</h2>
   </div>
 </section>
 
 <!-- 3. AutoFiC -->
-<section class="slide">
+<section class="slide" id="project-autofic">
   <div class="page autofic-page">
-    <div class="title-row"><div class="title-bar"></div><h1>RESEARCH & PROJECT · 01</h1></div>
+    <div class="title-row"><div class="title-bar"></div><h1>PROJECT · 01</h1></div>
     <h2 class="section-title">
       AutoFiC : 취약점 탐지부터 PR 생성까지 자동화된 보안 패치 파이프라인
       <span class="title-links">
@@ -416,26 +428,22 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
         <a class="title-link document" href="https://inyeongjang.github.io/papers/KCSE-2026.pdf" target="_blank" rel="noreferrer" aria-label="AutoFiC 논문 PDF" title="논문"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a>
       </span>
     </h2>
-
     <div class="project-grid">
       <div class="visuals">
         <div class="visual image-dark"><img src="files/autofic-1.png" alt="AutoFiC 파이프라인"></div>
         <div class="visual image-light"><img src="files/autofic-2.png" alt="Pull Request 결과"></div>
       </div>
-
       <div class="project-copy">
         <div class="subhead">프로젝트 소개</div>
         <ul class="bullets">
-          <li>정적 분석 도구(SAST)의 취약점 탐지 결과를 LLM으로 분석해 <br> 자동 패치부터 Pull Request 생성까지 연계하는 End-to-End 파이프라인 구현</li>
-          <li>XML 기반 구조화 컨텍스트와 Annotation 기반 위치 강조로 <br> 취약 구간을 명확히 전달하고 수정 범위를 한정</li>
+          <li>개발자의 수작업에 의존하던 취약점 수정을 자동화하기 위해, <br><strong>취약점 분석 → 패치 생성 → Pull Request 생성</strong>으로 이어지는 E2E 파이프라인 구현</li>
+          <li><strong>전체 파이프라인이 일정 주기마다 자동 실행</strong>되도록 GitHub Actions 기반 워크플로우 구축</li>
         </ul>
-
         <div class="subhead subhead-spaced">담당 역할</div>
         <ul class="bullets">
           <li><strong>Project Manager</strong> : 일정 관리 및 업무 분담</li>
           <li><strong>SAST 자동화 설계</strong> : 정적 분석 결과를 LLM 입력에 적합한 형태로 구조화하는 로직 구현</li>
         </ul>
-
         <div class="subhead subhead-spaced">성과</div>
         <ul class="bullets">
           <li>파이프라인 성공률 <strong>94.5%</strong>, 취약점 해결률 <strong>90.0%</strong> 기록</li>
@@ -447,10 +455,10 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
   </div>
 </section>
 
-<!-- 4. Patch Correctness -->
-<section class="slide">
+<!-- 4. LLM Oracle -->
+<section class="slide" id="project-llm-oracle">
   <div class="page patch-correctness-page">
-    <div class="title-row"><div class="title-bar"></div><h1>RESEARCH & PROJECT · 02</h1></div>
+    <div class="title-row"><div class="title-bar"></div><h1>RESEARCH · 02</h1></div>
     <h2 class="section-title">
       자동 패치 정확성 검증을 위한 LLM Oracle 설계
       <span class="title-links">
@@ -458,26 +466,22 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
         <a class="title-link document" href="https://inyeongjang.github.io/papers/ICST-2026.pdf" target="_blank" rel="noreferrer" aria-label="LLM Oracle 논문 PDF" title="논문"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a>
       </span>
     </h2>
-
     <div class="project-grid">
       <div class="visuals">
-        <div class="visual image-light"><img src="files/icst-1.png" alt="LLM Oracle"></div>
-        <div class="visual image-light"><img src="files/icst-2.png" alt="LLM Oracle"></div>
+        <div class="visual image-light"><img src="files/icst-1.png" alt="LLM Oracle 구조"></div>
+        <div class="visual image-light"><img src="files/icst-2.png" alt="LLM Oracle 결과"></div>
       </div>
-
       <div class="project-copy">
         <div class="subhead">연구 소개</div>
         <ul class="bullets">
-          <li><strong>부정확한 패치를 자동으로 식별</strong>하기 위한 다양한 <strong>LLM 프롬프트 전략</strong> 비교·분석</li>
+          <li>자동 패치 검증을 위해 AI가 생성한 테스트에서 반복적으로 발생하는 <strong>오류와 실패 사례 분석</strong></li>
+          <li><strong>의미적 부적절성·구문적 오류</strong>로 유형화하고 6가지 개선 전략을 설계하여 모델별 효과 비교</li>
         </ul>
-
         <div class="subhead subhead-spaced">담당 역할</div>
         <ul class="bullets">
-          <li><strong>전체 실험 구조 설계</strong></li>
-          <li><strong>Chain-of-Thought, Goal-Alignment</strong> 등 프롬프트 전략 설계</li>
+          <li><strong>전체 실험 구조 및 프롬프트 전략 설계</strong></li>
           <li><strong>평가 지표 정의</strong> 및 실험 결과 분석</li>
         </ul>
-
         <div class="subhead subhead-spaced">성과</div>
         <ul class="bullets">
           <li><strong>Defects4J의 부정확한 패치 109개</strong>와 서로 다른 규모의 LLM을 대상으로 <strong>6가지 전략</strong> 평가</li>
@@ -579,7 +583,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 <section class="slide">
   <div class="page statement-page closing-page">
     <p class="closing-kicker">MY NEXT STEP</p>
-    <h2 class="statement typewriter"><span>사용자가 신뢰할 수 있는 소프트웨어</span>를 <br><br>만드는 QA 엔지니어로 성장하겠습니다.</h2>
+    <h2 class="statement typewriter">소프트웨어의 오류를 분석하고 개선해온 경험을 바탕으로,<br><br><span>실제 서비스 품질 향상에 기여</span>하겠습니다.</h2>
   </div>
 </section>
 
@@ -603,7 +607,6 @@ const previousButton = document.querySelector(SELECTORS.previousButton);
 const nextButton = document.querySelector(SELECTORS.nextButton);
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
 const typewriterStates = new Map();
 
 function initializeTypewriter(statement) {
@@ -613,24 +616,18 @@ function initializeTypewriter(statement) {
   caret.className = 'typing-caret';
   caret.setAttribute('aria-hidden', 'true');
   let node;
-  while ((node = walker.nextNode())) {
-    segments.push({ node, text: node.nodeValue });
-  }
 
+  while ((node = walker.nextNode())) segments.push({ node, text: node.nodeValue });
   statement.setAttribute('aria-label', statement.textContent.replace(/\s+/g, ' ').trim());
   typewriterStates.set(statement, { segments, caret, timer: null });
 
-  if (reduceMotion) {
-    statement.classList.add('play');
-  } else {
-    segments.forEach(segment => { segment.node.nodeValue = ''; });
-  }
+  if (reduceMotion) statement.classList.add('play');
+  else segments.forEach(segment => { segment.node.nodeValue = ''; });
 }
 
 function resetTypewriter(statement) {
   const state = typewriterStates.get(statement);
   if (!state || reduceMotion) return;
-
   clearTimeout(state.timer);
   state.caret.remove();
   state.segments.forEach(segment => { segment.node.nodeValue = ''; });
@@ -640,7 +637,6 @@ function resetTypewriter(statement) {
 function playTypewriter(statement) {
   const state = typewriterStates.get(statement);
   if (!state || reduceMotion) return;
-
   resetTypewriter(statement);
   statement.classList.add('play');
   let segmentIndex = 0;
@@ -652,14 +648,12 @@ function playTypewriter(statement) {
       state.caret.remove();
       return;
     }
-
     segment.node.after(state.caret);
     segment.node.nodeValue += segment.text.charAt(characterIndex++);
     if (characterIndex >= segment.text.length) {
       segmentIndex += 1;
       characterIndex = 0;
     }
-
     state.timer = setTimeout(typeNext, 42);
   }
 
@@ -672,7 +666,6 @@ const typewriterObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     const statement = entry.target.querySelector(SELECTORS.typewriter);
     if (!statement) return;
-
     if (entry.isIntersecting) playTypewriter(statement);
     else resetTypewriter(statement);
   });
