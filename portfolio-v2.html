@@ -290,11 +290,14 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
   .nav-btn,.dots{display:none}
 }
 @media print{
+  @page{size:13.333in 7.5in;margin:0}
   html,body{overflow:visible}
   .deck{display:block;overflow:visible}
   .slide{width:100vw;height:100vh;page-break-after:always}
   .nav-btn,.dots{display:none}
   .page{box-shadow:none}
+  .statement.typewriter{opacity:1}
+  .typing-caret{display:none}
 }
 </style>
 </head>
@@ -341,11 +344,6 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
             </div>
 
             <div class="rsec dense-list compact-list">
-              <div class="rsec-title">어학</div>
-              <div class="ritem"><span class="date">2024.08.25</span><strong>TOEIC 840</strong></div>
-            </div>
-
-            <div class="rsec dense-list compact-list">
               <div class="rsec-title">프로젝트 · 연구</div>
 
               <div class="ritem">
@@ -382,6 +380,11 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 
           <div>
             <div class="rsec dense-list compact-list">
+              <div class="rsec-title">어학</div>
+              <div class="ritem"><span class="date">2024.08.25</span><strong>TOEIC 840</strong></div>
+            </div>
+
+            <div class="rsec dense-list compact-list">
               <div class="rsec-title">보안 · 개발</div>
               <div class="ritem"><span class="date">2025.03–2025.09</span><strong>차세대 보안리더 양성 프로그램 화이트햇스쿨 3기</strong></div>
               <div class="ritem"><span class="date">2024.03–2026.08</span><strong>덕성여자대학교 사이버보안 동아리 BackDoor 2기 회장</strong></div>
@@ -396,12 +399,6 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
               <div class="ritem"><span class="date">2023.03–2024.06</span><strong>덕성여자대학교 코딩 교육 봉사 동아리 I-coding</strong></div>
             </div>
 
-            <div class="rsec dense-list compact-list">
-              <div class="rsec-title">기타 활동</div>
-              <div class="ritem"><span class="date">2023.03–2023.12</span><strong>덕성여자대학교 가치투자 동아리 ISSUE</strong></div>
-              <div class="ritem"><span class="date">2023.09–2023.12</span><strong>하나증권 글로벌 투자 아카데미</strong></div>
-              <div class="ritem"><span class="date">2023.06–2023.12</span><strong>Gopax Guardians 1기</strong></div>
-            </div>
           </div>
         </div>
       </div>
@@ -437,12 +434,12 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
         <div class="subhead">프로젝트 소개</div>
         <ul class="bullets">
           <li>개발자의 수작업에 의존하던 취약점 수정을 자동화하기 위해, <br><strong>취약점 분석 → 패치 생성 → Pull Request 생성</strong>으로 이어지는 E2E 파이프라인 구현</li>
-          <li><strong>전체 파이프라인이 일정 주기마다 자동 실행</strong>되도록 GitHub Actions 기반 워크플로우 구축</li>
+          <li>전체 파이프라인이 일정 주기마다 자동 실행되도록 GitHub Actions 기반 워크플로우 구축</li>
         </ul>
         <div class="subhead subhead-spaced">담당 역할</div>
         <ul class="bullets">
-          <li><strong>Project Manager</strong> : 일정 관리 및 업무 분담</li>
-          <li><strong>SAST 자동화 설계</strong> : 정적 분석 결과를 LLM 입력에 적합한 형태로 구조화하는 로직 구현</li>
+          <li>Project Manager : 일정 관리 및 업무 분담</li>
+          <li>SAST 자동화 설계 : 정적 분석 결과를 LLM 입력에 적합한 형태로 구조화하는 로직 구현</li>
         </ul>
         <div class="subhead subhead-spaced">성과</div>
         <ul class="bullets">
@@ -474,17 +471,17 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
       <div class="project-copy">
         <div class="subhead">연구 소개</div>
         <ul class="bullets">
-          <li>자동 패치 검증을 위해 AI가 생성한 테스트에서 반복적으로 발생하는 <strong>오류와 실패 사례 분석</strong></li>
-          <li><strong>의미적 부적절성·구문적 오류</strong>로 유형화하고 6가지 개선 전략을 설계하여 모델별 효과 비교</li>
+          <li>자동 패치 검증을 위해 AI가 생성한 테스트에서 반복적으로 발생하는 오류와 실패 사례 분석</li>
+          <li>의미적 부적절성·구문적 오류로 유형화하고 6가지 개선 전략을 설계하여 모델별 효과 비교</li>
         </ul>
         <div class="subhead subhead-spaced">담당 역할</div>
         <ul class="bullets">
-          <li><strong>전체 실험 구조 및 프롬프트 전략 설계</strong></li>
-          <li><strong>평가 지표 정의</strong> 및 실험 결과 분석</li>
+          <li>전체 실험 구조 및 프롬프트 전략 설계</li>
+          <li>평가 지표 정의 및 실험 결과 분석</li>
         </ul>
         <div class="subhead subhead-spaced">성과</div>
         <ul class="bullets">
-          <li><strong>Defects4J의 부정확한 패치 109개</strong>와 서로 다른 규모의 LLM을 대상으로 <strong>6가지 전략</strong> 평가</li>
+          <li>Defects4J의 부정확한 패치 109개와 서로 다른 규모의 LLM을 대상으로 6가지 전략 평가</li>
           <li>역할 정의로 목표를 명시해 GPT 계열 모델의 식별 성능을 <strong>최대 7.5% 향상</strong></li>
           <li>엄격한 출력 형식과 예시를 적용해 Llama 계열 모델의 식별 성능을 <strong>최대 19.9% 향상</strong></li>
         </ul>
@@ -673,6 +670,15 @@ const typewriterObserver = new IntersectionObserver(entries => {
 
 document.querySelectorAll(SELECTORS.statementPage).forEach(page => {
   typewriterObserver.observe(page.closest(SELECTORS.slide));
+});
+
+window.addEventListener('beforeprint', () => {
+  typewriterStates.forEach((state, statement) => {
+    clearTimeout(state.timer);
+    state.caret.remove();
+    state.segments.forEach(segment => { segment.node.nodeValue = segment.text; });
+    statement.classList.add('play');
+  });
 });
 
 let currentSlideIndex = 0;
