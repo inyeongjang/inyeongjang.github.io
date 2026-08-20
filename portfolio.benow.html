@@ -1,0 +1,822 @@
+<!doctype html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>장인영 | BENOW AI Automation Engineer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;family=Noto+Sans+KR:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#17324d;
+  --text:#4c6478;
+  --muted:#7890a3;
+  --blue:#52aee8;
+  --blue-dark:#287eb8;
+  --mint:#7bcbd4;
+  --line:#d5eaf6;
+  --pale:#edf8ff;
+  --paper:#ffffff;
+  --canvas:#f4f9fc;
+  --shadow:0 28px 70px rgba(38,92,126,.14);
+}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--canvas)}
+body{
+  font-family:"Noto Sans KR",Pretendard,"Apple SD Gothic Neo",sans-serif;
+  color:var(--navy);
+  word-break:keep-all;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  letter-spacing:-.012em;
+}
+h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-serif}
+.deck{
+  width:100vw;height:100vh;
+  display:flex;overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  scrollbar-width:none;
+}
+.deck::-webkit-scrollbar{display:none}
+.slide{
+  min-width:100vw;height:100vh;
+  scroll-snap-align:start;scroll-snap-stop:always;
+  display:flex;align-items:center;justify-content:center;
+  background:
+    radial-gradient(circle at 14% 16%,rgba(123,203,212,.12),transparent 28%),
+    radial-gradient(circle at 86% 82%,rgba(82,174,232,.10),transparent 30%),
+    var(--canvas);
+  position:relative;
+}
+.page{
+  width:min(1320px,92vw);
+  height:min(700px,88vh);
+  background:var(--paper);
+  box-shadow:var(--shadow);
+  border:1px solid rgba(190,220,236,.72);
+  border-radius:24px;
+  padding:40px 48px 38px;
+  position:relative;
+  overflow:hidden;
+}
+.page::before{
+  content:"";
+  position:absolute;left:0;top:0;width:100%;height:5px;
+  background:#d8e1e7;
+  z-index:0;
+}
+.page > *{position:relative;z-index:1}
+
+.nav-btn{
+  position:fixed;top:50%;transform:translateY(-50%);
+  width:46px;height:46px;border:1px solid rgba(218,228,235,.9);border-radius:50%;
+  background:#fffffff2;box-shadow:0 10px 28px rgba(40,61,80,.14);
+  color:var(--blue-dark);font-size:25px;cursor:pointer;z-index:20;
+  transition:transform .2s ease,background .2s ease,color .2s ease,box-shadow .2s ease
+}
+.nav-btn:hover{background:var(--blue-dark);color:#fff;transform:translateY(-50%) scale(1.06);box-shadow:0 12px 30px rgba(40,126,184,.28)}
+.nav-btn:disabled{opacity:.3;cursor:default}
+#prev{left:10px} #next{right:10px}
+.dots{
+  position:fixed;left:50%;bottom:18px;transform:translateX(-50%);
+  display:flex;gap:8px;z-index:20;
+  background:#ffffffeb;border:1px solid #d7e7f0;
+  padding:8px 12px;border-radius:999px;box-shadow:0 6px 20px rgba(33,51,68,.08)
+}
+.dot{width:7px;height:7px;padding:0;border:0;border-radius:99px;background:#becbd5;cursor:pointer;transition:.25s}
+.dot.active{width:24px;background:var(--blue)}
+.deck-meta{
+  position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:20;
+  width:min(1320px,92vw);display:flex;align-items:center;justify-content:space-between;
+  color:#6e879a;font-family:Manrope,"Noto Sans KR",sans-serif;font-size:10px;
+  font-weight:800;letter-spacing:.13em;text-transform:uppercase;pointer-events:none
+}
+.deck-meta strong{color:var(--navy);font-size:11px;letter-spacing:.18em}
+.deck-meta .role{display:flex;align-items:center;gap:9px}
+.deck-meta .role::before{content:"";width:18px;height:2px;border-radius:99px;background:var(--blue)}
+.page-count{font-variant-numeric:tabular-nums;color:var(--blue-dark)}
+
+.title-row{
+  display:flex;align-items:center;gap:12px;margin-bottom:12px
+}
+.title-bar{width:5px;height:30px;background:linear-gradient(var(--blue-dark),var(--mint));border-radius:999px}
+.title-row h1{
+  margin:0;font-size:15px;letter-spacing:.08em;color:var(--navy);text-transform:uppercase
+}
+.section-title{
+  color:var(--navy);font-size:26px;font-weight:850;margin:0 0 24px;letter-spacing:-.04em;line-height:1.36
+}
+.subhead{
+  font-size:11px;font-weight:850;color:var(--blue-dark);letter-spacing:.08em;
+  text-transform:uppercase;margin:0 0 8px;line-height:1.45
+}
+.subhead-spaced{margin-top:10px}
+
+/* 1 page */
+.resume-grid{display:grid;grid-template-columns:104px minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);column-gap:20px;row-gap:14px;height:100%}
+.profile{
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;
+  padding-top:5px;color:var(--navy)
+}
+.photo{
+  width:96px;height:112px;border-radius:14px;background:linear-gradient(145deg,#dff4ff,#fff);
+  display:grid;place-items:center;color:var(--blue-dark);font-weight:800;margin:0;
+  overflow:hidden;flex-shrink:0;border:1px solid #d2e8f3;box-shadow:0 8px 20px rgba(54,128,167,.12)
+}
+.photo img{
+  display:block;width:100%;height:100%;object-fit:cover;object-position:center 30%
+}
+.name{font-size:24px;font-weight:850;letter-spacing:-.04em}
+.link-row{display:flex;gap:6px;margin-top:13px;flex-wrap:wrap;justify-content:flex-start}
+.link-row a{
+  display:grid;place-items:center;
+  width:30px;height:30px;padding:0;border:1px solid #b9dff1;
+  border-radius:999px;color:var(--blue-dark);text-decoration:none;background:#ffffffa6
+}
+.link-row svg{width:14px;height:14px;fill:currentColor}
+.link-row a:hover{background:#fff;color:var(--blue-dark)}
+.resume-right{display:contents}
+.resume-head{grid-column:2;grid-row:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.identity-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.identity-row .link-row{margin-top:0}
+.resume-head h2{margin:0;font-size:25px;line-height:1.38;letter-spacing:-.04em;color:var(--navy)}
+.resume-head span{font-size:10.5px;color:var(--muted)}
+.resume-cols{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:24px;border-top:0;padding-top:2px}
+.rsec{margin-bottom:13px}
+.rsec:last-child{margin-bottom:0}
+.rsec-title{
+  display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:850;color:var(--blue-dark);
+  margin-bottom:7px;letter-spacing:-.01em;line-height:1.4
+}
+.rsec-title::after{content:"";height:1px;min-height:1px;flex:1;background:var(--line)}
+.ritem{margin-bottom:6px;padding:2px 0;border-left:0}
+.ritem strong{display:block;font-size:11.4px;line-height:1.46;font-weight:700}
+.ritem span{display:block;font-size:10px;color:var(--muted);line-height:1.46}
+.ritem a{color:inherit;text-decoration:none}
+.ritem a:hover{text-decoration:underline;text-decoration-color:var(--blue);text-underline-offset:3px}
+.project-heading{display:flex;align-items:center;gap:5px;margin-bottom:2px;min-width:0;width:100%}
+.project-heading strong{margin-right:auto;min-width:0}
+.dense-list .rsec-title{margin-bottom:5px}
+.dense-list .ritem{margin-bottom:3px;padding:2px 0}
+.compact-list .ritem{display:grid;grid-template-columns:82px minmax(0,1fr) 16px;column-gap:7px;align-items:center}
+.compact-list .ritem .date{font-size:10px;line-height:1.46;color:var(--muted);white-space:nowrap}
+.compact-list .ritem strong{min-width:0}
+.compact-list .ritem .project-heading{grid-column:2/4}
+
+/* statement page */
+.statement-page{display:flex;align-items:center;justify-content:center;text-align:center}
+.statement-page::after{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(82,174,232,.10),transparent 68%);z-index:0;pointer-events:none}
+.statement{
+  max-width:760px;margin:0;font-size:clamp(28px,3.4vw,44px);font-weight:800;
+  line-height:1.35;letter-spacing:-.055em;color:var(--navy)
+}
+.statement span{color:var(--blue-dark);text-decoration:underline;text-decoration-color:rgba(82,174,232,.28);text-decoration-thickness:.18em;text-underline-offset:.12em}
+.statement.typewriter{position:relative;opacity:0;min-height:2.8em}
+.statement.typewriter.play{opacity:1}
+.typing-caret{
+  display:inline-block;width:2px;height:.9em;margin-left:7px;
+  vertical-align:-.08em;background:var(--blue-dark);
+  animation:caret-blink .7s step-end infinite
+}
+@keyframes caret-blink{50%{opacity:0}}
+@media(prefers-reduced-motion:reduce){
+  .statement.typewriter{opacity:1}
+  .typing-caret{display:none}
+}
+
+/* project pages */
+.project-grid{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:40px;
+  height:calc(100% - 92px)
+}
+.visuals{display:flex;flex-direction:column;justify-content:center;gap:12px;min-height:0}
+.visual{
+  border:1px solid #d8e2e9;border-radius:14px;background:linear-gradient(145deg,#f8fafb,#eff4f7);
+  display:flex;align-items:center;justify-content:center;
+  color:#748695;font-size:11px;text-align:center;padding:0;line-height:1.6;overflow:hidden;
+  box-shadow:inset 0 1px 0 #fff,0 7px 18px rgba(53,95,118,.08)
+}
+.visual img{
+  display:block;width:100%;height:auto;max-width:100%;
+  object-fit:contain;object-position:center
+}
+.visual.image-light{background:#ffffff;border-color:#e4e7e9}
+.visual.image-dark{background:#243238;border-color:#243238}
+.patch-correctness-page .visual img,
+.autofic-page .visual img{transform:scale(.86)}
+.autofic-page .visual{flex:1 1 0;min-height:0}
+.autofic-page .visual img{height:100%}
+.project-copy{padding:3px 14px 0 0;display:flex;flex-direction:column;justify-content:center}
+.bullets{margin:0;padding-left:1.25em}
+.project-copy .subhead{color:#176b9e}
+.project-copy .subhead-spaced{margin-top:10px}
+.bullets li{font-size:11.8px;line-height:1.72;color:#294f6b;margin-bottom:7px;padding-left:2px}
+.bullets li:last-child{margin-bottom:0}
+.bullets strong{color:#102f49;font-weight:800}
+.bullets li::marker{color:#258dcc}
+.autofic-page .section-title,.patch-correctness-page .section-title{font-size:29px;margin-bottom:24px}
+.title-links{display:inline-flex;align-items:center;gap:6px;margin-left:8px;vertical-align:.12em;white-space:nowrap}
+.title-link{
+  display:inline-grid!important;place-items:center;width:27px;height:27px;border:1px solid #b9dff1;border-radius:7px;
+  color:var(--blue-dark)!important;background:#fff;text-decoration:none!important;transition:background .2s,border-color .2s,transform .2s
+}
+.title-link:hover{background:var(--pale);border-color:#8fcce8;transform:translateY(-1px)}
+.title-link svg{width:14px;height:14px;fill:currentColor}
+.title-link.document svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+:is(.autofic-page,.patch-correctness-page) .project-copy .subhead{font-size:12px;margin-bottom:9px}
+:is(.autofic-page,.patch-correctness-page) .project-copy .subhead-spaced{margin-top:14px}
+:is(.autofic-page,.patch-correctness-page) .project-copy .bullets li{font-size:13px;line-height:1.72;margin-bottom:8px}
+:is(.autofic-page,.patch-correctness-page) .award{font-size:12.5px}
+.award{
+  margin-top:12px;background:linear-gradient(90deg,#e7f5ff,#effbf9);border:1px solid #c9e6f3;
+  border-radius:10px;padding:10px 12px;font-size:11.5px;font-weight:850;color:#174f78;
+  box-shadow:0 5px 14px rgba(61,151,199,.08)
+}
+.activity-entry{display:grid;grid-template-columns:max-content minmax(0,1fr);column-gap:9px;align-items:baseline;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.activity-entry:last-child{padding-bottom:0;border-bottom:0}
+.activity-entry .subhead{margin:0;white-space:nowrap}
+.activity-entry .subhead::after{content:"·";margin-left:8px;color:#9eb3c1}
+.activity-entry h3{margin:0 0 7px;font-size:14px;line-height:1.42;letter-spacing:-.025em}
+.activity-entry .bullets{grid-column:1/-1}
+.activity-entry .bullets li{font-size:10.8px;line-height:1.7;margin-bottom:5px}
+.activity-entry a,.section-title a{color:inherit;text-decoration:none}
+.activity-entry a:hover,.section-title a:hover{color:var(--blue-dark);text-decoration:underline;text-underline-offset:3px}
+.external-mark{font-size:.78em;color:var(--blue-dark);margin-left:3px}
+.experience-mentoring-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;height:100%}
+.activity-column{min-width:0}
+.activity-column > .title-row{margin-bottom:24px}
+.activity-column > .title-row .title-bar,.finance-page > .title-row .title-bar{height:38px;width:6px}
+.activity-column > .title-row h1,.finance-page > .title-row h1{font-size:20px;letter-spacing:.1em}
+.experience-mentoring-grid .activity-entry{padding-bottom:13px;margin-bottom:13px}
+.experience-mentoring-grid .activity-entry .subhead{font-size:11.5px}
+.experience-mentoring-grid .activity-entry h3{font-size:14.5px;line-height:1.45;margin-bottom:7px}
+.experience-mentoring-grid .activity-entry .bullets li{font-size:11.2px;line-height:1.72;margin-bottom:5px}
+.finance-page > .title-row{margin-bottom:24px}
+.finance-grid{display:grid;grid-template-columns:1fr;grid-template-rows:repeat(3,minmax(0,auto));gap:14px;height:calc(100% - 62px)}
+.finance-grid .activity-entry{column-gap:8px;padding:0 0 11px;margin:0}
+.finance-grid .activity-entry .subhead{font-size:11.5px;line-height:1.5;white-space:normal;margin:0}
+.finance-grid .activity-entry h3{font-size:14.5px;line-height:1.45;margin-bottom:8px}
+.finance-grid .activity-entry .bullets li{font-size:11.5px;line-height:1.68;margin-bottom:5px}
+.title-link:focus-visible,.nav-btn:focus-visible,.dot:focus-visible{outline:2px solid var(--blue-dark);outline-offset:3px}
+.closing-kicker{margin:0 0 18px;font-size:10px;font-weight:800;letter-spacing:.22em;color:var(--blue-dark)}
+.closing-page{flex-direction:column}
+.closing-page .statement{font-size:clamp(25px,3vw,39px)}
+
+@media(max-width:900px){
+  .page{width:92vw;height:86vh;padding:30px}
+  .resume-grid{grid-template-columns:94px minmax(0,1fr);column-gap:16px;row-gap:14px}
+  .photo{width:86px;height:101px}
+  .resume-cols{grid-template-columns:minmax(0,1fr) minmax(185px,.9fr);gap:18px}
+  .compact-list .ritem{grid-template-columns:72px minmax(0,1fr) 16px;column-gap:5px}
+  .resume-head h2{font-size:22px}
+  .project-grid{grid-template-columns:46% 54%}
+}
+@media(max-width:700px){
+  html,body{height:auto;overflow:auto;background:#ffffff}
+  .deck{display:block;width:100%;height:auto;overflow:visible}
+  .slide{min-width:0;width:100%;height:auto;min-height:0;display:block;padding:12px;background:#ffffff}
+  .page{width:100%;height:auto;min-height:0;padding:28px 22px 40px;border-radius:15px;overflow:visible}
+  .resume-grid,.project-grid{grid-template-columns:1fr;height:auto}
+  .resume-grid{grid-template-rows:auto auto auto}
+  .resume-head{grid-column:1;grid-row:2;padding:0}
+  .resume-cols{grid-column:1;grid-row:3}
+  .resume-grid{gap:24px}.resume-cols{grid-template-columns:1fr}.resume-head{align-items:flex-start;flex-direction:column;gap:8px}
+  .profile{display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:14px;padding:0}.photo{width:88px;height:104px;margin:0}.link-row{margin:0}.project-grid{gap:22px}.visuals{min-height:0}
+  .project-copy{padding:0}.section-title,.autofic-page .section-title,.patch-correctness-page .section-title{font-size:21px;line-height:1.42;margin-bottom:20px}
+  .title-links{gap:5px;margin-left:5px;vertical-align:.08em}
+  .title-link{width:25px;height:25px}
+  .bullets li{line-height:1.72}
+  .activity-column > .title-row{margin-bottom:20px}
+  .experience-mentoring-grid .activity-entry{padding-bottom:14px;margin-bottom:14px}
+  .finance-page > .title-row{margin-bottom:20px}
+  .finance-grid{gap:18px}
+  .statement{font-size:clamp(25px,7.5vw,36px);line-height:1.42}
+  .experience-mentoring-grid{grid-template-columns:1fr;height:auto;gap:28px}
+  .finance-grid{grid-template-columns:1fr;grid-template-rows:none;height:auto}
+  .nav-btn,.dots,.deck-meta{display:none}
+}
+@media print{
+  @page{size:13.333in 7.5in;margin:0}
+  html,body{overflow:visible}
+  .deck{display:block;overflow:visible}
+  .slide{width:100vw;height:100vh;page-break-after:always}
+  .nav-btn,.dots,.deck-meta{display:none}
+  .page{box-shadow:none}
+}
+</style>
+</head>
+<body>
+
+<button id="prev" class="nav-btn" aria-label="이전">‹</button>
+<button id="next" class="nav-btn" aria-label="다음">›</button>
+<div class="deck-meta" aria-hidden="true">
+  <div class="role"><strong>BENOW</strong><span>AI Automation Engineer</span></div>
+  <span class="page-count"><span id="currentPage">01</span> / 09</span>
+</div>
+<div class="dots" id="dots"></div>
+
+<div class="deck" id="deck">
+
+<!-- Section 1 -->
+<section class="slide">
+  <div class="page">
+    <div class="resume-grid">
+      <aside class="profile">
+        <div class="photo"><img src="files/profile.jpg" alt="장인영"></div>
+      </aside>
+
+      <div class="resume-right">
+        <div class="resume-head">
+          <div class="identity-row">
+            <div class="name">장인영</div>
+            <div class="link-row">
+              <a href="mailto:726iy@duksung.ac.kr" aria-label="이메일">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm9 8.1L20.2 7H3.8l8.2 6.1ZM3 9.2V17h18V9.2l-8.4 6.2a1 1 0 0 1-1.2 0L3 9.2Z"/></svg>
+              </a>
+              <a href="https://github.com/inyeongjang" target="_blank" rel="noreferrer" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7A11.5 11.5 0 0 0 8.36 23c.58.1.79-.25.79-.56v-2.23c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.74-1.56-2.58-.3-5.29-1.29-5.29-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.16 1.18A10.9 10.9 0 0 1 12 6c.98 0 1.95.13 2.87.38 2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.72 5.39-5.31 5.68.42.36.79 1.07.79 2.16v3.24c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/inyeong-jang-4184252b2/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.57h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29ZM5.32 7.41a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.04H3.54V8.98H7.1v11.47Z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h2>반복되는 문제를 발견하고, AI로 더 나은 업무 방식을 구현합니다.</h2>
+        </div>
+
+        <div class="resume-cols">
+          <div>
+            <div class="rsec dense-list compact-list">
+              <div class="rsec-title">학력</div>
+              <div class="ritem">
+                <span class="date">2023.03–2028.02</span>
+                <strong>덕성여자대학교 디지털소프트웨어공학부 (4.43 / 4.5)</strong>
+              </div>
+            </div>
+
+            <div class="rsec dense-list compact-list">
+              <div class="rsec-title">어학</div>
+              <div class="ritem"><span class="date">2024.08.25</span><strong>TOEIC 840</strong></div>
+            </div>
+
+            <div class="rsec dense-list compact-list">
+              <div class="rsec-title">프로젝트 · 연구</div>
+
+              <div class="ritem">
+                <span class="date">2025.05–2026.02</span>
+                <div class="project-heading">
+                  <strong>AutoFiC: 취약점 탐지부터 PR 생성까지 자동화된 보안 패치 파이프라인</strong>
+                </div>
+              </div>
+
+              <div class="ritem">
+                <span class="date">2025.08–2026.05</span>
+                <div class="project-heading">
+                  <strong>자동 패치 정확성 검증을 위한 LLM Oracle 설계</strong>
+                </div>
+              </div>
+
+              <div class="ritem">
+                <span class="date">2026.05–진행 중</span>
+                <div class="project-heading">
+                  <strong>고령층을 위한 음성 기반 DRT 호출 시스템</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="rsec dense-list compact-list">
+              <div class="rsec-title">수상 내역</div>
+              <div class="ritem"><span class="date">2026.03.20</span><strong>KT 디지털 인재 장학생</strong></div>
+              <div class="ritem"><span class="date">2026.02.05</span><strong>KCSE 2026 우수 학부생 논문상</strong></div>
+              <div class="ritem"><span class="date">2024.11.23</span><strong>제 1회 디지털소프트웨어공학부 해커톤 2위</strong></div>
+              <div class="ritem"><span class="date">2023–2026</span><strong>학과 수석(24-1) · 단과대학 성적우수(23-1, 23-2) · 학과 성적우수 (24-2, 26-1)</strong></div>
+            </div>
+
+          </div>
+
+          <div>
+            <div class="rsec dense-list compact-list">
+              <div class="rsec-title">보안 · 개발</div>
+              <div class="ritem"><span class="date">2025.03–2025.09</span><strong>차세대 보안리더 양성 프로그램 화이트햇스쿨 3기</strong></div>
+              <div class="ritem"><span class="date">2024.03–2026.08</span><strong>덕성여자대학교 사이버보안 동아리 BackDoor 2기 회장</strong></div>
+              <div class="ritem"><span class="date">2024.09–2025.08</span><strong>덕성여자대학교 웹 개발 동아리 Corner 4기</strong></div>
+            </div>
+
+            <div class="rsec dense-list compact-list">
+              <div class="rsec-title">멘토링 · 교육</div>
+              <div class="ritem"><span class="date">2023.11–2026.08</span><strong>OUTTA AI 부트캠프 멘토</strong></div>
+              <div class="ritem"><span class="date">2026.01–2026.02</span><strong>한국수력원자력 아인슈타인 클래스 17기 멘토</strong></div>
+              <div class="ritem"><span class="date">2023.06–2023.09</span><strong>현대오토에버 스마트 모빌리티 공학체험교육 6기 멘토</strong></div>
+              <div class="ritem"><span class="date">2023.03–2024.06</span><strong>덕성여자대학교 코딩 교육 봉사 동아리 I-coding</strong></div>
+            </div>
+
+            <div class="rsec dense-list compact-list">
+              <div class="rsec-title">기타 활동</div>
+              <div class="ritem"><span class="date">2023.03–2023.12</span><strong>덕성여자대학교 가치투자 동아리 ISSUE</strong></div>
+              <div class="ritem"><span class="date">2023.09–2023.12</span><strong>하나증권 글로벌 투자 아카데미</strong></div>
+              <div class="ritem"><span class="date">2023.06–2023.12</span><strong>Gopax Guardians 1기</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Statement -->
+<section class="slide">
+  <div class="page statement-page">
+    <h2 class="statement typewriter"><span>AI를 실제 워크플로우에 연결</span>해<br><br>반복되는 과정을 <span>자동화하고 개선</span>해왔습니다.</h2>
+  </div>
+</section>
+
+<!-- 3. AutoFiC -->
+<section class="slide">
+  <div class="page autofic-page">
+    <div class="title-row"><div class="title-bar"></div><h1>RESEARCH & PROJECT · 01</h1></div>
+    <h2 class="section-title">
+      AutoFiC : 취약점 탐지부터 PR 생성까지 자동화된 보안 패치 파이프라인
+      <span class="title-links">
+        <a class="title-link" href="https://autofic.github.io/" target="_blank" rel="noreferrer" aria-label="AutoFiC 홈페이지" title="홈페이지"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.92 6h-3.04a15.7 15.7 0 0 0-1.38-3.56A8.04 8.04 0 0 1 18.92 8ZM12 4c.83 1.2 1.46 2.54 1.84 4H10.16A13.68 13.68 0 0 1 12 4ZM4.26 14a7.76 7.76 0 0 1 0-4h3.39a16.52 16.52 0 0 0 0 4H4.26Zm.82 2h3.04c.3 1.25.77 2.45 1.38 3.56A8.04 8.04 0 0 1 5.08 16ZM8.12 8H5.08A8.04 8.04 0 0 1 9.5 4.44 15.7 15.7 0 0 0 8.12 8ZM12 20a13.68 13.68 0 0 1-1.84-4h3.68A13.68 13.68 0 0 1 12 20Zm2.25-6h-4.5a14.4 14.4 0 0 1 0-4h4.5a14.4 14.4 0 0 1 0 4Zm.25 5.56A15.7 15.7 0 0 0 15.88 16h3.04a8.04 8.04 0 0 1-4.42 3.56ZM16.35 14a16.52 16.52 0 0 0 0-4h3.39a7.76 7.76 0 0 1 0 4h-3.39Z"/></svg></a>
+        <a class="title-link" href="https://github.com/AutoFiC/autofic-core" target="_blank" rel="noreferrer" aria-label="AutoFiC GitHub 저장소" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7A11.5 11.5 0 0 0 8.36 23c.58.1.79-.25.79-.56v-2.23c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.74-1.56-2.58-.3-5.29-1.29-5.29-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.16 1.18A10.9 10.9 0 0 1 12 6c.98 0 1.95.13 2.87.38 2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.72 5.39-5.31 5.68.42.36.79 1.07.79 2.16v3.24c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg></a>
+        <a class="title-link document" href="https://inyeongjang.github.io/papers/KCSE-2026.pdf" target="_blank" rel="noreferrer" aria-label="AutoFiC 논문 PDF" title="논문"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a>
+      </span>
+    </h2>
+
+    <div class="project-grid">
+      <div class="visuals">
+        <div class="visual image-dark"><img src="files/autofic-1.png" alt="AutoFiC 파이프라인"></div>
+        <div class="visual image-light"><img src="files/autofic-2.png" alt="Pull Request 결과"></div>
+      </div>
+
+      <div class="project-copy">
+        <div class="subhead">프로젝트 소개</div>
+        <ul class="bullets">
+          <li>정적 분석 도구(SAST)의 취약점 탐지 결과를 LLM으로 분석해 <br> 자동 패치부터 Pull Request 생성까지 연계하는 End-to-End 파이프라인 구현</li>
+          <li>XML 기반 구조화 컨텍스트와 Annotation 기반 위치 강조로 <br> 취약 구간을 명확히 전달하고 수정 범위를 한정</li>
+        </ul>
+
+        <div class="subhead subhead-spaced">담당 역할</div>
+        <ul class="bullets">
+          <li><strong>Project Manager</strong> : 일정 관리 및 업무 분담</li>
+          <li><strong>SAST 자동화 설계</strong> : 정적 분석 결과를 LLM 입력에 적합한 형태로 구조화하는 로직 구현</li>
+        </ul>
+
+        <div class="subhead subhead-spaced">성과</div>
+        <ul class="bullets">
+          <li>파이프라인 성공률 <strong>94.5%</strong>, 취약점 해결률 <strong>90.0%</strong> 기록</li>
+          <li>AutoFiC이 생성한 Pull Request 중 <strong>7건</strong>이 실제 저장소에 병합</li>
+        </ul>
+        <div class="award">🏆 KCSE 2026 우수 학부생 논문상 수상</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Patch Correctness -->
+<section class="slide">
+  <div class="page patch-correctness-page">
+    <div class="title-row"><div class="title-bar"></div><h1>RESEARCH & PROJECT · 02</h1></div>
+    <h2 class="section-title">
+      자동 패치 정확성 검증을 위한 LLM Oracle 설계
+      <span class="title-links">
+        <a class="title-link" href="https://github.com/inyeongjang/LLM-Oracle/tree/v1.0" target="_blank" rel="noreferrer" aria-label="LLM Oracle GitHub 저장소" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7A11.5 11.5 0 0 0 8.36 23c.58.1.79-.25.79-.56v-2.23c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.74-1.56-2.58-.3-5.29-1.29-5.29-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.16 1.18A10.9 10.9 0 0 1 12 6c.98 0 1.95.13 2.87.38 2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.72 5.39-5.31 5.68.42.36.79 1.07.79 2.16v3.24c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg></a>
+        <a class="title-link document" href="https://inyeongjang.github.io/papers/ICST-2026.pdf" target="_blank" rel="noreferrer" aria-label="LLM Oracle 논문 PDF" title="논문"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a>
+      </span>
+    </h2>
+
+    <div class="project-grid">
+      <div class="visuals">
+        <div class="visual image-light"><img src="files/icst-1.png" alt="LLM Oracle"></div>
+        <div class="visual image-light"><img src="files/icst-2.png" alt="LLM Oracle"></div>
+      </div>
+
+      <div class="project-copy">
+        <div class="subhead">연구 소개</div>
+        <ul class="bullets">
+          <li><strong>부정확한 패치를 자동으로 식별</strong>하기 위한 다양한 <strong>LLM 프롬프트 전략</strong> 비교·분석</li>
+        </ul>
+
+        <div class="subhead subhead-spaced">담당 역할</div>
+        <ul class="bullets">
+          <li><strong>전체 실험 구조 설계</strong></li>
+          <li><strong>Chain-of-Thought, Goal-Alignment</strong> 등 프롬프트 전략 설계</li>
+          <li><strong>평가 지표 정의</strong> 및 실험 결과 분석</li>
+        </ul>
+
+        <div class="subhead subhead-spaced">성과</div>
+        <ul class="bullets">
+          <li><strong>Defects4J의 부정확한 패치 109개</strong>와 서로 다른 규모의 LLM을 대상으로 <strong>6가지 전략</strong> 평가</li>
+          <li>역할 정의로 목표를 명시해 GPT 계열 모델의 식별 성능을 <strong>최대 7.5% 향상</strong></li>
+          <li>엄격한 출력 형식과 예시를 적용해 Llama 계열 모델의 식별 성능을 <strong>최대 19.9% 향상</strong></li>
+        </ul>
+        <div class="award">🏆 IEEE ICST 2026 Research Track 논문 발표</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Growth Statement -->
+<section class="slide">
+  <div class="page statement-page">
+    <h2 class="statement typewriter">배운 지식을 나누고,<br><br><span>다양한 사람들과 함께 성장</span>해왔습니다.</h2>
+  </div>
+</section>
+
+<!-- 6. Experience & Mentoring -->
+<section class="slide">
+  <div class="page">
+    <div class="experience-mentoring-grid">
+      <div class="activity-column">
+        <div class="title-row"><div class="title-bar"></div><h1>EXPERIENCE</h1></div>
+        <div class="activity-entry">
+          <div class="subhead">덕성여자대학교 사이버보안 동아리</div>
+          <h3>BackDoor</h3>
+          <ul class="bullets">
+            <li>2기 회장으로서 사이버보안 관련 스터디 세션 및 팀 프로젝트 기획·운영</li>
+            <li>CCA, HSPACE, INGOGNITO, WUISP 파트너십 체결</li>
+          </ul>
+        </div>
+        <div class="activity-entry">
+          <div class="subhead">차세대 보안리더 양성 프로그램</div>
+          <h3>화이트햇스쿨 3기</h3>
+          <ul class="bullets">
+            <li>사이버보안 이론·실무 학습 및 팀 프로젝트 수행</li>
+            <li><a href="https://autofic.github.io/" target="_blank" rel="noreferrer">AutoFiC: 취약점 탐지부터 PR 생성까지 자동화된 보안 패치 파이프라인 <span class="external-mark">↗</span></a></li>
+          </ul>
+        </div>
+        <div class="activity-entry">
+          <div class="subhead">덕성여자대학교 웹 개발 동아리</div>
+          <h3>Corner</h3>
+          <ul class="bullets">
+            <li><a href="https://github.com/inyeongjang/Snoopy" target="_blank" rel="noreferrer">Node.js 및 Git 기초 학습 <span class="external-mark">↗</span></a></li>
+            <li><a href="https://github.com/inyeongjang/corner4" target="_blank" rel="noreferrer">제3회 코너톤: 개인 맞춤형 도서 추천 서비스 “My Book Planet” <span class="external-mark">↗</span></a></li>
+          </ul>
+        </div>
+        <div class="activity-entry">
+          <div class="subhead">덕성여자대학교 디지털소프트웨어공학부</div>
+          <h3>제 1회 해커톤</h3>
+          <ul class="bullets">
+            <li><a href="https://github.com/inyeongjang/NextBridge_Hackathon" target="_blank" rel="noreferrer">지방 소멸 문제를 해결하기 위한 외국인 노동자 커뮤니티 “Next Bridge” <span class="external-mark">↗</span></a></li>
+            <li>Django 백엔드 개발 및 BeautifulSoup·Selenium 기반 데이터 크롤링</li>
+          </ul>
+        </div>
+      </div>
+      <div class="activity-column">
+        <div class="title-row"><div class="title-bar"></div><h1>MENTORING</h1></div>
+        <div class="activity-entry">
+          <div class="subhead">대학생 연합 AI 연구 동아리</div>
+          <h3>OUTTA AI Bootcamp 멘토</h3>
+          <ul class="bullets">
+            <li>파이썬, 선형대수학, 머신러닝, 딥러닝 기초 스터디</li>
+            <li>‘데이터 크롤링’, ‘인공신경망’, ‘GAN’ 과목의 과제 채점 및 질의응답</li>
+          </ul>
+        </div>
+        <div class="activity-entry">
+          <div class="subhead">한국수력원자력</div>
+          <h3>아인슈타인 클래스 17기 멘토</h3>
+          <ul class="bullets">
+            <li>원전 주변 지역 청소년 대상 AI 활용 교육</li>
+            <li>기초 문해력 교육 및 진로 탐색 멘토링</li>
+          </ul>
+        </div>
+        <div class="activity-entry">
+          <div class="subhead">현대오토에버</div>
+          <h3>스마트모빌리티 공학체험교육 6기 멘토</h3>
+          <ul class="bullets">
+            <li>구립푸르름지역아동센터 초등학생 대상으로 스마트 모빌리티 공학 체험 교육 진행</li>
+            <li>SDV·PBV·자율주행·센서의 개념을 설명하고 ‘나만의 모빌리티’ 제작 지도</li>
+          </ul>
+        </div>
+        <div class="activity-entry">
+          <div class="subhead">덕성여자대학교 코딩 교육 봉사 동아리</div>
+          <h3>I-coding</h3>
+          <ul class="bullets">
+            <li>우리동네키움센터 강북 1호점 초등학생 대상 일대일 코딩 교육 봉사</li>
+            <li>코딩에 대한 흥미가 지속되도록 학생의 관심사를 반영한 맞춤형 커리큘럼 기획</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Finance Statement -->
+<section class="slide">
+  <div class="page statement-page">
+    <h2 class="statement typewriter">기술 구현을 넘어,<br><br><span>사용자의 문제와 비즈니스 맥락</span>을 고민해왔습니다.</h2>
+  </div>
+</section>
+
+<!-- 8. Finance -->
+<section class="slide">
+  <div class="page finance-page">
+    <div class="title-row"><div class="title-bar"></div><h1>BUSINESS PERSPECTIVE</h1></div>
+    <div class="finance-grid">
+        <div class="activity-entry">
+          <div class="subhead">덕성여자대학교 가치투자 동아리</div>
+          <h3>ISSUE</h3>
+          <ul class="bullets">
+            <li>산업·기업 분석과 모의투자를 수행하며 주식 투자에 필요한 기초 지식 학습</li>
+            <li><a href="files/ISSUE/1.pdf" target="_blank" rel="noreferrer">드림시큐리티 <span class="external-mark">↗</span></a></li>
+            <li><a href="files/ISSUE/2.pdf" target="_blank" rel="noreferrer">SK텔레콤 <span class="external-mark">↗</span></a></li>
+            <li><a href="files/ISSUE/3.pdf" target="_blank" rel="noreferrer">사이버보안 관련주 <span class="external-mark">↗</span></a></li>
+          </ul>
+        </div>
+        <div class="activity-entry">
+          <div class="subhead">덕성여자대학교 가치투자 동아리</div>
+          <h3>하나증권 글로벌 투자 아카데미</h3>
+          <ul class="bullets">
+            <li>산업·기업 분석과 모의투자를 수행하며 주식 투자에 필요한 기초 지식 학습</li>
+            <li><a href="files/ISSUE/4.pdf" target="_blank" rel="noreferrer">클라우드 산업 및 마이크로소프트 투자 분석 <span class="external-mark">↗</span></a></li>
+            <li><a href="files/ISSUE/5.pdf" target="_blank" rel="noreferrer">Z세대의 해외주식·해외파생 거래 활성화 방안 <span class="external-mark">↗</span></a></li>
+            <li><a href="files/ISSUE/6.pdf" target="_blank" rel="noreferrer">1Q HTS·MTS 사용성 개선 방안 <span class="external-mark">↗</span></a></li>
+          </ul>
+        </div>
+        <div class="activity-entry">
+          <div class="subhead">가상자산 거래소 고팍스 서포터즈</div>
+          <h3>GOPAX Guardians</h3>
+          <ul class="bullets">
+            <li>가상자산 시장과 주요 이슈를 분석하고 총 3편의 리서치 페이퍼 발간</li>
+            <li><a href="https://xangle.io/research/detail/1612" target="_blank" rel="noreferrer">영지식 증명의 이해와 활용 사례 <span class="external-mark">↗</span></a></li>
+            <li><a href="https://academy.gopax.co.kr/bainaenseuneun-wae-hangugsijangeul-ggumgguna/" target="_blank" rel="noreferrer">바이낸스는 왜 한국 시장을 꿈꾸나? <span class="external-mark">↗</span></a></li>
+            <li><a href="https://medium.com/gopax/위메이드가-꿈꾸는-블록체인-메가-에코-시스템-위믹스-wemix-생태계-톺아보기-e44922395010" target="_blank" rel="noreferrer">위메이드가 꿈꾸는 블록체인 메가 에코 시스템 — 위믹스(WEMIX) 생태계 톺아보기 <span class="external-mark">↗</span></a></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. Closing -->
+<section class="slide">
+  <div class="page statement-page closing-page">
+    <p class="closing-kicker">MY NEXT STEP</p>
+    <h2 class="statement typewriter"><span>반복되는 일을 구조화하고 AI로 개선해</span><br><br>비나우의 일하는 방식에 의미 있는 변화를 만들겠습니다.</h2>
+  </div>
+</section>
+
+</div>
+
+<script>
+const SELECTORS = {
+  deck: '#deck',
+  slide: '.slide',
+  dots: '#dots',
+  previousButton: '#prev',
+  nextButton: '#next',
+  statementPage: '.statement-page',
+  typewriter: '.typewriter',
+};
+
+const deck = document.querySelector(SELECTORS.deck);
+const slides = [...document.querySelectorAll(SELECTORS.slide)];
+const dotsContainer = document.querySelector(SELECTORS.dots);
+const previousButton = document.querySelector(SELECTORS.previousButton);
+const nextButton = document.querySelector(SELECTORS.nextButton);
+const currentPage = document.querySelector('#currentPage');
+
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const typewriterStates = new Map();
+
+function initializeTypewriter(statement) {
+  const walker = document.createTreeWalker(statement, NodeFilter.SHOW_TEXT);
+  const segments = [];
+  const caret = document.createElement('i');
+  caret.className = 'typing-caret';
+  caret.setAttribute('aria-hidden', 'true');
+  let node;
+  while ((node = walker.nextNode())) {
+    segments.push({ node, text: node.nodeValue });
+  }
+
+  statement.setAttribute('aria-label', statement.textContent.replace(/\s+/g, ' ').trim());
+  typewriterStates.set(statement, { segments, caret, timer: null });
+
+  if (reduceMotion) {
+    statement.classList.add('play');
+  } else {
+    segments.forEach(segment => { segment.node.nodeValue = ''; });
+  }
+}
+
+function resetTypewriter(statement) {
+  const state = typewriterStates.get(statement);
+  if (!state || reduceMotion) return;
+
+  clearTimeout(state.timer);
+  state.caret.remove();
+  state.segments.forEach(segment => { segment.node.nodeValue = ''; });
+  statement.classList.remove('play');
+}
+
+function playTypewriter(statement) {
+  const state = typewriterStates.get(statement);
+  if (!state || reduceMotion) return;
+
+  resetTypewriter(statement);
+  statement.classList.add('play');
+  let segmentIndex = 0;
+  let characterIndex = 0;
+
+  function typeNext() {
+    const segment = state.segments[segmentIndex];
+    if (!segment) {
+      state.caret.remove();
+      return;
+    }
+
+    segment.node.after(state.caret);
+    segment.node.nodeValue += segment.text.charAt(characterIndex++);
+    if (characterIndex >= segment.text.length) {
+      segmentIndex += 1;
+      characterIndex = 0;
+    }
+
+    state.timer = setTimeout(typeNext, 42);
+  }
+
+  typeNext();
+}
+
+document.querySelectorAll(SELECTORS.typewriter).forEach(initializeTypewriter);
+
+const typewriterObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const statement = entry.target.querySelector(SELECTORS.typewriter);
+    if (!statement) return;
+
+    if (entry.isIntersecting) playTypewriter(statement);
+    else resetTypewriter(statement);
+  });
+}, { threshold: .65 });
+
+document.querySelectorAll(SELECTORS.statementPage).forEach(page => {
+  typewriterObserver.observe(page.closest(SELECTORS.slide));
+});
+
+let currentSlideIndex = 0;
+
+function updateNavigation() {
+  dots.forEach((dot, index) => {
+    const isCurrent = index === currentSlideIndex;
+    dot.classList.toggle('active', isCurrent);
+    dot.setAttribute('aria-current', isCurrent ? 'page' : 'false');
+  });
+
+  previousButton.disabled = currentSlideIndex === 0;
+  nextButton.disabled = currentSlideIndex === slides.length - 1;
+  currentPage.textContent = String(currentSlideIndex + 1).padStart(2, '0');
+}
+
+function goToSlide(index) {
+  currentSlideIndex = Math.max(0, Math.min(slides.length - 1, index));
+  slides[currentSlideIndex].scrollIntoView({
+    behavior: 'smooth',
+    inline: 'start',
+    block: 'nearest',
+  });
+  updateNavigation();
+}
+
+function createNavigationDot(index) {
+  const dot = document.createElement('button');
+  dot.type = 'button';
+  dot.className = `dot${index === 0 ? ' active' : ''}`;
+  dot.setAttribute('aria-label', `${index + 1}페이지로 이동`);
+  dot.addEventListener('click', () => goToSlide(index));
+  return dot;
+}
+
+slides.forEach((_, index) => dotsContainer.appendChild(createNavigationDot(index)));
+const dots = [...dotsContainer.querySelectorAll('.dot')];
+
+previousButton.addEventListener('click', () => goToSlide(currentSlideIndex - 1));
+nextButton.addEventListener('click', () => goToSlide(currentSlideIndex + 1));
+
+deck.addEventListener('scroll', () => {
+  const visibleSlideIndex = Math.round(deck.scrollLeft / window.innerWidth);
+  if (visibleSlideIndex !== currentSlideIndex) {
+    currentSlideIndex = visibleSlideIndex;
+    updateNavigation();
+  }
+});
+
+window.addEventListener('keydown', event => {
+  if (['ArrowRight', 'PageDown', ' '].includes(event.key)) {
+    event.preventDefault();
+    goToSlide(currentSlideIndex + 1);
+  }
+
+  if (['ArrowLeft', 'PageUp'].includes(event.key)) {
+    event.preventDefault();
+    goToSlide(currentSlideIndex - 1);
+  }
+});
+
+updateNavigation();
+</script>
+</body>
+</html>
