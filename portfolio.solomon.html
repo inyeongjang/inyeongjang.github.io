@@ -132,12 +132,13 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 .identity-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
 .identity-row .link-row{margin-top:0}
 .resume-head h2{margin:0;font-size:25px;line-height:1.38;letter-spacing:-.04em;color:var(--navy)}
+.resume-head h2.headline-emphasis{font-size:23px}
 .resume-head .headline-highlight{
   background:linear-gradient(transparent 58%,rgba(82,174,232,.28) 58%,rgba(82,174,232,.28) 91%,transparent 91%);
-  box-decoration-break:clone;-webkit-box-decoration-break:clone
+  box-decoration-break:clone;-webkit-box-decoration-break:clone;
+  font-size:inherit;color:inherit
 }
 .resume-head span{font-size:10.5px;color:var(--muted)}
-.resume-head .headline-highlight{font-size:inherit;color:inherit}
 .resume-cols{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:24px;border-top:0;padding-top:2px}
 .rsec{margin-bottom:13px}
 .rsec:last-child{margin-bottom:0}
@@ -164,7 +165,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 .statement-page{display:flex;align-items:center;justify-content:center;text-align:center}
 .statement-page::after{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(82,174,232,.10),transparent 68%);z-index:0;pointer-events:none}
 .statement{
-  max-width:760px;margin:0;font-size:clamp(28px,3.4vw,44px);font-weight:800;
+  max-width:760px;margin:0;font-size:clamp(26px,3.1vw,40px);font-weight:800;
   line-height:1.35;letter-spacing:-.055em;color:var(--navy)
 }
 .statement span{color:var(--blue-dark);text-decoration:underline;text-decoration-color:rgba(82,174,232,.28);text-decoration-thickness:.18em;text-underline-offset:.12em}
@@ -247,22 +248,16 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 .experience-mentoring-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;height:100%}
 .activity-column{min-width:0}
 .activity-column > .title-row{margin-bottom:24px}
-.activity-column > .title-row .title-bar,.finance-page > .title-row .title-bar{height:38px;width:6px}
-.activity-column > .title-row h1,.finance-page > .title-row h1{font-size:20px;letter-spacing:.1em}
+.activity-column > .title-row .title-bar{height:38px;width:6px}
+.activity-column > .title-row h1{font-size:20px;letter-spacing:.1em}
 .experience-mentoring-grid .activity-entry{padding-bottom:13px;margin-bottom:13px}
 .experience-mentoring-grid .activity-entry .subhead{font-size:11.5px}
 .experience-mentoring-grid .activity-entry h3{font-size:14.5px;line-height:1.45;margin-bottom:7px}
 .experience-mentoring-grid .activity-entry .bullets li{font-size:11.2px;line-height:1.72;margin-bottom:5px}
-.finance-page > .title-row{margin-bottom:24px}
-.finance-grid{display:grid;grid-template-columns:1fr;grid-template-rows:repeat(3,minmax(0,auto));gap:14px;height:calc(100% - 62px)}
-.finance-grid .activity-entry{column-gap:8px;padding:0 0 11px;margin:0}
-.finance-grid .activity-entry .subhead{font-size:11.5px;line-height:1.5;white-space:normal;margin:0}
-.finance-grid .activity-entry h3{font-size:14.5px;line-height:1.45;margin-bottom:8px}
-.finance-grid .activity-entry .bullets li{font-size:11.5px;line-height:1.68;margin-bottom:5px}
 .title-link:focus-visible,.nav-btn:focus-visible,.dot:focus-visible{outline:2px solid var(--blue-dark);outline-offset:3px}
 .closing-kicker{margin:0 0 18px;font-size:10px;font-weight:800;letter-spacing:.22em;color:var(--blue-dark)}
 .closing-page{flex-direction:column}
-.closing-page .statement{font-size:clamp(25px,3vw,39px)}
+.closing-page .statement{font-size:clamp(23px,2.7vw,36px)}
 
 @media(max-width:900px){
   .page{width:92vw;height:86vh;padding:30px}
@@ -290,11 +285,8 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
   .bullets li{line-height:1.72}
   .activity-column > .title-row{margin-bottom:20px}
   .experience-mentoring-grid .activity-entry{padding-bottom:14px;margin-bottom:14px}
-  .finance-page > .title-row{margin-bottom:20px}
-  .finance-grid{gap:18px}
-  .statement{font-size:clamp(25px,7.5vw,36px);line-height:1.42}
+  .statement{font-size:clamp(23px,7vw,33px);line-height:1.42}
   .experience-mentoring-grid{grid-template-columns:1fr;height:auto;gap:28px}
-  .finance-grid{grid-template-columns:1fr;grid-template-rows:none;height:auto}
   .nav-btn,.dots{display:none}
 }
 @media print{
@@ -343,7 +335,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
               </a>
             </div>
           </div>
-          <h2><span class="headline-highlight">AI가 만든 결과를 그대로 수용하지 않고, 끝까지 검증합니다.</span></h2>
+          <h2 class="headline-emphasis"><span class="headline-highlight">AI가 만든 결과를 그대로 수용하지 않고, 끝까지 검증합니다.</span></h2>
         </div>
 
         <div class="resume-cols">
@@ -490,14 +482,13 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
       <div class="project-copy">
         <div class="subhead">연구 소개</div>
         <ul class="bullets">
-          <li><strong>부정확한 패치를 자동으로 식별</strong>하기 위한 다양한 <strong>LLM 프롬프트 전략</strong> 비교·분석</li>
+          <li>부정확한 패치를 자동으로 식별하기 위한 다양한 LLM 프롬프트 전략 비교·분석</li>
         </ul>
 
         <div class="subhead subhead-spaced">담당 역할</div>
         <ul class="bullets">
-          <li><strong>전체 실험 구조 설계</strong></li>
-          <li><strong>Chain-of-Thought, Goal-Alignment</strong> 등 프롬프트 전략 설계</li>
-          <li><strong>평가 지표 정의</strong> 및 실험 결과 분석</li>
+          <li>전체 실험 구조 및 프롬프트 전략 설계</li>
+          <li>평가 지표 정의 및 실험 결과 분석</li>
         </ul>
 
         <div class="subhead subhead-spaced">성과</div>
@@ -597,7 +588,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
   </div>
 </section>
 
-<!-- 9. Closing -->
+<!-- 7. Closing -->
 <section class="slide">
   <div class="page statement-page closing-page">
     <p class="closing-kicker">AT SOLOMON LABS</p>
