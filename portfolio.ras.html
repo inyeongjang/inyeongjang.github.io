@@ -252,6 +252,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 .research-body strong{color:#102f49}.flow-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.flow-tags span{padding:8px 11px;border-radius:8px;background:#fff;border:1px solid #c9e6f3;font-size:11px;font-weight:800;color:#176b9e}
 .motivation-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;height:calc(100% - 85px)}
 .motivation-card{border:1px solid var(--line);border-radius:18px;padding:27px 29px;background:#fff}.motivation-card:first-child{background:#f8fbfd}.motivation-card .subhead{color:#176b9e;margin-bottom:13px}.motivation-card h3{font-size:20px;line-height:1.5;margin:0 0 16px}.motivation-card p{font-size:13px;line-height:1.82;color:#294f6b;margin:0}.motivation-card ul{margin-top:16px}
+.pdf-cover{display:none}
 
 @media(max-width:900px){
   .page{width:92vw;height:86vh;padding:30px}
@@ -286,16 +287,43 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
   .nav-btn,.dots{display:none}
 }
 @media print{
-  @page{size:13.333in 7.5in;margin:0}
-  html,body{overflow:visible}
+  @page{size:15in 8.4375in;margin:0}
+  html,body{width:1440px;height:auto;overflow:visible;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .pdf-cover{width:1440px;height:810px;display:flex;align-items:center;justify-content:center;page-break-after:always;background:#fff}
+  .pdf-cover a{font:800 40px Manrope,"Noto Sans KR",sans-serif;color:var(--navy);text-decoration:none;letter-spacing:-.025em}
   .deck{display:block;overflow:visible}
-  .slide{width:100vw;height:100vh;page-break-after:always}
+  .slide{width:1440px;min-width:1440px;height:810px;page-break-after:always}
   .nav-btn,.dots{display:none}
-  .page{box-shadow:none}
+  .page{width:1380px;height:760px;padding:38px 46px 34px;box-shadow:none}
+  .resume-grid{grid-template-columns:118px minmax(0,1fr);column-gap:30px;row-gap:22px}
+  .photo{width:112px;height:132px}
+  .name{font-size:30px}
+  .resume-head h2.headline-emphasis{font-size:30px}
+  .resume-cols{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:40px;padding-top:8px}
+  .rsec{margin-bottom:19px}
+  .rsec-title{font-size:15px;margin-bottom:9px}
+  .compact-list .ritem{grid-template-columns:110px minmax(0,1fr) 16px;column-gap:10px}
+  .compact-list .ritem .date{font-size:11.5px}
+  .ritem strong{font-size:13.5px;line-height:1.55}
+  .project-grid{height:calc(100% - 92px);gap:42px}
+  :is(.autofic-page,.patch-correctness-page) .section-title{font-size:31px}
+  :is(.autofic-page,.patch-correctness-page) .project-copy .subhead{font-size:13px}
+  :is(.autofic-page,.patch-correctness-page) .project-copy .bullets li{font-size:14px;line-height:1.68}
+  :is(.autofic-page,.patch-correctness-page) .award{font-size:13.5px}
+  .experience-mentoring-grid{gap:42px}
+  .activity-column > .title-row h1{font-size:22px}
+  .experience-mentoring-grid .activity-entry{padding-bottom:14px;margin-bottom:14px}
+  .experience-mentoring-grid .activity-entry .subhead{font-size:12.5px}
+  .experience-mentoring-grid .activity-entry h3{font-size:16px;line-height:1.45;margin-bottom:8px}
+  .experience-mentoring-grid .activity-entry .bullets li{font-size:12.4px;line-height:1.62;margin-bottom:5px}
 }
 </style>
 </head>
 <body>
+
+<section class="pdf-cover" aria-label="포트폴리오 링크">
+  <a href="https://inyeongjang.github.io/portfolio.ras.html">inyeongjang.github.io/portfolio.ras.html</a>
+</section>
 
 <button id="prev" class="nav-btn" aria-label="이전">‹</button>
 <button id="next" class="nav-btn" aria-label="다음">›</button>
@@ -390,13 +418,6 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
   </div>
 </section>
 
-<!-- 2. Statement -->
-<section class="slide">
-  <div class="page statement-page">
-    <h2 class="statement research-intro"><span>LLM을 활용한 소프트웨어 보안 자동화</span>를 연구하며,<br><br><span>모델에 대한 이해</span>의 필요성을 느꼈습니다.</h2>
-  </div>
-</section>
-
 <!-- 3. AutoFiC -->
 <section class="slide">
   <div class="page autofic-page">
@@ -482,13 +503,6 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
   </div>
 </section>
 
-<!-- 5. Growth Statement -->
-<section class="slide">
-  <div class="page statement-page">
-    <h2 class="statement">배운 지식을 나누고,<br><br>다양한 사람들과 <span>함께 성장</span>해왔습니다.</h2>
-  </div>
-</section>
-
 <!-- 6. Experience & Mentoring -->
 <section class="slide">
   <div class="page">
@@ -564,14 +578,6 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- 7. Closing -->
-<section class="slide">
-  <div class="page statement-page closing-page">
-    <p class="closing-kicker">MY NEXT STEP</p>
-    <h2 class="statement">소프트웨어 보안 연구 경험을 바탕으로,<br><br><span>보안 특화 모델을 구축하고 분석</span>하겠습니다.</h2>
   </div>
 </section>
 
