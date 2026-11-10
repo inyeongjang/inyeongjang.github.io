@@ -1,14 +1,14 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inyeong Jang</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inyeong Jang | Research Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
     body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
     .mono { font-family: 'JetBrains Mono', monospace; }
     .section-border { border-top: 1px solid #f1f5f9; padding-top: 4rem; margin-top: 4rem; }
@@ -21,8 +21,7 @@
     }
     .list-item-effect:hover { border-left-color: #38bdf8; }
   </style>
-
-  <script>
+<script>
     tailwind.config = {
       theme: {
         extend: {
@@ -41,339 +40,99 @@
     }
   </script>
 </head>
-
 <body class="bg-white text-slate-800 selection:bg-slate-100">
-
-  <!-- Minimal NAV -->
-  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-slate-50">
-    <div class="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
-      <a href="#top" class="font-bold tracking-tight text-sm uppercase text-slate-900">
+<!-- Minimal NAV -->
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-slate-50">
+<div class="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
+<a class="font-bold tracking-tight text-sm uppercase text-slate-900" href="#top">
         Inyeong Jang
       </a>
-  
-      <div class="flex items-center gap-8">
-        <div class="flex items-center gap-6 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-          <a class="hover:text-sky-500 transition-colors" href="#top">Home</a>
-          <a class="hover:text-sky-500 transition-colors" href="#publications">Publications</a>
-          <a class="hover:text-sky-500 transition-colors" href="#projects">Projects</a>
-          <a class="hover:text-sky-500 transition-colors" href="#awards">Awards</a>
-          <a class="hover:text-sky-500 transition-colors" href="#experience">Experience</a>
-        </div>
-      </div>
-    </div>
-  </nav>
+<div class="flex items-center gap-8">
+<div class="flex items-center text-[10px] font-bold text-slate-400 uppercase tracking-widest gap-x-4 gap-y-2 flex-wrap justify-end">
+<a class="hover:text-sky-500 transition-colors" href="#top">Home</a>
+<a class="hover:text-sky-500 transition-colors" href="#research-experience">Research Experience</a><a class="hover:text-sky-500 transition-colors" href="#publications">Publications</a>
+<a class="hover:text-sky-500 transition-colors" href="#projects">Projects</a>
 
-  <main class="max-w-4xl mx-auto px-6 py-16 md:py-24">
+<a class="hover:text-sky-500 transition-colors" href="#awards">Awards</a>
+<a class="hover:text-sky-500 transition-colors" href="#experience">Experience</a>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-4xl mx-auto px-6 py-16 md:py-24">
+<!-- HEADER / INTRO -->
+<header class="flex flex-col md:flex-row gap-12 items-stretch" id="top">
+<!-- Left Column: Photo & Buttons -->
+<div class="shrink-0 flex flex-col items-center">
+<div class="w-40 h-52 md:w-44 md:h-56 profile-frame rounded-2xl overflow-hidden flex items-center justify-center relative">
+<div class="text-center p-6 text-slate-400"><div class="text-4xl font-semibold tracking-tight text-slate-400">IJ</div><p class="mono text-[10px] mt-3 tracking-widest text-slate-400">RESEARCH PORTFOLIO</p></div>
+</div>
+<div class="mt-auto flex gap-3 pt-8 md:pt-0">
+<a class="w-10 h-10 inline-flex items-center justify-center rounded-xl bg-slate-900 text-white hover:bg-sky-500 transition-all" href="mailto:726iy@duksung.ac.kr">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+<a class="w-10 h-10 inline-flex items-center justify-center rounded-xl bg-slate-900 text-white hover:bg-sky-500 transition-all" href="https://github.com/inyeongjang" target="_blank">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="w-10 h-10 inline-flex items-center justify-center rounded-xl bg-slate-900 text-white hover:bg-sky-500 transition-all" href="cv.pdf">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+</a>
+</div>
+</div>
+<!-- Right Column: Info -->
+<div class="flex-1 w-full flex flex-col justify-between pt-2">
+<div class="space-y-8">
+<div>
+<h2 class="mono text-[10px] uppercase tracking-[0.2em] text-sky-500 font-semibold mb-2">Education</h2>
+<p class="text-slate-900 font-semibold text-sm tracking-tight leading-tight">Duksung Women's University, Seoul, Korea</p>
+<p class="text-slate-500 font-medium text-sm mt-1">B.S. in Computer Science, Engineering and Converged Technology</p>
+<div class="flex items-center gap-3 text-sm text-slate-400 mt-2 font-medium">
+<span>Mar. 2023 – Feb. 2028 (Expected)</span>
+<span class="text-slate-200">|</span>
+<span class="text-slate-600">GPA: 4.43 / 4.5</span>
+</div>
+</div>
+<div>
+<h2 class="mono text-[10px] uppercase tracking-[0.2em] text-sky-500 font-semibold mb-3">Research Interests</h2>
+<p class="text-sm font-medium text-slate-600">AI-Driven Network Optimization <span class="text-slate-400">(Exploring)</span></p>
+</div>
+<div>
+<h2 class="mono text-[10px] uppercase tracking-[0.2em] text-sky-500 font-semibold mb-2">Language</h2>
+<div class="space-y-1.5 text-sm font-medium text-slate-600"><p><span class="text-slate-900 font-semibold">TOEIC</span> <span class="ml-3">880</span></p><p><span class="text-slate-900 font-semibold">TOEIC Speaking</span> <span class="ml-3">150 (Intermediate High)</span></p></div>
+</div>
+</div>
+</div>
+</header>
+<!-- PUBLICATIONS -->
+<section class="section-border" id="research-experience">
+<h2 class="text-sm font-black uppercase tracking-[0.3em] text-sky-500 mb-8">Research Experience</h2>
+<div class="space-y-7">
+<article class="list-item-effect">
+<h3 class="text-base font-bold text-slate-900 leading-snug">Undergraduate Student Researcher</h3>
+<p class="text-sm font-medium text-slate-600 mt-1">Software Analysis Lab, Korea University</p>
+<p class="text-sm text-slate-600 leading-relaxed mt-2">Participated in research on automated program repair and software correctness assessment, focusing on the reliability of LLM-generated patches. Examined patch validation methods, failure cases, and empirical evaluation of software repair agents.</p>
+</article>
+</div>
+</section><section class="section-border" id="publications"><h2 class="text-sm font-black uppercase tracking-[0.3em] text-sky-500 mb-8">Publications</h2><div class="space-y-10">
+<article class="list-item-effect"><h3 class="text-lg font-bold text-slate-900 leading-tight mb-2"><a class="hover:text-sky-500 hover:underline" href="papers/ICST-2026.pdf" target="_blank">Improving Automated Patch Correctness Assessment by Designing LLM-Based Oracles</a></h3><p class="text-slate-500 text-sm"><strong class="text-slate-900">Inyeong Jang</strong>, Jinyoung Kim</p><p class="text-slate-400 text-xs mt-1 italic">IEEE International Conference on Software Testing, Verification and Validation (ICST), 2026 · Research Track</p></article>
+<article class="list-item-effect"><h3 class="text-lg font-bold text-slate-900 leading-tight mb-2"><a class="hover:text-sky-500 hover:underline" href="papers/KCSE-2026.pdf" target="_blank">AutoFiC: An LLM-based Automated Security Patch Generation Pipeline</a></h3><p class="text-slate-500 text-sm"><strong class="text-slate-900">Inyeong Jang</strong>, Jeongmin Oh, Minchae Kim, Eunsol Kim</p><p class="text-slate-400 text-xs mt-1 italic">Korea Conference on Software Engineering (KCSE), 2026 · Oral Presentation</p><p class="text-xs font-semibold text-slate-600 mt-2">Best Undergraduate Paper Award</p></article>
+<article class="list-item-effect"><h3 class="text-lg font-bold text-slate-900 leading-tight mb-2"><a class="hover:text-sky-500 hover:underline" href="papers/CISC-W-2025.pdf" target="_blank">SCSC: Supply Chain Security Cross-reference Framework and Platform Proposal</a></h3><p class="text-slate-500 text-sm">HaKyeong Choi, Yeseo You, <strong class="text-slate-900">Inyeong Jang</strong>, Hyein Lee</p><p class="text-slate-400 text-xs mt-1 italic">Conference on Information Security and Cryptography (CISC), Winter 2025 · Poster</p></article>
+</div></section>
+<!-- PROJECTS -->
+<section class="section-border" id="projects"><h2 class="text-sm font-black uppercase tracking-[0.3em] text-sky-500 mb-8">Research Projects</h2><div class="space-y-10">
+<article class="list-item-effect"><div class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">AutoFiC</div><h3 class="text-lg font-bold text-slate-900 leading-tight mb-2"><a class="hover:text-sky-500 hover:underline" href="https://autofic.github.io" rel="noopener noreferrer" target="_blank">LLM-based Automated Security Patch Pipeline</a></h3><p class="text-sm text-slate-600 leading-relaxed">Developed an end-to-end pipeline combining static application security testing (SAST), LLM-based patch generation, automated patch application, and pull request creation for Python open-source projects. The pipeline completed successfully on <strong>86 of 91 projects (94.5%)</strong> and eliminated <strong>397 of 441 static-analysis warnings (90.0%)</strong>. Warning removal does not itself establish patch correctness.</p></article>
+<article class="list-item-effect"><div class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">ICST 2026 Research</div><h3 class="text-lg font-bold text-slate-900 leading-tight mb-2"><a class="hover:text-sky-500 hover:underline" href="papers/ICST-2026.pdf" target="_blank">LLM-based Automated Patch Correctness Assessment</a></h3><p class="text-sm text-slate-600 leading-relaxed">Analyzed recurring failure patterns in LLM-based patch validation and developed six prompting strategies for identifying incorrect patches. Improved incorrect-patch detection performance by up to <strong>19.9 percentage points</strong> relative to the baseline in the evaluated setting.</p></article>
+</div></section>
+<!-- RESEARCH EXPERIENCE -->
 
-    <!-- HEADER / INTRO -->
-    <header id="top" class="flex flex-col md:flex-row gap-12 items-stretch">
-
-      <!-- Left Column: Photo & Buttons -->
-      <div class="shrink-0 flex flex-col items-center">
-        <div class="w-40 h-52 md:w-44 md:h-56 profile-frame rounded-2xl overflow-hidden flex items-center justify-center relative">
-          <img src="files/profile.jpg" alt="Inyeong Jang" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-          <div class="hidden text-center p-6 text-slate-300">
-            <svg class="w-10 h-10 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-            <p class="text-[9px] font-semibold tracking-widest">Photo</p>
-          </div>
-        </div>
-
-        <div class="mt-auto flex gap-3 pt-8 md:pt-0">
-          <a href="mailto:726iy@duksung.ac.kr" class="w-10 h-10 inline-flex items-center justify-center rounded-xl bg-slate-900 text-white hover:bg-sky-500 transition-all">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-          </a>
-          <a href="https://github.com/inyeongjang" target="_blank" class="w-10 h-10 inline-flex items-center justify-center rounded-xl bg-slate-900 text-white hover:bg-sky-500 transition-all">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
-          </a>
-          <a href="cv.pdf" class="w-10 h-10 inline-flex items-center justify-center rounded-xl bg-slate-900 text-white hover:bg-sky-500 transition-all">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Right Column: Info -->
-      <div class="flex-1 w-full flex flex-col justify-between pt-2">
-        <div class="space-y-8">
-          <div>
-            <h2 class="mono text-[10px] uppercase tracking-[0.2em] text-sky-500 font-semibold mb-2">Education</h2>
-            <p class="text-slate-900 font-semibold text-sm tracking-tight leading-tight">Duksung Women's University, Seoul, Korea</p>
-            <p class="text-slate-500 font-medium text-sm mt-1">B.S. in Computer Science, Engineering and Converged Technology</p>
-            <div class="flex items-center gap-3 text-sm text-slate-400 mt-2 font-medium">
-              <span>Mar. 2023 – Present</span>
-              <span class="text-slate-200">|</span>
-              <span class="text-slate-600">GPA: 4.43 / 4.5</span>
-            </div>
-          </div>
-
-          <div>
-            <h2 class="mono text-[10px] uppercase tracking-[0.2em] text-sky-500 font-semibold mb-3">Research Interests</h2>
-            <ul class="text-sm font-medium text-slate-600 space-y-1">
-              <li>• Automated Program Repair (APR)</li>
-              <li>• Software Testing and Verification</li>
-              <li>• Software Security</li>
-            </ul>
-          </div>
-
-          <div>
-            <h2 class="mono text-[10px] uppercase tracking-[0.2em] text-sky-500 font-semibold mb-2">Language</h2>
-            <div class="flex items-center gap-3 h-10 text-sm font-medium text-slate-600">
-              <span class="text-slate-900 font-semibold tracking-tight">TOEIC</span>
-              <span>840</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- PUBLICATIONS -->
-    <section id="publications" class="section-border">
-      <h2 class="text-sm font-black uppercase tracking-[0.3em] text-sky-500 mb-8">
-        Publications
-      </h2>
-
-      <div class="space-y-10">
-
-        <!-- Paper 1 -->
-        <article class="list-item-effect">
-          <h3 class="text-lg font-bold text-slate-900 leading-tight mb-2">
-            <a href="papers/ICST-2026.pdf" target="_blank" class="text-slate-900 hover:text-sky-500 transition-colors hover:underline">
-              Improving Automated Patch Correctness Assessment by Designing LLM-Based Oracles
-            </a>
-          </h3>
-          <p class="text-slate-500 text-sm">
-            <span class="font-semibold text-slate-900">Inyeong Jang</span>, Jinyoung Kim
-          </p>
-          <p class="text-slate-400 text-xs mt-1 italic">
-            <a href="https://conf.researchr.org/home/icst-2026">
-              IEEE International Conference on Software Testing, Verification and Validation (ICST), 2026 
-            </a>
-          </p>
-        </article>
-
-        <!-- Paper 2 -->
-        <article class="list-item-effect">
-          <h3 class="text-lg font-bold text-slate-900 leading-tight mb-2">
-            <a href="papers/KCSE-2026.pdf" target="_blank" class="text-slate-900 hover:text-sky-500 transition-colors hover:underline">
-              AutoFiC: An LLM-based Automated Security Patch Generation Pipeline
-            </a>
-          </h3>
-          <p class="text-slate-500 text-sm">
-            <span class="font-semibold text-slate-900">Inyeong Jang</span>, Jeongmin Oh, Minchae Kim, Eunsol Kim
-          </p>
-          <p class="text-slate-400 text-xs mt-1 italic">
-            <a href="https://kcse.sigsoft.or.kr/2026/">
-              Korea Conference on Software Engineering (KCSE), 2026
-            </a>
-          </p>
-          <p class="text-xs font-semibold text-slate-600 mt-2">
-            🏆 Best Undergraduate Paper Award
-          </p>
-        </article>
-
-        <!-- Paper 3 -->
-        <article class="list-item-effect">
-          <h3 class="text-lg font-bold text-slate-900 leading-tight mb-2">
-            <a href="papers/CISC-W-2025.pdf" target="_blank" class="text-slate-900 hover:text-sky-500 transition-colors hover:underline">
-              SCSC: Supply Chain Security Cross-reference Framework and Platform Proposal
-            </a>
-          </h3>
-          <p class="text-slate-500 text-sm">
-            HaKyeong Choi, Yeseo You,
-            <span class="font-semibold text-slate-900">Inyeong Jang</span>,
-            Hyein Lee
-          </p>
-          <p class="text-slate-400 text-xs mt-1 italic">
-            <a href="https://www.manuscriptlink.com/society/kiisc/conference/ciscs2025">
-              Conference on Information Security and Cryptography (CISC), 2025
-            </a>
-          </p>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section-border">
-      <h2 class="text-sm font-black uppercase tracking-[0.3em] text-sky-500 mb-8">
-        Research Projects
-      </h2>
-
-      <div class="space-y-10">
-
-        <!-- Project 1 -->
-        <article class="list-item-effect">
-          <div class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">
-            <span>2025</span>
-          </div>
-          <h3 class="text-lg font-bold text-slate-900 leading-tight mb-2">
-            <a href="https://autofic.github.io" target="_blank" class="text-slate-900 hover:text-sky-500 transition-colors hover:underline">
-              AutoFiC: LLM-based Security Patch Pipeline
-            </a>
-          </h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Developed an end-to-end pipeline that integrates static analysis (SAST),
-            LLM-based patch generation, automated patch application, and pull request creation
-            for open-source software.
-          </p>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- AWARDS & SCHOLARSHIPS -->
-    <section id="awards" class="section-border">
-      <h2 class="text-sm font-black uppercase tracking-[0.3em] text-sky-500 mb-8">
-        Awards & Scholarships
-      </h2>
-
-      <div class="space-y-10">
-
-        <article class="list-item-effect">
-          <div class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">
-            <span>Award</span>
-            <span>•</span>
-            <span>2026</span>
-          </div>
-          <h3 class="text-lg font-bold text-slate-900 leading-tight mb-1">
-              Best Undergraduate Paper Award
-          </h3>
-          <p class="text-slate-400 text-xs mt-1 italic">Korea Conference on Software Engineering (KCSE)</p>
-        </article>
-
-        <article class="list-item-effect">
-          <div class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">
-            <span>Award</span>
-            <span>•</span>
-            <span>2024</span>
-          </div>
-          <h3 class="text-lg font-bold text-slate-900 leading-tight mb-1">
-              2nd Place, University Hackathon
-          </h3>
-          <p class="text-slate-400 text-xs mt-1 italic">Duksung Women's University</p>
-        </article>
-        
-        <article class="list-item-effect">
-          <div class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">
-            <span>Scholarship</span>
-            <span>•</span>
-            <span>2026</span>
-          </div>
-          <h3 class="text-lg font-bold text-slate-900 leading-tight mb-1">
-              KT Digital Talent Scholarship
-          </h3>
-          <p class="text-slate-400 text-xs mt-1 italic">KT Corporation</p>
-        </article>
-
-        <article class="list-item-effect">
-          <div class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">
-            <span>Scholarship</span>
-            <span>•</span>
-            <span>Spring 2023 – Spring 2026</span>
-          </div>
-          <h3 class="text-lg font-bold text-slate-900 leading-tight mb-1">
-              Academic Excellence Scholarship
-          </h3>
-          <p class="text-slate-400 text-xs mt-1 italic">Duksung Women's University · 5 consecutive semesters</p>
-        </article>
-
-      </div>
-    </section>
-    
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section-border">
-      <h2 class="text-sm font-black uppercase tracking-[0.3em] text-sky-500 mb-8">
-        Experience & Activities
-      </h2>
-
-      <div class="space-y-10">
-
-        <article class="list-item-effect">
-          <div class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">
-            <span>Training</span>
-            <span>•</span>
-            <span>2025</span>
-          </div>
-          <h4 class="text-lg font-bold text-slate-900 leading-tight mb-1">
-              WhiteHat School (KITRI)
-          </h4>
-          <p class="text-sm text-slate-500 font-medium">
-            Participant (3rd Cohort). Completed advanced cybersecurity training focused on practical security engineering.
-          </p>
-        </article>
-
-        <article class="list-item-effect">
-          <div class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">
-            <span>Leadership</span>
-            <span>•</span>
-            <span>2024 – 2026</span>
-          </div>
-          <h4 class="text-lg font-bold text-slate-900 leading-tight mb-1">
-              BackDoor Security Club
-          </h4>
-          <p class="text-sm text-slate-500 font-medium">
-            Leader (2nd Cohort). Led cybersecurity study activities and coordinated club projects and events.
-          </p>
-        </article>
-
-        <article class="list-item-effect">
-          <div class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">
-            <span>Mentoring</span>
-            <span>•</span>
-            <span>2023 – 2026</span>
-          </div>
-          <h4 class="text-lg font-bold text-slate-900 leading-tight mb-1">
-              Outta AI Research Group
-          </h4>
-          <p class="text-sm text-slate-500 font-medium">
-              Mentor. Supported students in learning data analysis and deep learning fundamentals.
-          </p>
-        </article>
-
-        <article class="list-item-effect">
-          <div class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">
-            <span>Community</span>
-            <span>•</span>
-            <span>2023</span>
-          </div>
-          <h4 class="text-lg font-bold text-slate-900 leading-tight mb-1">
-              GOPAX Guardians
-          </h4>
-          <p class="text-sm text-slate-500 font-medium">
-              Member (1st Cohort). Participated in activities related to blockchain and digital asset education.
-          </p>
-        </article>
-
-        <article class="list-item-effect">
-          <div class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">
-            <span>Mentoring</span>
-            <span>•</span>
-            <span>2026</span>
-          </div>
-          <h4 class="text-lg font-bold text-slate-900 leading-tight mb-1">
-              KHNP Einstein Class
-          </h4>
-          <p class="text-sm text-slate-500 font-medium">
-              Mentor (17th Cohort). Provided educational mentoring for students in local communities.
-          </p>
-        </article>
-
-        <article class="list-item-effect">
-          <div class="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">
-            <span>Mentoring</span>
-            <span>•</span>
-            <span>2023</span>
-          </div>
-          <h4 class="text-lg font-bold text-slate-900 leading-tight mb-1">
-              Hyundai AutoEver Smart Mobility Engineering Experience Program
-          </h4>
-          <p class="text-sm text-slate-500 font-medium">
-              Mentor (6th Cohort). Supported students in hands-on activities and learning related to smart mobility technologies.
-          </p>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="mt-32 pt-8 border-t border-slate-50 text-center">
-      <p class="mono text-[10px] tracking-[0.5em] uppercase text-slate-300 font-bold">Inyeong Jang</p>
+<!-- AWARDS & SCHOLARSHIPS -->
+<section class="section-border" id="awards"><h2 class="text-sm font-black uppercase tracking-[0.3em] text-sky-500 mb-8">Awards &amp; Scholarships</h2><div class="space-y-7">
+<article class="list-item-effect"><p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Award · 2026</p><h3 class="text-base font-bold text-slate-900">Best Undergraduate Paper Award</h3><p class="text-sm text-slate-500">Korea Conference on Software Engineering (KCSE)</p></article>
+<article class="list-item-effect"><p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Scholarship · 2026</p><h3 class="text-base font-bold text-slate-900">KT Digital Talent Scholarship</h3><p class="text-sm text-slate-500">KT Group Hope Sharing Foundation</p></article>
+<article class="list-item-effect"><p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Award · 2024</p><h3 class="text-base font-bold text-slate-900">2nd Place, 1st Digital Software Engineering Hackathon</h3><p class="text-sm text-slate-500">Duksung Women's University</p></article>
+<article class="list-item-effect"><p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Scholarship · Spring 2023 – Spring 2026</p><h3 class="text-base font-bold text-slate-900">Academic Excellence Scholarship</h3><p class="text-sm text-slate-500">Duksung Women's University</p></article>
+</div></section>
+<!-- EXPERIENCE -->
+<section class="section-border" id="experience"><h2 class="text-sm font-black uppercase tracking-[0.3em] text-sky-500 mb-8">Experience &amp; Activities</h2><div class="space-y-7"><article class="list-item-effect"><p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Research Community · Oct. 2026 – Present</p><h3 class="text-base font-bold text-slate-900 leading-snug">Runner, Pseudo Labs</h3><p class="text-sm text-slate-600 leading-relaxed mt-2">Contribute to the Science Agent Leaderboard project, focusing on the evaluation of AI agents performing scientific tasks. Analyze ClinTox prediction results, evaluation metrics, and failure cases to examine the reliability of agent performance assessments.</p></article><article class="list-item-effect"><p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Training · Nov. 2026 – Present</p><h3 class="text-base font-bold text-slate-900 leading-snug">Mentee, Baby Beavers (Beaver Dam)</h3><p class="text-sm text-slate-600 leading-relaxed mt-2">Selected for the Baby Beavers cloud security program, which combines technical training with hands-on project work. Exploring cloud infrastructure and security practices through the program.</p></article><article class="list-item-effect"><p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Training · Mar. 2025 – Sep. 2025</p><h3 class="text-base font-bold text-slate-900 leading-snug">Mentee, WhiteHat School (KITRI)</h3><p class="text-sm text-slate-600 leading-relaxed mt-2">Completed the WhiteHat School cybersecurity training program, developing practical foundations in security engineering and vulnerability analysis through structured coursework and applied exercises.</p></article><article class="list-item-effect"><p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Leadership · Mar. 2024 – Aug. 2026</p><h3 class="text-base font-bold text-slate-900 leading-snug">Leader, BackDoor Cybersecurity Club</h3><p class="text-sm text-slate-600 leading-relaxed mt-2">Led a university cybersecurity club, coordinating study sessions, collaborative projects, and student activities. Supported members in exploring security concepts and building a peer-learning community.</p></article><article class="list-item-effect"><p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Community · Sep. 2024 – Aug. 2025</p><h3 class="text-base font-bold text-slate-900 leading-snug">Member, Corner Web Development Club</h3><p class="text-sm text-slate-600 leading-relaxed mt-2">Participated in a university web development community to strengthen practical understanding of web technologies and collaborative software development.</p></article><article class="list-item-effect"><p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Mentoring · Nov. 2023 – Aug. 2026</p><h3 class="text-base font-bold text-slate-900 leading-snug">Mentor, OUTTA AI Bootcamp</h3><p class="text-sm text-slate-600 leading-relaxed mt-2">Supported participants learning data analysis and introductory AI concepts, including machine learning and deep learning fundamentals. Helped explain technical concepts and guide learning activities.</p></article><article class="list-item-effect"><p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Mentoring · Jan. 2026 – Feb. 2026</p><h3 class="text-base font-bold text-slate-900 leading-snug">Mentor, Einstein Class (KHNP)</h3><p class="text-sm text-slate-600 leading-relaxed mt-2">Provided educational mentoring to students through the KHNP Einstein Class program, supporting learning and participation in community-based educational activities.</p></article><article class="list-item-effect"><p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Mentoring · Jun. 2023 – Sep. 2023</p><h3 class="text-base font-bold text-slate-900 leading-snug">Mentor, Smart Mobility Engineering Experience (Hyundai AutoEver)</h3><p class="text-sm text-slate-600 leading-relaxed mt-2">Mentored students in a smart mobility engineering education program, helping them engage with hands-on technical activities and understand mobility-related technologies.</p></article><article class="list-item-effect"><p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Volunteer · Mar. 2023 – Jun. 2023</p><h3 class="text-base font-bold text-slate-900 leading-snug">Member, I-coding Volunteer Club</h3><p class="text-sm text-slate-600 leading-relaxed mt-2">Participated in coding-related educational volunteering activities, supporting learners through technology-focused community service.</p></article></div></section>
+<!-- FOOTER -->
+<footer class="mt-32 pt-8 border-t border-slate-50 text-center"><p class="mono text-[10px] tracking-[0.25em] uppercase text-slate-300 font-bold">Inyeong Jang · 2026</p></footer></main></body></html>
