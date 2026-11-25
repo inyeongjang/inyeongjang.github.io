@@ -484,7 +484,6 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 /* DRT image slot backgrounds */
 .drt-page .visual.drt-image-slot { background:#dfe3df !important; }
 </style>
-
 <style>
 /* Fine tuning: slightly denser profile; airier project descriptions. */
 .slide:first-child .resume-grid { row-gap:10px; }
@@ -501,7 +500,47 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 :is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .tech-line { line-height:1.58; }
 :is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .award { margin-top:10px; }
 </style>
-</head>
+<style>
+/* Profile: align project and qualifications headings; remove subgroup labels. */
+@media (min-width:901px) {
+  .slide:first-child .resume-group-top.resume-left { gap:36px; }
+  .slide:first-child .resume-group-top.resume-right { gap:8px; }
+}
+.slide:first-child .resume-cols { row-gap:19px; }
+.slide:first-child .experience-column { gap:11px; }
+.slide:first-child .experience-column .ritem { padding:3px 0; }
+.slide:first-child .resume-cols > .rsec .rsec-title { margin-bottom:14px; }
+/* Give all project pages more comfortable line and section spacing. */
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .bullets li {
+  line-height:1.68; margin-bottom:8px;
+}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .subhead-spaced {
+  margin-top:13px;
+}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .subhead {
+  margin-bottom:8px;
+}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .tech-heading {
+  margin-top:13px !important; margin-bottom:6px !important;
+}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .tech-line {
+  line-height:1.65;
+}
+@media (min-width:701px) and (max-height:820px) {
+ :is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .bullets li {
+   line-height:1.58; margin-bottom:6px;
+ }
+ :is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .subhead-spaced {margin-top:10px;}
+}
+@media (max-width:900px) and (min-width:701px) {
+ .slide:first-child .resume-group-top.resume-left { gap:26px; }
+ .slide:first-child .resume-group-top.resume-right { gap:8px; }
+}
+@media (max-width:700px) {
+ .slide:first-child .resume-group-top.resume-left,
+ .slide:first-child .resume-group-top.resume-right {gap:18px;}
+}
+</style></head>
 <body>
 <button aria-label="이전" class="nav-btn" id="prev">‹</button>
 <button aria-label="다음" class="nav-btn" id="next">›</button>
@@ -547,7 +586,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 <div class="ritem"><span class="date">2026.09.13</span><strong>TOEIC Speaking IH</strong></div>
 </div></div><div class="rsec dense-list compact-list">
 <div class="rsec-title">기타 경험</div>
-<div class="experience-items"><div class="experience-column experience-study"><div class="experience-subtitle">보안 교육 · 동아리</div><div class="ritem"><span class="date">2025.03–2025.09</span><strong>화이트햇스쿨 3기</strong></div><div class="ritem"><span class="date">2024.03–2026.08</span><strong>덕성여자대학교 사이버보안 동아리 BackDoor 1·3기 부원 / 2기 회장</strong></div><div class="ritem"><span class="date">2024.09–2025.08</span><strong>덕성여자대학교 웹 개발 동아리 Corner 4기</strong></div></div><div class="experience-column experience-mentoring"><div class="experience-subtitle">멘토링 · 교육</div><div class="ritem"><span class="date">2023.11–2026.08</span><strong>OUTTA AI 부트캠프 멘토</strong></div><div class="ritem"><span class="date">2026.01–2026.02</span><strong>한국수력원자력 아인슈타인 클래스 17기 멘토</strong></div><div class="ritem"><span class="date">2023.06–2023.09</span><strong>현대오토에버 스마트 모빌리티 공학체험교육 6기 멘토</strong></div><div class="ritem"><span class="date">2023.03–2024.06</span><strong>덕성여자대학교 코딩 교육 봉사 동아리 I-coding</strong></div></div></div></div></div>
+<div class="experience-items"><div class="experience-column experience-study"><div class="ritem"><span class="date">2025.03–2025.09</span><strong>화이트햇스쿨 3기</strong></div><div class="ritem"><span class="date">2024.03–2026.08</span><strong>덕성여자대학교 사이버보안 동아리 BackDoor 1·3기 부원 / 2기 회장</strong></div><div class="ritem"><span class="date">2024.09–2025.08</span><strong>덕성여자대학교 웹 개발 동아리 Corner 4기</strong></div></div><div class="experience-column experience-mentoring"><div class="ritem"><span class="date">2023.11–2026.08</span><strong>OUTTA AI 부트캠프 멘토</strong></div><div class="ritem"><span class="date">2026.01–2026.02</span><strong>한국수력원자력 아인슈타인 클래스 17기 멘토</strong></div><div class="ritem"><span class="date">2023.06–2023.09</span><strong>현대오토에버 스마트 모빌리티 공학체험교육 6기 멘토</strong></div><div class="ritem"><span class="date">2023.03–2024.06</span><strong>덕성여자대학교 코딩 교육 봉사 동아리 I-coding</strong></div></div></div></div></div>
 </div>
 </div>
 </div>
@@ -631,7 +670,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 <section class="slide">
 <div class="page drt-page">
 <div class="title-row"><h1>PROJECT · 03</h1></div>
-<h2 class="section-title">AI 케어콜 기반 고령층 DRT 예약 및 보호자 공유 서비스</h2>
+<h2 class="section-title">AI 케어콜 기반 고령층 DRT 예약 및 보호자 공유 서비스<span class="title-links"><a aria-label="DRT 운행 현황 페이지 GitHub 저장소" class="title-link" href="https://github.com/KT-26-TEAM7/drt-tracking" rel="noreferrer" target="_blank" title="DRT 운행 현황 페이지 GitHub 저장소"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 .7A11.5 11.5 0 0 0 8.36 23c.58.1.79-.25.79-.56v-2.23c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.74-1.56-2.58-.3-5.29-1.29-5.29-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.16 1.18A10.9 10.9 0 0 1 12 6c.98 0 1.95.13 2.87.38 2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.72 5.39-5.31 5.68.42.36.79 1.07.79 2.16v3.24c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"></path></svg></a><a aria-label="DRT 가상 서버 GitHub 저장소" class="title-link" href="https://github.com/KT-26-TEAM7/mock-drt-server" rel="noreferrer" target="_blank" title="DRT 가상 서버 GitHub 저장소"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 .7A11.5 11.5 0 0 0 8.36 23c.58.1.79-.25.79-.56v-2.23c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.74-1.56-2.58-.3-5.29-1.29-5.29-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.16 1.18A10.9 10.9 0 0 1 12 6c.98 0 1.95.13 2.87.38 2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.72 5.39-5.31 5.68.42.36.79 1.07.79 2.16v3.24c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"></path></svg></a></span></h2>
 <div class="project-grid">
 <div class="visuals drt-visuals"><div class="visual image-light drt-image-slot" data-image-slot="1"><img alt="DRT 프로젝트 이미지 1" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'" src="images/drt-1.png"/><span class="drt-placeholder-label">drt-1.png</span></div><div class="visual image-light drt-image-slot" data-image-slot="2"><img alt="DRT 프로젝트 이미지 2" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'" src="images/drt-2.png"/><span class="drt-placeholder-label">drt-2.png</span></div></div>
 <div class="project-copy"><div class="subhead">프로젝트 소개</div>
@@ -646,7 +685,6 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 <li><strong>발표 시연 페이지</strong> : 예약과 호출 과정을 보여주는 웹페이지 개발</li>
 </ul>
 <div class="award">한국교통안전공단의 실제 앱에 해당 기능을 적용하기 위한 고도화 진행 예정</div>
-
 </div></div></div></section><section class="slide">
 <div class="page">
 <div class="experience-mentoring-grid">
