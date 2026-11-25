@@ -344,7 +344,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 .slide:first-child .resume-cols .ritem strong{font-size:12.2px;line-height:1.5}
 .slide:first-child .resume-cols .ritem .date{font-size:10.8px}
 .slide:first-child .resume-cols .compact-list .ritem{grid-template-columns:110px minmax(0,1fr) 0;gap:10px}
-.slide:first-child .resume-cols > .rsec{grid-column:1/-1;min-width:0;border-top:1px solid var(--line);padding-top:14px}
+.slide:first-child .resume-cols > .rsec{grid-column:1/-1;min-width:0;border-top:0;padding-top:0}
 .slide:first-child .resume-cols > .rsec .rsec-title{margin-bottom:13px}
 .slide:first-child .experience-items{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:44px;row-gap:6px}
 .slide:first-child .experience-items .ritem{margin-bottom:0}
@@ -354,7 +354,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
   .slide:first-child .resume-cols{row-gap:13px}
   .slide:first-child .resume-group-top{gap:12px}
   .slide:first-child .resume-cols .ritem{padding:2px 0;margin-bottom:4px}
-  .slide:first-child .resume-cols > .rsec{padding-top:10px}
+  .slide:first-child .resume-cols > .rsec{padding-top:0}
 }
 @media(max-width:900px) and (min-width:701px){
   .slide:first-child .resume-cols{column-gap:24px}
@@ -429,6 +429,25 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
  :is(.autofic-page, .patch-correctness-page, .drt-page) .project-copy{padding:0;}
  .drt-page .drt-image-slot{min-height:160px;}
 }
+</style><style>
+/* Final fixes: preserve original project text rhythm, remove stray line. */
+.slide:first-child .resume-cols > .rsec {border-top:none !important;padding-top:0 !important;}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .subhead {font-size:12px;line-height:1.45;margin-bottom:8px;}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .subhead-spaced {margin-top:14px;}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .bullets li {font-size:13px;line-height:1.72;margin-bottom:8px;padding-left:2px;}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .award {font-size:12.5px;margin-top:12px;padding:10px 12px;}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .tech-heading {margin-top:14px !important;margin-bottom:8px !important;}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .tech-line {font-size:12.5px;line-height:1.72;margin:0 0 0 2px;}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-grid {gap:32px;height:calc(100% - 82px);}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy {justify-content:center;overflow-y:auto;scrollbar-width:thin;}
+/* Images sit on a background matching their own canvas. */
+.visual.image-light {background:#fff !important;border-color:#e4e7e9;}
+.visual.image-dark {background:#243238 !important;border-color:#243238;}
+.visual.image-light img,.visual.image-dark img {background:transparent;}
+.drt-page .drt-image-slot {background:#fff !important;}
+@media(max-width:700px){
+ :is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy {overflow:visible;}
+}
 </style></head>
 <body>
 <button aria-label="이전" class="nav-btn" id="prev">‹</button>
@@ -502,7 +521,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 <ul class="bullets">
 <li><strong>SAST 탐지 → LLM 기반 패치 생성 → PR 생성</strong> End-to-End 자동화 파이프라인 개발</li>
 <li>XML 구조화 컨텍스트와 Annotation으로 취약 구간을 명시하고 수정 범위를 한정</li>
-</ul>
+</ul><div class="subhead subhead-spaced tech-heading">주요 기술</div><p class="tech-line">Python · Semgrep · CodeQL · Snyk Code · OpenAI API · GitHub Actions</p>
 <div class="subhead subhead-spaced">담당 역할</div>
 <ul class="bullets">
 <li><strong>Project Manager</strong> : 일정 관리 및 업무 분담</li>
@@ -514,7 +533,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 <li>생성한 Pull Request 중 <strong>7건</strong> 실제 저장소 병합</li>
 </ul>
 <div class="award">🏆 KCSE 2026 우수 학부생 논문상 수상</div>
-<div class="subhead subhead-spaced tech-heading">주요 기술</div><p class="tech-line">Python · Semgrep · CodeQL · Snyk Code · OpenAI API · GitHub Actions</p></div>
+</div>
 </div>
 </div>
 </section>
@@ -539,7 +558,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 <ul class="bullets">
 <li>정적 분석 경고 제거만으로 패치의 정확성을 보장할 수 없다는 한계에서 출발</li>
 <li>기존 LLM 기반 패치 검증 도구에서 생성된 테스트의 오류를 분석하고 검증 성능 개선</li>
-</ul>
+</ul><div class="subhead subhead-spaced tech-heading">주요 기술</div><p class="tech-line">Python · Java · OpenAI API · Llama 3.2</p>
 <div class="subhead subhead-spaced">담당 역할</div>
 <ul class="bullets">
 <li>LLM 생성 테스트의 <strong>의미적 불충분성과 구문적 유효성 문제</strong> 분석</li>
@@ -551,7 +570,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 <li>잘못된 패치 탐지 성능 GPT-4o-mini <strong>최대 7.5%p</strong>, Llama 3.2 3B <strong>최대 19.9%p</strong> 향상</li>
 </ul>
 <div class="award">🏆 IEEE ICST 2026 Research Track 논문 발표</div>
-<div class="subhead subhead-spaced tech-heading">주요 기술</div><p class="tech-line">Python · Java · OpenAI API · Llama 3.2</p></div>
+</div>
 </div>
 </div>
 </section>
@@ -566,7 +585,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 <ul class="bullets">
 <li>KT 디지털 인재 장학생 사회문제 해결 프로젝트로, KT 및 한국교통안전공단과 협업</li>
 <li>고령층의 음성 기반 수요응답형 교통서비스(DRT) 예약과 보호자 운행 현황 확인을 지원</li>
-</ul>
+</ul><div class="subhead subhead-spaced tech-heading">주요 기술</div><p class="tech-line">Python · JavaScript · FastAPI</p>
 <div class="subhead subhead-spaced">담당 역할</div>
 <ul class="bullets">
 <li><strong>Mock DRT 서버 구축</strong> : 실제 서비스 연동 전 DRT 호출을 테스트하는 가상 API 서버 개발</li>
@@ -578,8 +597,8 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 <li>DRT 호출 테스트 환경과 운행 현황 조회·발표 시연 페이지 구현</li>
 <li>한국교통안전공단의 실제 앱에 해당 기능을 적용하기 위한 고도화 진행 예정</li>
 </ul>
-<div class="subhead subhead-spaced tech-heading">주요 기술</div>
-<p class="tech-line">Python · JavaScript · FastAPI</p></div></div></div></section><section class="slide">
+
+</div></div></div></section><section class="slide">
 <div class="page">
 <div class="experience-mentoring-grid">
 <div class="activity-column">
