@@ -288,47 +288,44 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 
 
 
-/* Profile page: balanced two-row information layout */
+/* Profile page: two independent columns; no empty grid row */
 .slide:first-child .page{overflow:hidden}
-.slide:first-child .resume-grid{height:100%;min-height:0;grid-template-rows:auto minmax(0,1fr);row-gap:18px}
+.slide:first-child .resume-grid{height:100%;min-height:0;grid-template-rows:auto minmax(0,1fr);row-gap:16px}
 .slide:first-child .resume-head h2.headline-emphasis{font-size:27px;line-height:1.42}
 .slide:first-child .identity-row{margin-bottom:10px}
 .slide:first-child .resume-cols{
-  display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,.86fr);
-  grid-template-rows:auto auto;column-gap:48px;row-gap:20px;
-  align-content:space-between;padding-top:8px;
+  display:grid;
+  grid-template-columns:minmax(0,1.16fr) minmax(0,.84fr);
+  grid-template-rows:auto;
+  column-gap:50px;
+  align-content:start;
+  align-items:start;
+  padding-top:4px;
 }
-.slide:first-child .resume-section-group{min-width:0}
-.slide:first-child .skills-group,.slide:first-child .mentoring-group{
-  border-top:1px solid var(--line);padding-top:18px
-}
-.slide:first-child .rsec{margin-bottom:17px}
-.slide:first-child .rsec:last-child{margin-bottom:0}
+.slide:first-child .resume-section-group{min-width:0;display:flex;flex-direction:column;gap:18px}
+.slide:first-child .rsec{margin:0}
 .slide:first-child .rsec-title{font-size:14px;margin-bottom:10px}
-.slide:first-child .dense-list .ritem{margin-bottom:7px;padding:3px 0}
+.slide:first-child .dense-list .ritem{margin-bottom:8px;padding:3px 0}
 .slide:first-child .ritem strong{font-size:12.2px;line-height:1.5}
-.slide:first-child .compact-list .ritem{grid-template-columns:100px minmax(0,1fr) 10px;column-gap:11px}
+.slide:first-child .compact-list .ritem{grid-template-columns:108px minmax(0,1fr) 6px;column-gap:10px}
 .slide:first-child .compact-list .ritem .date{font-size:10.8px}
-@media(min-width:701px) and (max-height:760px){
+@media(min-width:701px) and (max-height:800px){
   .slide:first-child .page{overflow-y:auto}
-  .slide:first-child .resume-grid{height:auto;row-gap:14px}
-  .slide:first-child .resume-cols{row-gap:14px;column-gap:32px}
-  .slide:first-child .skills-group,.slide:first-child .mentoring-group{padding-top:12px}
-  .slide:first-child .rsec{margin-bottom:12px}
+  .slide:first-child .resume-grid{height:auto;row-gap:12px}
+  .slide:first-child .resume-section-group{gap:12px}
   .slide:first-child .dense-list .ritem{margin-bottom:5px;padding:2px 0}
 }
 @media(max-width:900px) and (min-width:701px){
   .slide:first-child .resume-cols{column-gap:24px}
-  .slide:first-child .compact-list .ritem{grid-template-columns:80px minmax(0,1fr) 8px;column-gap:7px}
+  .slide:first-child .compact-list .ritem{grid-template-columns:85px minmax(0,1fr) 4px;column-gap:7px}
   .slide:first-child .ritem strong{font-size:11px}
 }
 @media(max-width:700px){
   .slide:first-child .page{overflow:visible}
   .slide:first-child .resume-grid{height:auto;grid-template-rows:auto auto auto}
-  .slide:first-child .resume-cols{grid-template-columns:1fr;grid-template-rows:auto;row-gap:18px}
-  .slide:first-child .resume-section-group{border-top:1px solid var(--line);padding-top:15px}
-  .slide:first-child .resume-section-group:first-child{border-top:0;padding-top:0}
-  .slide:first-child .compact-list .ritem{grid-template-columns:92px minmax(0,1fr) 8px}
+  .slide:first-child .resume-cols{grid-template-columns:1fr;row-gap:22px}
+  .slide:first-child .resume-section-group{gap:18px}
+  .slide:first-child .compact-list .ritem{grid-template-columns:92px minmax(0,1fr) 6px}
 }
 </style>
 </head>
@@ -359,47 +356,41 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 </div>
 <h2 class="headline-emphasis"><span class="headline-highlight">LLM 기반 자동화 시스템을 개발하고, 생성 결과의 오류를 분석해 왔습니다.</span></h2>
 </div>
-<div class="resume-cols"><div class="resume-section-group summary-group"><div class="rsec dense-list compact-list">
+<div class="resume-cols">
+<div class="resume-section-group left-group">
+<div class="rsec dense-list compact-list">
 <div class="rsec-title">학력</div>
-<div class="ritem">
-<span class="date">2023.03–2028.02</span>
-<strong>덕성여자대학교 디지털소프트웨어공학부 (4.43 / 4.5)</strong>
+<div class="ritem"><span class="date">2023.03–2028.02</span><strong>덕성여자대학교 디지털소프트웨어공학부 (4.43 / 4.5)</strong></div>
 </div>
-</div><div class="rsec dense-list compact-list">
+<div class="rsec dense-list compact-list">
 <div class="rsec-title">프로젝트 · 연구</div>
-<div class="ritem">
-<span class="date">2025.05–2026.02</span>
-<div class="project-heading">
-<strong>AutoFiC: 취약점 탐지부터 PR 생성까지 자동화된 보안 패치 파이프라인</strong>
+<div class="ritem"><span class="date">2025.05–2026.02</span><div class="project-heading"><strong>AutoFiC: 취약점 탐지부터 PR 생성까지 자동화된 보안 패치 파이프라인</strong></div></div>
+<div class="ritem"><span class="date">2025.08–2026.05</span><div class="project-heading"><strong>자동 패치 정확성 검증을 위한 LLM Oracle 설계</strong></div></div>
 </div>
-</div>
-<div class="ritem">
-<span class="date">2025.08–2026.05</span>
-<div class="project-heading">
-<strong>자동 패치 정확성 검증을 위한 LLM Oracle 설계</strong>
-</div>
-</div>
-</div></div><div class="resume-section-group credentials-group"><div class="rsec dense-list compact-list">
+<div class="rsec dense-list compact-list">
 <div class="rsec-title">수상 내역</div>
 <div class="ritem"><span class="date">2026.03.20</span><strong>KT 디지털 인재 장학생</strong></div>
 <div class="ritem"><span class="date">2026.02.05</span><strong>KCSE 2026 우수 학부생 논문상</strong></div>
-<div class="ritem"><span class="date">2023–2026</span><strong>성적우수 장학금 (학과 수석 포함, 2023–2026)</strong></div>
-</div><div class="rsec dense-list compact-list">
+</div>
+<div class="rsec dense-list compact-list">
 <div class="rsec-title">어학 · 자격증</div>
 <div class="ritem"><span class="date">2026.11.20</span><strong>ADsP 데이터분석 준전문가</strong></div>
-<div class="ritem"><span class="date">2026.09</span><strong>TOEIC 880 · TOEIC Speaking IH</strong></div>
-</div></div><div class="resume-section-group skills-group"><div class="rsec dense-list compact-list">
-<div class="rsec-title">보안 · 개발</div>
+<div class="ritem"><span class="date">2026.09.06</span><strong>TOEIC 880</strong></div>
+<div class="ritem"><span class="date">2026.09.13</span><strong>TOEIC Speaking IH</strong></div>
+</div>
+</div>
+<div class="resume-section-group right-group">
+<div class="rsec dense-list compact-list">
+<div class="rsec-title">기타 경험</div>
 <div class="ritem"><span class="date">2025.03–2025.09</span><strong>화이트햇스쿨 3기</strong></div>
 <div class="ritem"><span class="date">2024.03–2026.08</span><strong>덕성여자대학교 사이버보안 동아리 BackDoor 1·3기 부원 / 2기 회장</strong></div>
 <div class="ritem"><span class="date">2024.09–2025.08</span><strong>덕성여자대학교 웹 개발 동아리 Corner 4기</strong></div>
-</div></div><div class="resume-section-group mentoring-group"><div class="rsec dense-list compact-list">
-<div class="rsec-title">멘토링 · 교육</div>
 <div class="ritem"><span class="date">2023.11–2026.08</span><strong>OUTTA AI 부트캠프 멘토</strong></div>
 <div class="ritem"><span class="date">2026.01–2026.02</span><strong>한국수력원자력 아인슈타인 클래스 17기 멘토</strong></div>
 <div class="ritem"><span class="date">2023.06–2023.09</span><strong>현대오토에버 스마트 모빌리티 공학체험교육 6기 멘토</strong></div>
 <div class="ritem"><span class="date">2023.03–2024.06</span><strong>덕성여자대학교 코딩 교육 봉사 동아리 I-coding</strong></div>
-</div></div></div>
+</div>
+</div></div>
 </div>
 </div>
 </div>
