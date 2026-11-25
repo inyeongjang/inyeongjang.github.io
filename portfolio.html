@@ -1,13 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>장인영 | Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;family=Noto+Sans+KR:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;family=Noto+Sans+KR:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{
   --navy:#17324d;
@@ -287,289 +287,276 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 }
 
 
-/* First-page layout: keep every section visible on shorter laptop screens. */
-.slide:first-child .page{overflow-y:auto;scrollbar-width:thin;scrollbar-color:#c5dfeb transparent}
-.slide:first-child .resume-grid{height:auto;min-height:100%;grid-template-rows:auto auto}
-.slide:first-child .resume-cols{align-content:start}
-.slide:first-child .rsec{margin-bottom:13px}
-.slide:first-child .dense-list .ritem{margin-bottom:4px;padding:2px 0}
-.slide:first-child .rsec-title{margin-bottom:6px}
-@media (min-width:701px) and (max-height:700px){
-  .slide:first-child .page{padding:24px 34px}
-  .slide:first-child .resume-grid{row-gap:12px}
-  .slide:first-child .resume-head h2.headline-emphasis{font-size:23px}
-  .slide:first-child .resume-cols{gap:22px}
-  .slide:first-child .rsec{margin-bottom:9px}
-  .slide:first-child .dense-list .ritem{margin-bottom:2px;padding:1px 0}
-}
 
+/* Profile page: balanced two-row information layout */
+.slide:first-child .page{overflow:hidden}
+.slide:first-child .resume-grid{height:100%;min-height:0;grid-template-rows:auto minmax(0,1fr);row-gap:18px}
+.slide:first-child .resume-head h2.headline-emphasis{font-size:27px;line-height:1.42}
+.slide:first-child .identity-row{margin-bottom:10px}
+.slide:first-child .resume-cols{
+  display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,.86fr);
+  grid-template-rows:auto auto;column-gap:48px;row-gap:20px;
+  align-content:space-between;padding-top:8px;
+}
+.slide:first-child .resume-section-group{min-width:0}
+.slide:first-child .skills-group,.slide:first-child .mentoring-group{
+  border-top:1px solid var(--line);padding-top:18px
+}
+.slide:first-child .rsec{margin-bottom:17px}
+.slide:first-child .rsec:last-child{margin-bottom:0}
+.slide:first-child .rsec-title{font-size:14px;margin-bottom:10px}
+.slide:first-child .dense-list .ritem{margin-bottom:7px;padding:3px 0}
+.slide:first-child .ritem strong{font-size:12.2px;line-height:1.5}
+.slide:first-child .compact-list .ritem{grid-template-columns:100px minmax(0,1fr) 10px;column-gap:11px}
+.slide:first-child .compact-list .ritem .date{font-size:10.8px}
+@media(min-width:701px) and (max-height:760px){
+  .slide:first-child .page{overflow-y:auto}
+  .slide:first-child .resume-grid{height:auto;row-gap:14px}
+  .slide:first-child .resume-cols{row-gap:14px;column-gap:32px}
+  .slide:first-child .skills-group,.slide:first-child .mentoring-group{padding-top:12px}
+  .slide:first-child .rsec{margin-bottom:12px}
+  .slide:first-child .dense-list .ritem{margin-bottom:5px;padding:2px 0}
+}
+@media(max-width:900px) and (min-width:701px){
+  .slide:first-child .resume-cols{column-gap:24px}
+  .slide:first-child .compact-list .ritem{grid-template-columns:80px minmax(0,1fr) 8px;column-gap:7px}
+  .slide:first-child .ritem strong{font-size:11px}
+}
+@media(max-width:700px){
+  .slide:first-child .page{overflow:visible}
+  .slide:first-child .resume-grid{height:auto;grid-template-rows:auto auto auto}
+  .slide:first-child .resume-cols{grid-template-columns:1fr;grid-template-rows:auto;row-gap:18px}
+  .slide:first-child .resume-section-group{border-top:1px solid var(--line);padding-top:15px}
+  .slide:first-child .resume-section-group:first-child{border-top:0;padding-top:0}
+  .slide:first-child .compact-list .ritem{grid-template-columns:92px minmax(0,1fr) 8px}
+}
 </style>
 </head>
 <body>
-
-<button id="prev" class="nav-btn" aria-label="이전">‹</button>
-<button id="next" class="nav-btn" aria-label="다음">›</button>
+<button aria-label="이전" class="nav-btn" id="prev">‹</button>
+<button aria-label="다음" class="nav-btn" id="next">›</button>
 <div class="dots" id="dots"></div>
-
 <div class="deck" id="deck">
-
 <!-- Section 1 -->
 <section class="slide">
-  <div class="page">
-    <div class="resume-grid">
-      <aside class="profile">
-        <div class="photo"><img src="files/profile.jpg" alt="장인영"></div>
-      </aside>
-
-      <div class="resume-right">
-        <div class="resume-head">
-          <div class="identity-row">
-            <div class="name">장인영</div>
-            <div class="link-row">
-              <a href="https://github.com/inyeongjang" target="_blank" rel="noreferrer" aria-label="GitHub">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7A11.5 11.5 0 0 0 8.36 23c.58.1.79-.25.79-.56v-2.23c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.74-1.56-2.58-.3-5.29-1.29-5.29-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.16 1.18A10.9 10.9 0 0 1 12 6c.98 0 1.95.13 2.87.38 2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.72 5.39-5.31 5.68.42.36.79 1.07.79 2.16v3.24c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg>
-              </a>
-              <a href="https://www.linkedin.com/in/inyeong-jang-4184252b2/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.57h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29ZM5.32 7.41a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.04H3.54V8.98H7.1v11.47Z"/></svg>
-              </a>
-            </div>
-          </div>
-          <h2 class="headline-emphasis"><span class="headline-highlight">LLM 기반 개발 자동화와 소프트웨어 검증을 연구해 왔습니다.</span></h2>
-        </div>
-
-        <div class="resume-cols">
-          <div>
-            <div class="rsec dense-list compact-list">
-              <div class="rsec-title">학력</div>
-              <div class="ritem">
-                <span class="date">2023.03–2028.02</span>
-                <strong>덕성여자대학교 디지털소프트웨어공학부 (4.43 / 4.5)</strong>
-              </div>
-            </div>
-
-            <div class="rsec dense-list compact-list">
-              <div class="rsec-title">프로젝트 · 연구</div>
-
-              <div class="ritem">
-                <span class="date">2025.05–2026.02</span>
-                <div class="project-heading">
-                  <strong>AutoFiC: 취약점 탐지부터 PR 생성까지 자동화된 보안 패치 파이프라인</strong>
-                </div>
-              </div>
-
-              <div class="ritem">
-                <span class="date">2025.08–2026.05</span>
-                <div class="project-heading">
-                  <strong>자동 패치 정확성 검증을 위한 LLM Oracle 설계</strong>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="rsec dense-list compact-list">
-              <div class="rsec-title">수상 내역</div>
-              <div class="ritem"><span class="date">2026.03.20</span><strong>KT 디지털 인재 장학생</strong></div>
-              <div class="ritem"><span class="date">2026.02.05</span><strong>KCSE 2026 우수 학부생 논문상</strong></div>
-              <div class="ritem"><span class="date">2023–2026</span><strong>성적우수 장학금 (학과 수석 포함, 2023–2026)</strong></div>
-            </div>
-
-          </div>
-
-          <div>
-            <div class="rsec dense-list compact-list">
-              <div class="rsec-title">보안 · 개발</div>
-              <div class="ritem"><span class="date">2025.03–2025.09</span><strong>화이트햇스쿨 3기</strong></div>
-              <div class="ritem"><span class="date">2024.03–2026.08</span><strong>덕성여자대학교 사이버보안 동아리 BackDoor 1·3기 부원 / 2기 회장</strong></div>
-              <div class="ritem"><span class="date">2024.09–2025.08</span><strong>덕성여자대학교 웹 개발 동아리 Corner 4기</strong></div>
-            </div>
-
-
-            <div class="rsec dense-list compact-list">
-              <div class="rsec-title">어학 · 자격증</div>
-              <div class="ritem"><span class="date">2026.11.20</span><strong>ADsP 데이터분석 준전문가</strong></div>
-              <div class="ritem"><span class="date">2026.09</span><strong>TOEIC 880 · TOEIC Speaking IH</strong></div>
-            </div>
-
-            <div class="rsec dense-list compact-list">
-              <div class="rsec-title">멘토링 · 교육</div>
-              <div class="ritem"><span class="date">2023.11–2026.08</span><strong>OUTTA AI 부트캠프 멘토</strong></div>
-              <div class="ritem"><span class="date">2026.01–2026.02</span><strong>한국수력원자력 아인슈타인 클래스 17기 멘토</strong></div>
-              <div class="ritem"><span class="date">2023.06–2023.09</span><strong>현대오토에버 스마트 모빌리티 공학체험교육 6기 멘토</strong></div>
-              <div class="ritem"><span class="date">2023.03–2024.06</span><strong>덕성여자대학교 코딩 교육 봉사 동아리 I-coding</strong></div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="page">
+<div class="resume-grid">
+<aside class="profile">
+<div class="photo"><img alt="장인영" src="files/profile.jpg"/></div>
+</aside>
+<div class="resume-right">
+<div class="resume-head">
+<div class="identity-row">
+<div class="name">장인영</div>
+<div class="link-row">
+<a aria-label="GitHub" href="https://github.com/inyeongjang" rel="noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 .7A11.5 11.5 0 0 0 8.36 23c.58.1.79-.25.79-.56v-2.23c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.74-1.56-2.58-.3-5.29-1.29-5.29-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.16 1.18A10.9 10.9 0 0 1 12 6c.98 0 1.95.13 2.87.38 2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.72 5.39-5.31 5.68.42.36.79 1.07.79 2.16v3.24c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"></path></svg>
+</a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/inyeong-jang-4184252b2/" rel="noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.57h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29ZM5.32 7.41a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.04H3.54V8.98H7.1v11.47Z"></path></svg>
+</a>
+</div>
+</div>
+<h2 class="headline-emphasis"><span class="headline-highlight">LLM 기반 자동화 시스템을 개발하고, 생성 결과의 오류를 분석해 왔습니다.</span></h2>
+</div>
+<div class="resume-cols"><div class="resume-section-group summary-group"><div class="rsec dense-list compact-list">
+<div class="rsec-title">학력</div>
+<div class="ritem">
+<span class="date">2023.03–2028.02</span>
+<strong>덕성여자대학교 디지털소프트웨어공학부 (4.43 / 4.5)</strong>
+</div>
+</div><div class="rsec dense-list compact-list">
+<div class="rsec-title">프로젝트 · 연구</div>
+<div class="ritem">
+<span class="date">2025.05–2026.02</span>
+<div class="project-heading">
+<strong>AutoFiC: 취약점 탐지부터 PR 생성까지 자동화된 보안 패치 파이프라인</strong>
+</div>
+</div>
+<div class="ritem">
+<span class="date">2025.08–2026.05</span>
+<div class="project-heading">
+<strong>자동 패치 정확성 검증을 위한 LLM Oracle 설계</strong>
+</div>
+</div>
+</div></div><div class="resume-section-group credentials-group"><div class="rsec dense-list compact-list">
+<div class="rsec-title">수상 내역</div>
+<div class="ritem"><span class="date">2026.03.20</span><strong>KT 디지털 인재 장학생</strong></div>
+<div class="ritem"><span class="date">2026.02.05</span><strong>KCSE 2026 우수 학부생 논문상</strong></div>
+<div class="ritem"><span class="date">2023–2026</span><strong>성적우수 장학금 (학과 수석 포함, 2023–2026)</strong></div>
+</div><div class="rsec dense-list compact-list">
+<div class="rsec-title">어학 · 자격증</div>
+<div class="ritem"><span class="date">2026.11.20</span><strong>ADsP 데이터분석 준전문가</strong></div>
+<div class="ritem"><span class="date">2026.09</span><strong>TOEIC 880 · TOEIC Speaking IH</strong></div>
+</div></div><div class="resume-section-group skills-group"><div class="rsec dense-list compact-list">
+<div class="rsec-title">보안 · 개발</div>
+<div class="ritem"><span class="date">2025.03–2025.09</span><strong>화이트햇스쿨 3기</strong></div>
+<div class="ritem"><span class="date">2024.03–2026.08</span><strong>덕성여자대학교 사이버보안 동아리 BackDoor 1·3기 부원 / 2기 회장</strong></div>
+<div class="ritem"><span class="date">2024.09–2025.08</span><strong>덕성여자대학교 웹 개발 동아리 Corner 4기</strong></div>
+</div></div><div class="resume-section-group mentoring-group"><div class="rsec dense-list compact-list">
+<div class="rsec-title">멘토링 · 교육</div>
+<div class="ritem"><span class="date">2023.11–2026.08</span><strong>OUTTA AI 부트캠프 멘토</strong></div>
+<div class="ritem"><span class="date">2026.01–2026.02</span><strong>한국수력원자력 아인슈타인 클래스 17기 멘토</strong></div>
+<div class="ritem"><span class="date">2023.06–2023.09</span><strong>현대오토에버 스마트 모빌리티 공학체험교육 6기 멘토</strong></div>
+<div class="ritem"><span class="date">2023.03–2024.06</span><strong>덕성여자대학교 코딩 교육 봉사 동아리 I-coding</strong></div>
+</div></div></div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- 3. AutoFiC -->
 <section class="slide">
-  <div class="page autofic-page">
-    <div class="title-row"><div class="title-bar"></div><h1>RESEARCH & PROJECT · 01</h1></div>
-    <h2 class="section-title">
+<div class="page autofic-page">
+<div class="title-row"><div class="title-bar"></div><h1>RESEARCH &amp; PROJECT · 01</h1></div>
+<h2 class="section-title">
       AutoFiC : 취약점 탐지부터 PR 생성까지 자동화된 보안 패치 파이프라인
       <span class="title-links">
-        <a class="title-link" href="https://autofic.github.io/" target="_blank" rel="noreferrer" aria-label="AutoFiC 홈페이지" title="홈페이지"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.92 6h-3.04a15.7 15.7 0 0 0-1.38-3.56A8.04 8.04 0 0 1 18.92 8ZM12 4c.83 1.2 1.46 2.54 1.84 4H10.16A13.68 13.68 0 0 1 12 4ZM4.26 14a7.76 7.76 0 0 1 0-4h3.39a16.52 16.52 0 0 0 0 4H4.26Zm.82 2h3.04c.3 1.25.77 2.45 1.38 3.56A8.04 8.04 0 0 1 5.08 16ZM8.12 8H5.08A8.04 8.04 0 0 1 9.5 4.44 15.7 15.7 0 0 0 8.12 8ZM12 20a13.68 13.68 0 0 1-1.84-4h3.68A13.68 13.68 0 0 1 12 20Zm2.25-6h-4.5a14.4 14.4 0 0 1 0-4h4.5a14.4 14.4 0 0 1 0 4Zm.25 5.56A15.7 15.7 0 0 0 15.88 16h3.04a8.04 8.04 0 0 1-4.42 3.56ZM16.35 14a16.52 16.52 0 0 0 0-4h3.39a7.76 7.76 0 0 1 0 4h-3.39Z"/></svg></a>
-        <a class="title-link" href="https://github.com/AutoFiC/autofic-core" target="_blank" rel="noreferrer" aria-label="AutoFiC GitHub 저장소" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7A11.5 11.5 0 0 0 8.36 23c.58.1.79-.25.79-.56v-2.23c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.74-1.56-2.58-.3-5.29-1.29-5.29-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.16 1.18A10.9 10.9 0 0 1 12 6c.98 0 1.95.13 2.87.38 2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.72 5.39-5.31 5.68.42.36.79 1.07.79 2.16v3.24c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg></a>
-        <a class="title-link document" href="https://inyeongjang.github.io/papers/KCSE-2026.pdf" target="_blank" rel="noreferrer" aria-label="AutoFiC 논문 PDF" title="논문"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a>
-      </span>
-    </h2>
-
-    <div class="project-grid">
-      <div class="visuals">
-        <div class="visual image-dark"><img src="files/autofic-1.png" alt="AutoFiC 파이프라인"></div>
-        <div class="visual image-light"><img src="files/autofic-2.png" alt="Pull Request 결과"></div>
-      </div>
-
-      <div class="project-copy">
-        <div class="subhead">프로젝트 소개</div>
-        <ul class="bullets">
-          <li><strong>SAST 탐지 → LLM 기반 패치 생성 → PR 생성</strong> End-to-End 자동화 파이프라인 개발</li>
-          <li>XML 구조화 컨텍스트와 Annotation으로 취약 구간을 명시하고 수정 범위를 한정</li>
-        </ul>
-
-        <div class="subhead subhead-spaced">담당 역할</div>
-        <ul class="bullets">
-          <li><strong>Project Manager</strong> : 일정 관리 및 업무 분담</li>
-          <li><strong>SAST 실행 자동화 및 결과 통합</strong> : Semgrep, CodeQL, Snyk Code 실행과 분석 결과 전처리·구조화 로직 구현</li>
-        </ul>
-
-        <div class="subhead subhead-spaced">성과</div>
-        <ul class="bullets">
-          <li>파이프라인 실행 성공 <strong>86/91개 프로젝트(94.5%)</strong>, 정적 분석 경고 <strong>397/441건 제거(90.0%)</strong></li>
-          <li>생성한 Pull Request 중 <strong>7건</strong> 실제 저장소 병합</li>
-        </ul>
-        <div class="award">🏆 KCSE 2026 우수 학부생 논문상 수상</div>
-      </div>
-    </div>
-  </div>
+<a aria-label="AutoFiC 홈페이지" class="title-link" href="https://autofic.github.io/" rel="noreferrer" target="_blank" title="홈페이지"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.92 6h-3.04a15.7 15.7 0 0 0-1.38-3.56A8.04 8.04 0 0 1 18.92 8ZM12 4c.83 1.2 1.46 2.54 1.84 4H10.16A13.68 13.68 0 0 1 12 4ZM4.26 14a7.76 7.76 0 0 1 0-4h3.39a16.52 16.52 0 0 0 0 4H4.26Zm.82 2h3.04c.3 1.25.77 2.45 1.38 3.56A8.04 8.04 0 0 1 5.08 16ZM8.12 8H5.08A8.04 8.04 0 0 1 9.5 4.44 15.7 15.7 0 0 0 8.12 8ZM12 20a13.68 13.68 0 0 1-1.84-4h3.68A13.68 13.68 0 0 1 12 20Zm2.25-6h-4.5a14.4 14.4 0 0 1 0-4h4.5a14.4 14.4 0 0 1 0 4Zm.25 5.56A15.7 15.7 0 0 0 15.88 16h3.04a8.04 8.04 0 0 1-4.42 3.56ZM16.35 14a16.52 16.52 0 0 0 0-4h3.39a7.76 7.76 0 0 1 0 4h-3.39Z"></path></svg></a>
+<a aria-label="AutoFiC GitHub 저장소" class="title-link" href="https://github.com/AutoFiC/autofic-core" rel="noreferrer" target="_blank" title="GitHub"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 .7A11.5 11.5 0 0 0 8.36 23c.58.1.79-.25.79-.56v-2.23c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.74-1.56-2.58-.3-5.29-1.29-5.29-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.16 1.18A10.9 10.9 0 0 1 12 6c.98 0 1.95.13 2.87.38 2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.72 5.39-5.31 5.68.42.36.79 1.07.79 2.16v3.24c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"></path></svg></a>
+<a aria-label="AutoFiC 논문 PDF" class="title-link document" href="https://inyeongjang.github.io/papers/KCSE-2026.pdf" rel="noreferrer" target="_blank" title="논문"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h9l3 3v15H6z"></path><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"></path></svg></a>
+</span>
+</h2>
+<div class="project-grid">
+<div class="visuals">
+<div class="visual image-dark"><img alt="AutoFiC 파이프라인" src="files/autofic-1.png"/></div>
+<div class="visual image-light"><img alt="Pull Request 결과" src="files/autofic-2.png"/></div>
+</div>
+<div class="project-copy">
+<div class="subhead">프로젝트 소개</div>
+<ul class="bullets">
+<li><strong>SAST 탐지 → LLM 기반 패치 생성 → PR 생성</strong> End-to-End 자동화 파이프라인 개발</li>
+<li>XML 구조화 컨텍스트와 Annotation으로 취약 구간을 명시하고 수정 범위를 한정</li>
+</ul>
+<div class="subhead subhead-spaced">담당 역할</div>
+<ul class="bullets">
+<li><strong>Project Manager</strong> : 일정 관리 및 업무 분담</li>
+<li><strong>SAST 실행 자동화 및 결과 통합</strong> : Semgrep, CodeQL, Snyk Code 실행과 분석 결과 전처리·구조화 로직 구현</li>
+</ul>
+<div class="subhead subhead-spaced">성과</div>
+<ul class="bullets">
+<li>파이프라인 실행 성공 <strong>86/91개 프로젝트(94.5%)</strong>, 정적 분석 경고 <strong>397/441건 제거(90.0%)</strong></li>
+<li>생성한 Pull Request 중 <strong>7건</strong> 실제 저장소 병합</li>
+</ul>
+<div class="award">🏆 KCSE 2026 우수 학부생 논문상 수상</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- 4. Patch Correctness -->
 <section class="slide">
-  <div class="page patch-correctness-page">
-    <div class="title-row"><div class="title-bar"></div><h1>RESEARCH & PROJECT · 02</h1></div>
-    <h2 class="section-title">
+<div class="page patch-correctness-page">
+<div class="title-row"><div class="title-bar"></div><h1>RESEARCH &amp; PROJECT · 02</h1></div>
+<h2 class="section-title">
       자동 패치 정확성 검증을 위한 LLM Oracle 설계
       <span class="title-links">
-        <a class="title-link" href="https://github.com/inyeongjang/LLM-Oracle/tree/v1.0" target="_blank" rel="noreferrer" aria-label="LLM Oracle GitHub 저장소" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7A11.5 11.5 0 0 0 8.36 23c.58.1.79-.25.79-.56v-2.23c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.74-1.56-2.58-.3-5.29-1.29-5.29-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.16 1.18A10.9 10.9 0 0 1 12 6c.98 0 1.95.13 2.87.38 2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.72 5.39-5.31 5.68.42.36.79 1.07.79 2.16v3.24c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg></a>
-        <a class="title-link document" href="https://inyeongjang.github.io/papers/ICST-2026.pdf" target="_blank" rel="noreferrer" aria-label="LLM Oracle 논문 PDF" title="논문"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"/></svg></a>
-      </span>
-    </h2>
-
-    <div class="project-grid">
-      <div class="visuals">
-        <div class="visual image-light"><img src="files/icst-1.png" alt="LLM Oracle"></div>
-        <div class="visual image-light"><img src="files/icst-2.png" alt="LLM Oracle"></div>
-      </div>
-
-      <div class="project-copy">
-        <div class="subhead">연구 소개</div>
-        <ul class="bullets">
-          <li>AutoFiC의 <strong>패치 정확성 검증 한계</strong>를 해결하기 위해 후속 연구로 확장</li>
-          <li>LLM이 추가 테스트를 생성해 잘못된 패치를 식별하는 검증 기법 연구</li>
-        </ul>
-
-        <div class="subhead subhead-spaced">담당 역할</div>
-        <ul class="bullets">
-          <li><strong>LLM 생성 테스트의 의미적 오류 및 실행 실패</strong> 원인 분석</li>
-          <li>오류 유형에 따른 <strong>6가지 프롬프트 전략</strong> 설계 및 모델별 성능 평가</li>
-        </ul>
-
-        <div class="subhead subhead-spaced">성과</div>
-        <ul class="bullets">
-          <li>Defects4J의 부정확한 패치 <strong>109개</strong>와 다양한 규모의 LLM 평가</li>
-          <li>기존 방법 대비 잘못된 패치 식별 성능 <strong>최대 19.9%p 향상</strong></li>
-        </ul>
-        <div class="award">🏆 IEEE ICST 2026 Research Track 논문 발표</div>
-      </div>
-    </div>
-  </div>
+<a aria-label="LLM Oracle GitHub 저장소" class="title-link" href="https://github.com/inyeongjang/LLM-Oracle/tree/v1.0" rel="noreferrer" target="_blank" title="GitHub"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 .7A11.5 11.5 0 0 0 8.36 23c.58.1.79-.25.79-.56v-2.23c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.74-1.56-2.58-.3-5.29-1.29-5.29-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.16 1.18A10.9 10.9 0 0 1 12 6c.98 0 1.95.13 2.87.38 2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.72 5.39-5.31 5.68.42.36.79 1.07.79 2.16v3.24c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"></path></svg></a>
+<a aria-label="LLM Oracle 논문 PDF" class="title-link document" href="https://inyeongjang.github.io/papers/ICST-2026.pdf" rel="noreferrer" target="_blank" title="논문"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 3h9l3 3v15H6z"></path><path d="M15 3v4h4M9 11h6M9 15h6M9 19h4"></path></svg></a>
+</span>
+</h2>
+<div class="project-grid">
+<div class="visuals">
+<div class="visual image-light"><img alt="LLM Oracle" src="files/icst-1.png"/></div>
+<div class="visual image-light"><img alt="LLM Oracle" src="files/icst-2.png"/></div>
+</div>
+<div class="project-copy">
+<div class="subhead">연구 소개</div>
+<ul class="bullets">
+<li>정적 분석 경고 제거만으로 패치의 정확성을 보장할 수 없다는 한계에서 출발</li>
+<li>기존 LLM 기반 패치 검증 도구에서 생성된 테스트의 오류를 분석하고 검증 성능 개선</li>
+</ul>
+<div class="subhead subhead-spaced">담당 역할</div>
+<ul class="bullets">
+<li>LLM 생성 테스트의 <strong>의미적 불충분성과 구문적 유효성 문제</strong> 분석</li>
+<li>오류 유형에 따른 <strong>6가지 프롬프트 전략</strong> 설계 및 모델별 효과 비교</li>
+</ul>
+<div class="subhead subhead-spaced">성과</div>
+<ul class="bullets">
+<li>Defects4J의 잘못된 패치 <strong>109개</strong>와 <strong>3가지 LLM</strong>을 대상으로 실험</li>
+<li>잘못된 패치 탐지 성능 GPT-4o-mini <strong>최대 7.5%p</strong>, Llama 3.2 3B <strong>최대 19.9%p</strong> 향상</li>
+</ul>
+<div class="award">🏆 IEEE ICST 2026 Research Track 논문 발표</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- 6. Experience & Mentoring -->
 <section class="slide">
-  <div class="page">
-    <div class="experience-mentoring-grid">
-      <div class="activity-column">
-        <div class="title-row"><div class="title-bar"></div><h1>EXPERIENCE</h1></div>
-        <div class="activity-entry">
-          <div class="subhead">덕성여자대학교 사이버보안 동아리</div>
-          <h3>BackDoor</h3>
-          <ul class="bullets">
-            <li>1·3기 부원으로 활동하고, 2기 회장으로서 사이버보안 스터디와 팀 프로젝트 기획·운영</li>
-            <li>CCA, HSPACE, INGOGNITO, WUISP 파트너십 체결</li>
-          </ul>
-        </div>
-        <div class="activity-entry">
-          <div class="subhead">사이버보안 교육 프로그램</div>
-          <h3>화이트햇스쿨 3기</h3>
-          <ul class="bullets">
-            <li>사이버보안 이론·실무 학습 및 팀 프로젝트 수행</li>
-            <li><a href="https://autofic.github.io/" target="_blank" rel="noreferrer">AutoFiC: 취약점 탐지부터 PR 생성까지 자동화된 보안 패치 파이프라인 <span class="external-mark">↗</span></a></li>
-          </ul>
-        </div>
-        <div class="activity-entry">
-          <div class="subhead">덕성여자대학교 웹 개발 동아리</div>
-          <h3>Corner</h3>
-          <ul class="bullets">
-            <li><a href="https://github.com/inyeongjang/Snoopy" target="_blank" rel="noreferrer">Node.js 및 Git 기초 학습 <span class="external-mark">↗</span></a></li>
-            <li><a href="https://github.com/inyeongjang/corner4" target="_blank" rel="noreferrer">제3회 코너톤: 개인 맞춤형 도서 추천 서비스 “My Book Planet” <span class="external-mark">↗</span></a></li>
-          </ul>
-        </div>
-        <div class="activity-entry">
-          <div class="subhead">덕성여자대학교 디지털소프트웨어공학부</div>
-          <h3>제 1회 해커톤</h3>
-          <ul class="bullets">
-            <li><a href="https://github.com/inyeongjang/NextBridge_Hackathon" target="_blank" rel="noreferrer">지방 소멸 문제를 해결하기 위한 외국인 노동자 커뮤니티 “Next Bridge” <span class="external-mark">↗</span></a></li>
-            <li>Django 백엔드 개발 및 BeautifulSoup·Selenium 기반 데이터 크롤링</li>
-          </ul>
-        </div>
-      </div>
-      <div class="activity-column">
-        <div class="title-row"><div class="title-bar"></div><h1>MENTORING</h1></div>
-        <div class="activity-entry">
-          <div class="subhead">대학생 연합 AI 연구 동아리</div>
-          <h3>OUTTA AI Bootcamp 멘토</h3>
-          <ul class="bullets">
-            <li>파이썬, 선형대수학, 머신러닝, 딥러닝 기초 스터디</li>
-            <li>‘데이터 크롤링’, ‘인공신경망’, ‘GAN’ 과목의 과제 채점 및 질의응답</li>
-          </ul>
-        </div>
-        <div class="activity-entry">
-          <div class="subhead">한국수력원자력</div>
-          <h3>아인슈타인 클래스 17기 멘토</h3>
-          <ul class="bullets">
-            <li>원전 주변 지역 청소년 대상 AI 활용 교육</li>
-            <li>기초 문해력 교육 및 진로 탐색 멘토링</li>
-          </ul>
-        </div>
-        <div class="activity-entry">
-          <div class="subhead">현대오토에버</div>
-          <h3>스마트모빌리티 공학체험교육 6기 멘토</h3>
-          <ul class="bullets">
-            <li>구립푸르름지역아동센터 초등학생 대상으로 스마트 모빌리티 공학 체험 교육 진행</li>
-            <li>SDV·PBV·자율주행·센서의 개념을 설명하고 ‘나만의 모빌리티’ 제작 지도</li>
-          </ul>
-        </div>
-        <div class="activity-entry">
-          <div class="subhead">덕성여자대학교 코딩 교육 봉사 동아리</div>
-          <h3>I-coding</h3>
-          <ul class="bullets">
-            <li>우리동네키움센터 강북 1호점 초등학생 대상 일대일 코딩 교육 봉사</li>
-            <li>코딩에 대한 흥미가 지속되도록 학생의 관심사를 반영한 맞춤형 커리큘럼 기획</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<div class="page">
+<div class="experience-mentoring-grid">
+<div class="activity-column">
+<div class="title-row"><div class="title-bar"></div><h1>EXPERIENCE</h1></div>
+<div class="activity-entry">
+<div class="subhead">덕성여자대학교 사이버보안 동아리</div>
+<h3>BackDoor</h3>
+<ul class="bullets">
+<li>1·3기 부원으로 활동하고, 2기 회장으로서 사이버보안 스터디와 팀 프로젝트 기획·운영</li>
+<li>CCA, HSPACE, INGOGNITO, WUISP 파트너십 체결</li>
+</ul>
 </div>
-
+<div class="activity-entry">
+<div class="subhead">사이버보안 교육 프로그램</div>
+<h3>화이트햇스쿨 3기</h3>
+<ul class="bullets">
+<li>사이버보안 이론·실무 학습 및 팀 프로젝트 수행</li>
+<li><a href="https://autofic.github.io/" rel="noreferrer" target="_blank">AutoFiC: 취약점 탐지부터 PR 생성까지 자동화된 보안 패치 파이프라인 <span class="external-mark">↗</span></a></li>
+</ul>
+</div>
+<div class="activity-entry">
+<div class="subhead">덕성여자대학교 웹 개발 동아리</div>
+<h3>Corner</h3>
+<ul class="bullets">
+<li><a href="https://github.com/inyeongjang/Snoopy" rel="noreferrer" target="_blank">Node.js 및 Git 기초 학습 <span class="external-mark">↗</span></a></li>
+<li><a href="https://github.com/inyeongjang/corner4" rel="noreferrer" target="_blank">제3회 코너톤: 개인 맞춤형 도서 추천 서비스 “My Book Planet” <span class="external-mark">↗</span></a></li>
+</ul>
+</div>
+<div class="activity-entry">
+<div class="subhead">덕성여자대학교 디지털소프트웨어공학부</div>
+<h3>제 1회 해커톤</h3>
+<ul class="bullets">
+<li><a href="https://github.com/inyeongjang/NextBridge_Hackathon" rel="noreferrer" target="_blank">지방 소멸 문제를 해결하기 위한 외국인 노동자 커뮤니티 “Next Bridge” <span class="external-mark">↗</span></a></li>
+<li>Django 백엔드 개발 및 BeautifulSoup·Selenium 기반 데이터 크롤링</li>
+</ul>
+</div>
+</div>
+<div class="activity-column">
+<div class="title-row"><div class="title-bar"></div><h1>MENTORING</h1></div>
+<div class="activity-entry">
+<div class="subhead">대학생 연합 AI 연구 동아리</div>
+<h3>OUTTA AI Bootcamp 멘토</h3>
+<ul class="bullets">
+<li>파이썬, 선형대수학, 머신러닝, 딥러닝 기초 스터디</li>
+<li>‘데이터 크롤링’, ‘인공신경망’, ‘GAN’ 과목의 과제 채점 및 질의응답</li>
+</ul>
+</div>
+<div class="activity-entry">
+<div class="subhead">한국수력원자력</div>
+<h3>아인슈타인 클래스 17기 멘토</h3>
+<ul class="bullets">
+<li>원전 주변 지역 청소년 대상 AI 활용 교육</li>
+<li>기초 문해력 교육 및 진로 탐색 멘토링</li>
+</ul>
+</div>
+<div class="activity-entry">
+<div class="subhead">현대오토에버</div>
+<h3>스마트모빌리티 공학체험교육 6기 멘토</h3>
+<ul class="bullets">
+<li>구립푸르름지역아동센터 초등학생 대상으로 스마트 모빌리티 공학 체험 교육 진행</li>
+<li>SDV·PBV·자율주행·센서의 개념을 설명하고 ‘나만의 모빌리티’ 제작 지도</li>
+</ul>
+</div>
+<div class="activity-entry">
+<div class="subhead">덕성여자대학교 코딩 교육 봉사 동아리</div>
+<h3>I-coding</h3>
+<ul class="bullets">
+<li>우리동네키움센터 강북 1호점 초등학생 대상 일대일 코딩 교육 봉사</li>
+<li>코딩에 대한 흥미가 지속되도록 학생의 관심사를 반영한 맞춤형 커리큘럼 기획</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
 <script>
 const SELECTORS = {
   deck: '#deck',
