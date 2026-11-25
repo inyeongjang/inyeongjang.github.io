@@ -286,6 +286,23 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
   .nav-btn,.dots{display:none}
 }
 
+
+/* First-page layout: keep every section visible on shorter laptop screens. */
+.slide:first-child .page{overflow-y:auto;scrollbar-width:thin;scrollbar-color:#c5dfeb transparent}
+.slide:first-child .resume-grid{height:auto;min-height:100%;grid-template-rows:auto auto}
+.slide:first-child .resume-cols{align-content:start}
+.slide:first-child .rsec{margin-bottom:13px}
+.slide:first-child .dense-list .ritem{margin-bottom:4px;padding:2px 0}
+.slide:first-child .rsec-title{margin-bottom:6px}
+@media (min-width:701px) and (max-height:700px){
+  .slide:first-child .page{padding:24px 34px}
+  .slide:first-child .resume-grid{row-gap:12px}
+  .slide:first-child .resume-head h2.headline-emphasis{font-size:23px}
+  .slide:first-child .resume-cols{gap:22px}
+  .slide:first-child .rsec{margin-bottom:9px}
+  .slide:first-child .dense-list .ritem{margin-bottom:2px;padding:1px 0}
+}
+
 </style>
 </head>
 <body>
@@ -353,13 +370,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
               <div class="rsec-title">수상 내역</div>
               <div class="ritem"><span class="date">2026.03.20</span><strong>KT 디지털 인재 장학생</strong></div>
               <div class="ritem"><span class="date">2026.02.05</span><strong>KCSE 2026 우수 학부생 논문상</strong></div>
-              <div class="ritem"><span class="date">2023–2026</span><strong>학과 수석(24-1) · 단과대학 성적우수(23-1, 23-2) · 학과 성적우수 (24-2, 26-1)</strong></div>
-            </div>
-
-            <div class="rsec dense-list compact-list">
-              <div class="rsec-title">어학 · 자격증</div>
-              <div class="ritem"><span class="date">2026.11.20</span><strong>ADsP 데이터분석 준전문가</strong></div>
-              <div class="ritem"><span class="date">2026.09</span><strong>TOEIC 880 · TOEIC Speaking IH</strong></div>
+              <div class="ritem"><span class="date">2023–2026</span><strong>성적우수 장학금 (학과 수석 포함, 2023–2026)</strong></div>
             </div>
 
           </div>
@@ -370,6 +381,13 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
               <div class="ritem"><span class="date">2025.03–2025.09</span><strong>화이트햇스쿨 3기</strong></div>
               <div class="ritem"><span class="date">2024.03–2026.08</span><strong>덕성여자대학교 사이버보안 동아리 BackDoor 1·3기 부원 / 2기 회장</strong></div>
               <div class="ritem"><span class="date">2024.09–2025.08</span><strong>덕성여자대학교 웹 개발 동아리 Corner 4기</strong></div>
+            </div>
+
+
+            <div class="rsec dense-list compact-list">
+              <div class="rsec-title">어학 · 자격증</div>
+              <div class="ritem"><span class="date">2026.11.20</span><strong>ADsP 데이터분석 준전문가</strong></div>
+              <div class="ritem"><span class="date">2026.09</span><strong>TOEIC 880 · TOEIC Speaking IH</strong></div>
             </div>
 
             <div class="rsec dense-list compact-list">
