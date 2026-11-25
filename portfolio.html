@@ -448,7 +448,43 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 @media(max-width:700px){
  :is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy {overflow:visible;}
 }
-</style></head>
+</style>
+<style>
+/* Spacing adjustments: first-page summary and project detail pages */
+.slide:first-child .resume-grid {row-gap:12px;}
+.slide:first-child .resume-cols {row-gap:12px;}
+.slide:first-child .resume-group-top {gap:10px;}
+.slide:first-child .resume-cols .rsec-title {margin-bottom:7px;}
+.slide:first-child .resume-cols .ritem {margin-bottom:4px;padding:1px 0;}
+.slide:first-child .resume-cols .ritem strong {line-height:1.35;}
+.slide:first-child .experience-column {gap:6px;}
+.slide:first-child .experience-column .ritem {padding:1px 0;}
+.slide:first-child .experience-subtitle {margin-bottom:2px;}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .bullets li {
+  line-height:1.48;
+  margin-bottom:5px;
+}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .subhead-spaced {
+  margin-top:8px;
+}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .subhead {
+  margin-bottom:5px;
+}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .tech-heading {
+  margin-top:8px !important;
+  margin-bottom:4px !important;
+}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .tech-line {
+  line-height:1.48;
+}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .award {
+  margin-top:8px;
+  padding:8px 11px;
+}
+/* DRT image slot backgrounds */
+.drt-page .visual.drt-image-slot { background:#dfe3df !important; }
+</style>
+</head>
 <body>
 <button aria-label="이전" class="nav-btn" id="prev">‹</button>
 <button aria-label="다음" class="nav-btn" id="next">›</button>
@@ -525,7 +561,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 <div class="subhead subhead-spaced">담당 역할</div>
 <ul class="bullets">
 <li><strong>Project Manager</strong> : 일정 관리 및 업무 분담</li>
-<li><strong>SAST 실행 자동화 및 결과 통합</strong> : Semgrep, CodeQL, Snyk Code 실행과 분석 결과 전처리·구조화 로직 구현</li>
+<li><strong>SAST 실행 자동화 및 결과 통합</strong> : Semgrep, CodeQL, Snyk Code 실행과 분석 결과 전처리</li>
 </ul>
 <div class="subhead subhead-spaced">성과</div>
 <ul class="bullets">
@@ -592,11 +628,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 <li><strong>운행 현황 페이지</strong> : 사용자에게 제공할 운행 상태·차량 위치·예상 도착 시간 조회 화면 디자인 및 개발</li>
 <li><strong>발표 시연 페이지</strong> : 예약과 호출 과정을 보여주는 웹페이지 개발</li>
 </ul>
-<div class="subhead subhead-spaced">성과 및 향후 계획</div>
-<ul class="bullets">
-<li>DRT 호출 테스트 환경과 운행 현황 조회·발표 시연 페이지 구현</li>
-<li>한국교통안전공단의 실제 앱에 해당 기능을 적용하기 위한 고도화 진행 예정</li>
-</ul>
+<div class="award">한국교통안전공단의 실제 앱에 해당 기능을 적용하기 위한 고도화 진행 예정</div>
 
 </div></div></div></section><section class="slide">
 <div class="page">
