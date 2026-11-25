@@ -540,6 +540,42 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
  .slide:first-child .resume-group-top.resume-left,
  .slide:first-child .resume-group-top.resume-right {gap:18px;}
 }
+</style>
+<style>
+/* First-page consistency: match experience row spacing to other resume lists. */
+.slide:first-child .experience-column { gap:8px; }
+.slide:first-child .experience-column .ritem { margin:0; padding:1px 0; }
+@media (max-width:700px) {
+  .slide:first-child .experience-column { gap:7px; }
+}
+</style><style>
+/* Project-only readability: slightly larger spacing, retain profile layout. */
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .bullets li {
+  line-height:1.78;
+  margin-bottom:10px;
+}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .subhead-spaced {
+  margin-top:17px;
+}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .subhead {
+  margin-bottom:9px;
+}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .tech-heading {
+  margin-top:15px !important;
+  margin-bottom:7px !important;
+}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .tech-line {
+  line-height:1.7;
+}
+:is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .award {
+  margin-top:15px;
+}
+/* On shorter screens, scale spacing back to avoid an inner scrollbar. */
+@media (min-width:701px) and (max-height:820px) {
+ :is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .bullets li { line-height:1.62; margin-bottom:7px; }
+ :is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .subhead-spaced { margin-top:12px; }
+ :is(.autofic-page,.patch-correctness-page,.drt-page) .project-copy .tech-heading { margin-top:11px !important; }
+}
 </style></head>
 <body>
 <button aria-label="이전" class="nav-btn" id="prev">‹</button>
