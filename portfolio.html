@@ -327,8 +327,84 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
   .slide:first-child .resume-section-group{gap:18px}
   .slide:first-child .compact-list .ritem{grid-template-columns:92px minmax(0,1fr) 6px}
 }
+
+/* First slide: balanced two-column upper area and full-width experience grid */
+.slide:first-child .page{overflow:hidden}
+.slide:first-child .resume-grid{row-gap:17px;height:100%;grid-template-rows:auto minmax(0,1fr)}
+.slide:first-child .resume-cols{
+  grid-column:1/-1;grid-row:2;display:grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  grid-template-rows:auto auto;gap:19px 44px;
+  padding-top:4px;align-content:start;align-items:start;
+}
+.slide:first-child .resume-group-top{display:flex;flex-direction:column;gap:18px;min-width:0}
+.slide:first-child .resume-cols .rsec{margin:0}
+.slide:first-child .resume-cols .rsec-title{font-size:14px;margin-bottom:11px}
+.slide:first-child .resume-cols .ritem{margin-bottom:7px;padding:3px 0}
+.slide:first-child .resume-cols .ritem strong{font-size:12.2px;line-height:1.5}
+.slide:first-child .resume-cols .ritem .date{font-size:10.8px}
+.slide:first-child .resume-cols .compact-list .ritem{grid-template-columns:110px minmax(0,1fr) 0;gap:10px}
+.slide:first-child .resume-cols > .rsec{grid-column:1/-1;min-width:0;border-top:1px solid var(--line);padding-top:14px}
+.slide:first-child .resume-cols > .rsec .rsec-title{margin-bottom:13px}
+.slide:first-child .experience-items{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:44px;row-gap:6px}
+.slide:first-child .experience-items .ritem{margin-bottom:0}
+@media(min-width:701px) and (max-height:760px){
+  .slide:first-child .page{overflow-y:auto}
+  .slide:first-child .resume-grid{height:auto}
+  .slide:first-child .resume-cols{row-gap:13px}
+  .slide:first-child .resume-group-top{gap:12px}
+  .slide:first-child .resume-cols .ritem{padding:2px 0;margin-bottom:4px}
+  .slide:first-child .resume-cols > .rsec{padding-top:10px}
+}
+@media(max-width:900px) and (min-width:701px){
+  .slide:first-child .resume-cols{column-gap:24px}
+  .slide:first-child .experience-items{column-gap:24px}
+  .slide:first-child .resume-cols .compact-list .ritem{grid-template-columns:85px minmax(0,1fr) 0;gap:7px}
+  .slide:first-child .resume-cols .ritem strong{font-size:11px}
+}
+@media(max-width:700px){
+  .slide:first-child .page{overflow:visible}
+  .slide:first-child .resume-grid{height:auto;grid-template-rows:auto auto auto}
+  .slide:first-child .resume-cols{grid-template-columns:1fr;grid-template-rows:auto;gap:20px}
+  .slide:first-child .resume-cols > .rsec{grid-column:1}
+  .slide:first-child .experience-items{grid-template-columns:1fr;row-gap:4px}
+  .slide:first-child .resume-cols .compact-list .ritem{grid-template-columns:95px minmax(0,1fr) 0}
+}
+
+
+/* Group first-page experience items by activity type. */
+.slide:first-child .experience-items{align-items:start;column-gap:44px;row-gap:0}
+.slide:first-child .experience-column{min-width:0;display:flex;flex-direction:column;gap:9px}
+.slide:first-child .experience-subtitle{font-size:12px;font-weight:800;color:var(--blue-dark);margin:0 0 4px}
+.slide:first-child .experience-column .ritem{padding:2px 0;margin:0}
+@media(max-width:900px) and (min-width:701px){
+ .slide:first-child .experience-items{column-gap:24px}
+ .slide:first-child .experience-column{gap:7px}
+}
+@media(max-width:700px){
+ .slide:first-child .experience-items{grid-template-columns:1fr;row-gap:20px}
+}
+
+/* Shared, concise technology presentation across all three projects */
+.project-copy .tech-heading{margin-top:9px!important;margin-bottom:4px!important}
+.project-copy .tech-line{font-size:11px;line-height:1.5;color:#294f6b;margin:0;word-break:keep-all}
 </style>
-</head>
+<style>
+/* DRT: contributor-scoped project page */
+.drt-page .section-title{font-size:26px;margin-bottom:23px}
+.drt-muted{font-size:.68em;color:var(--muted);font-weight:650}
+/* DRT image slots: same two-image layout as previous projects */
+.drt-page .visuals{gap:12px}
+.drt-page .visual{flex:1 1 0;min-height:0}
+.drt-image-slot{border:1px dashed #b9d6e6;background:#f7fbfd}
+.drt-placeholder-label{font-size:13px;font-weight:600;color:#8aa6b8}
+.drt-page .project-copy .bullets li{font-size:12.8px;line-height:1.65;margin-bottom:7px}
+@media(max-width:700px){.drt-page .project-grid{height:auto}.drt-page .visual{min-height:160px}}
+@media(min-width:701px) and (max-height:760px){.drt-page .project-copy .bullets li{font-size:11.8px}}
+/* Fit third project in first-page summary while preserving readability */
+.slide:first-child .resume-group-top{gap:15px}
+.slide:first-child .resume-cols{gap:15px 44px}
+</style></head>
 <body>
 <button aria-label="이전" class="nav-btn" id="prev">‹</button>
 <button aria-label="다음" class="nav-btn" id="next">›</button>
@@ -356,41 +432,25 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 </div>
 <h2 class="headline-emphasis"><span class="headline-highlight">LLM 기반 자동화 시스템을 개발하고, 생성 결과의 오류를 분석해 왔습니다.</span></h2>
 </div>
-<div class="resume-cols">
-<div class="resume-section-group left-group">
-<div class="rsec dense-list compact-list">
+<div class="resume-cols"><div class="resume-group-top resume-left"><div class="rsec dense-list compact-list">
 <div class="rsec-title">학력</div>
 <div class="ritem"><span class="date">2023.03–2028.02</span><strong>덕성여자대학교 디지털소프트웨어공학부 (4.43 / 4.5)</strong></div>
-</div>
-<div class="rsec dense-list compact-list">
+</div><div class="rsec dense-list compact-list">
 <div class="rsec-title">프로젝트 · 연구</div>
 <div class="ritem"><span class="date">2025.05–2026.02</span><div class="project-heading"><strong>AutoFiC: 취약점 탐지부터 PR 생성까지 자동화된 보안 패치 파이프라인</strong></div></div>
 <div class="ritem"><span class="date">2025.08–2026.05</span><div class="project-heading"><strong>자동 패치 정확성 검증을 위한 LLM Oracle 설계</strong></div></div>
-</div>
-<div class="rsec dense-list compact-list">
+<div class="ritem"><span class="date">2026.03</span><div class="project-heading"><strong>AI 케어콜 기반 DRT 예약 서비스: Mock API 및 운행 현황 페이지</strong></div></div></div></div><div class="resume-group-top resume-right"><div class="rsec dense-list compact-list">
 <div class="rsec-title">수상 내역</div>
 <div class="ritem"><span class="date">2026.03.20</span><strong>KT 디지털 인재 장학생</strong></div>
 <div class="ritem"><span class="date">2026.02.05</span><strong>KCSE 2026 우수 학부생 논문상</strong></div>
-</div>
-<div class="rsec dense-list compact-list">
+</div><div class="rsec dense-list compact-list">
 <div class="rsec-title">어학 · 자격증</div>
 <div class="ritem"><span class="date">2026.11.20</span><strong>ADsP 데이터분석 준전문가</strong></div>
 <div class="ritem"><span class="date">2026.09.06</span><strong>TOEIC 880</strong></div>
 <div class="ritem"><span class="date">2026.09.13</span><strong>TOEIC Speaking IH</strong></div>
-</div>
-</div>
-<div class="resume-section-group right-group">
-<div class="rsec dense-list compact-list">
+</div></div><div class="rsec dense-list compact-list">
 <div class="rsec-title">기타 경험</div>
-<div class="ritem"><span class="date">2025.03–2025.09</span><strong>화이트햇스쿨 3기</strong></div>
-<div class="ritem"><span class="date">2024.03–2026.08</span><strong>덕성여자대학교 사이버보안 동아리 BackDoor 1·3기 부원 / 2기 회장</strong></div>
-<div class="ritem"><span class="date">2024.09–2025.08</span><strong>덕성여자대학교 웹 개발 동아리 Corner 4기</strong></div>
-<div class="ritem"><span class="date">2023.11–2026.08</span><strong>OUTTA AI 부트캠프 멘토</strong></div>
-<div class="ritem"><span class="date">2026.01–2026.02</span><strong>한국수력원자력 아인슈타인 클래스 17기 멘토</strong></div>
-<div class="ritem"><span class="date">2023.06–2023.09</span><strong>현대오토에버 스마트 모빌리티 공학체험교육 6기 멘토</strong></div>
-<div class="ritem"><span class="date">2023.03–2024.06</span><strong>덕성여자대학교 코딩 교육 봉사 동아리 I-coding</strong></div>
-</div>
-</div></div>
+<div class="experience-items"><div class="experience-column experience-study"><div class="experience-subtitle">보안 교육 · 동아리</div><div class="ritem"><span class="date">2025.03–2025.09</span><strong>화이트햇스쿨 3기</strong></div><div class="ritem"><span class="date">2024.03–2026.08</span><strong>덕성여자대학교 사이버보안 동아리 BackDoor 1·3기 부원 / 2기 회장</strong></div><div class="ritem"><span class="date">2024.09–2025.08</span><strong>덕성여자대학교 웹 개발 동아리 Corner 4기</strong></div></div><div class="experience-column experience-mentoring"><div class="experience-subtitle">멘토링 · 교육</div><div class="ritem"><span class="date">2023.11–2026.08</span><strong>OUTTA AI 부트캠프 멘토</strong></div><div class="ritem"><span class="date">2026.01–2026.02</span><strong>한국수력원자력 아인슈타인 클래스 17기 멘토</strong></div><div class="ritem"><span class="date">2023.06–2023.09</span><strong>현대오토에버 스마트 모빌리티 공학체험교육 6기 멘토</strong></div><div class="ritem"><span class="date">2023.03–2024.06</span><strong>덕성여자대학교 코딩 교육 봉사 동아리 I-coding</strong></div></div></div></div></div>
 </div>
 </div>
 </div>
@@ -429,7 +489,7 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 <li>생성한 Pull Request 중 <strong>7건</strong> 실제 저장소 병합</li>
 </ul>
 <div class="award">🏆 KCSE 2026 우수 학부생 논문상 수상</div>
-</div>
+<div class="subhead subhead-spaced tech-heading">주요 기술</div><p class="tech-line">Python · Semgrep · CodeQL · Snyk Code · OpenAI API · GitHub Actions</p></div>
 </div>
 </div>
 </section>
@@ -466,12 +526,18 @@ h1,h2,h3,.name,.rsec-title,.subhead{font-family:Manrope,"Noto Sans KR",sans-seri
 <li>잘못된 패치 탐지 성능 GPT-4o-mini <strong>최대 7.5%p</strong>, Llama 3.2 3B <strong>최대 19.9%p</strong> 향상</li>
 </ul>
 <div class="award">🏆 IEEE ICST 2026 Research Track 논문 발표</div>
-</div>
+<div class="subhead subhead-spaced tech-heading">주요 기술</div><p class="tech-line">Python · Java · OpenAI API · Llama 3.2</p></div>
 </div>
 </div>
 </section>
 <!-- 6. Experience & Mentoring -->
 <section class="slide">
+<div class="page drt-page">
+<div class="title-row"><div class="title-bar"></div><h1>PROJECT · 03</h1></div>
+<h2 class="section-title">AI 케어콜 기반 고령층 DRT 예약 및 보호자 공유 서비스</h2>
+<div class="project-grid">
+<div class="visuals drt-visuals"><div class="visual image-light drt-image-slot" data-image-slot="1"><span class="drt-placeholder-label">이미지 1 추가 예정</span></div><div class="visual image-light drt-image-slot" data-image-slot="2"><span class="drt-placeholder-label">이미지 2 추가 예정</span></div></div>
+<div class="project-copy"><div class="subhead">프로젝트 소개</div><ul class="bullets"><li>고령층의 DRT 예약을 돕고 보호자가 운행 현황을 확인할 수 있도록 설계한 AI 케어콜 연계 서비스</li><li>전화 기반 예약부터 호출, 운행 현황 공유까지 연결하는 팀 프로젝트</li></ul><div class="subhead subhead-spaced">담당 역할</div><ul class="bullets"><li>Mock DRT 서버: 실제 DRT 연동 전 예약·호출 흐름을 테스트할 가상 API 서버 구축</li><li>진행 상황 페이지: 사용자에게 전달되는 차량 위치·운행 상태·예상 도착 시간 조회 화면 디자인 및 개발</li><li>발표 시연 페이지: 예약 및 호출 과정을 시연하는 웹 화면 구현</li></ul><div class="subhead subhead-spaced">성과 및 향후 계획</div><ul class="bullets"><li>DRT 호출 테스트 환경과 사용자용 진행 상황 페이지, 발표 시연 화면 구현</li><li>한국교통안전공단의 실제 앱에 기능 적용을 위한 고도화 추진 예정</li></ul><div class="subhead subhead-spaced tech-heading">주요 기술</div><p class="tech-line">Python · JavaScript · FastAPI · REST API · HTML/CSS</p></div></div></div></section><section class="slide">
 <div class="page">
 <div class="experience-mentoring-grid">
 <div class="activity-column">
